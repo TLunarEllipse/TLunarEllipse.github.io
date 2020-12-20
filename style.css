@@ -47,19 +47,17 @@ textarea[id="console3"] {
   outline: 0;
 }
 div[id="menu"] {
-  border-top: 1px solid #fff;
-  border-left: 1px solid #fff;
   position: absolute;
   right: 0px;
   bottom: 0px;
-  width: 300px;
+  width: 230px;
   height: 100px;
 }
-img{
+img {
   width: 95px;
   padding: 0px 10px;
-  }
-img[id="run"]{
+}
+img[id="run"] {
   position: absolute;
   right: 10px;
-  }
+}
