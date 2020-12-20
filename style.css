@@ -1,15 +1,43 @@
-body{
+body {
   background: #252525;
   color: #fff;
   overflow: hidden;
   font-family: sans-serif;
-  }
-div[id="total"]{
-  width: 100%;
-  height: 10%;
-  overflow: auto;
-  }
-textarea[id="console1"]{
+}
+div[id="total"] {
   width: 100%;
   height: 100%;
-  }
+  overflow: auto;
+  background: #252525;
+  color: #fff;
+}
+textarea[id="console1"] {
+  width: 100%;
+  height: 20%;
+  position: absolute;
+  top: 0%;
+  background: #252525;
+  color: #fff;
+  border: none;
+  border-bottom: 1px solid #fff;
+}
+textarea[id="console2"] {
+  width: 100%;
+  height: 30%;
+  position: absolute;
+  top: 20.5%;
+  background: #252525;
+  color: #fff;
+  border: none;
+  border-bottom: 1px solid #fff;
+}
+textarea[id="console3"] {
+  width: 100%;
+  height: 50%;
+  position: absolute;
+  top: 51%;
+  background: #252525;
+  color: #fff;
+  border: none;
+  border-bottom: 1px solid #fff;
+}
