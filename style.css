@@ -10,7 +10,12 @@ div[id="total"] {
   overflow: auto;
   background: #252525;
   color: #fff;
+  
+  
 }
+textarea{
+  font-size: 70%;
+  }
 textarea[id="console1"] {
   width: 100%;
   height: 10%;
@@ -54,10 +59,13 @@ div[id="menu"] {
   height: 100px;
 }
 img {
-  width: 95px;
-  padding: 0px 10px;
+  width: 50px;
 }
 img[id="run"] {
   position: absolute;
   right: 10px;
 }
+img[id="logo"]{
+  position: absolute;
+  right: 105px;
+  }
