@@ -4,14 +4,19 @@ var console1 = document.getElementById("console1");
 var console2 = document.getElementById("console2");
 var console3 = document.getElementById("console3");
 
+//run code:
+
 function run() {
+  //date system:
+  stats();
   lexer();
 
   //define whether the code is right or wrong:
 
   //right:
   if ((work = 1)) {
-    document.getElementById("console1").innerHTML = "Program statistics:" + "";
+    document.getElementById("console1").innerHTML =
+      "Program statistics:" + fulldate + "";
     document.getElementById("console2").innerHTML = "Console Output:" + "";
     execute();
   }
@@ -28,3 +33,37 @@ function execute() {}
 
 //lexical analysis:
 function lexer() {}
+
+//statistics:
+function stats() {
+  var dataAtual = new Date();
+
+  var dia = (dataAtual.getDate() < 10 ? "0" : "") + dataAtual.getDate();
+
+  var mes =
+    (dataAtual.getMonth() + 1 < 10 ? "0" : "") + (dataAtual.getMonth() + 1);
+
+  var ano = dataAtual.getFullYear();
+
+  var hora = (dataAtual.getHours() < 10 ? "0" : "") + dataAtual.getHours();
+
+  var minuto =
+    (dataAtual.getMinutes() < 10 ? "0" : "") + dataAtual.getMinutes();
+
+  var segundo =
+    (dataAtual.getSeconds() < 10 ? "0" : "") + dataAtual.getSeconds();
+
+  var fulldate =
+    mes +
+    "/" +
+    dia +
+    "/" +
+    ano +
+    "(" +
+    hora +
+    ":" +
+    minuto +
+    ":" +
+    segundo +
+    ")";
+}
