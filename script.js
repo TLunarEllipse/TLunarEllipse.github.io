@@ -4,7 +4,7 @@ var console1 = document.getElementById("console1");
 var console2 = document.getElementById("console2");
 var console3 = document.getElementById("console3");
 var fulldate;
-var erro = "No Errors Founded";
+var erro = "No Errors Found";
 //run code:
 
 if (system) {
@@ -21,7 +21,13 @@ function run() {
   //right:
   if ((work = 1)) {
     document.getElementById("console1").innerHTML =
-      "Program statistics:" +" TLunarElipse Lang V: 1.0.0; "+ fulldate + "; "+"("+erro+");";
+      "Program statistics:" +
+      " TLunarElipse Lang; Version: 1.0.0; " +
+      fulldate +
+      "; " +
+      "(" +
+      erro +
+      ");";
     document.getElementById("console2").innerHTML = "Console Output:" + "";
     execute();
   }
