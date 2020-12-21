@@ -3,8 +3,10 @@ var system = true;
 var console1 = document.getElementById("console1");
 var console2 = document.getElementById("console2");
 var console3 = document.getElementById("console3");
-
+var fulldate;
 //run code:
+
+window.onload = run(
 
 function run() {
   //date system:
@@ -53,7 +55,7 @@ function stats() {
   var segundo =
     (dataAtual.getSeconds() < 10 ? "0" : "") + dataAtual.getSeconds();
 
-  var fulldate =
+  fulldate =
     mes +
     "/" +
     dia +
