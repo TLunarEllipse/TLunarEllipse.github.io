@@ -4,9 +4,12 @@ var console1 = document.getElementById("console1");
 var console2 = document.getElementById("console2");
 var console3 = document.getElementById("console3");
 var fulldate;
+var erro = "No Errors Founded";
 //run code:
 
-window.onload = run(
+if (system) {
+  setTimeout(run, 5);
+}
 
 function run() {
   //date system:
@@ -18,7 +21,7 @@ function run() {
   //right:
   if ((work = 1)) {
     document.getElementById("console1").innerHTML =
-      "Program statistics:" + fulldate + "";
+      "Program statistics:" +" TLunarElipse Lang V: 1.0.0; "+ fulldate + "; "+"("+erro+");";
     document.getElementById("console2").innerHTML = "Console Output:" + "";
     execute();
   }
