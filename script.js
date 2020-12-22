@@ -91,12 +91,29 @@ function execute() {}
 //lexical analysis:
 function lexer() {
   code1 = document.getElementById("console3").value;
-
-  code1 = code1.replace(",", "TT_COM");
-
-  while(code1.includes("+")){
-  code1 = code1.replace("+", "TT_PLU");
-}
+  
+   
+///start commas system 1:
+  while (code1.includes(" ")) {
+    code1 = code1.replace(" ", "¥¢^");
+  }
+///end commas system 1
+  
+  while (code1.includes(",")) {
+    code1 = code1.replace(",", "TT_COM");
+  }
+  
+  while (code1.includes("+")) {
+    code1 = code1.replace("+", "TT_PLU");
+  }
+  
+  
+///start commas system 2:
+  while (code1.includes("¥¢^")) {
+    code1 = code1.replace("¥¢^", ",");
+  }
+///end commas system 2
+  
   alert(code1);
 }
 
