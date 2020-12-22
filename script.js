@@ -7,13 +7,13 @@ var console2 = document.getElementById("console2");
 var console3 = document.getElementById("console3");
 var fulldate;
 var erro = "No Errors Found";
+var code1;
 
 //specifyions:
 
-var FUNCTIONS =['',''];
+var FUNCTIONS = ["print", "var", "or", "if", "else", "loop", "and", "not"];
 
-
-var TT_ADD = "+";
+var TT_PLU = "+";
 var TT_MIN = "-";
 var TT_MUL = "*";
 var TT_DIV = "÷";
@@ -30,6 +30,8 @@ var TT_EQU = "=";
 var TT_LES = "<";
 var TT_GRE = ">";
 
+var TT_SAS = "'";
+var TT_ASP = '"';
 
 //run code:
 
@@ -66,13 +68,15 @@ function run() {
 }
 
 //execute code:
-function execute() {
-  
-  
-}
+function execute() {}
 
 //lexical analysis:
 function lexer() {
+  code1 = document.getElementById("console3").value;
+  
+  code1 = code1.split;
+  
+  alert(code1);
   execute();
 }
 
