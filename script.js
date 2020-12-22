@@ -99,13 +99,32 @@ function lexer() {
   }
 ///end commas system 1
   
-  while (code1.includes(",")) {
-    code1 = code1.replace(",", "TT_COM");
-  }
+  //CHARACTERS:
   
   while (code1.includes("+")) {
     code1 = code1.replace("+", "TT_PLU");
   }
+  while (code1.includes("-")) {
+    code1 = code1.replace("-", "TT_MIN");
+  }
+  while (code1.includes("*")) {
+    code1 = code1.replace("*", "TT_MUL");
+  }
+  while (code1.includes("/")) {
+    code1 = code1.replace("/", "TT_DIV");
+  }
+  while (code1.includes("^")) {
+    code1 = code1.replace("^", "TT_POW");
+  }
+  
+  while (code1.includes("(")) {
+    code1 = code1.replace("(", "TT_LPA");
+  }
+  while (code1.includes(")")) {
+    code1 = code1.replace(")", "TT_RPA");
+  }
+  
+  
   
   
 ///start commas system 2:
