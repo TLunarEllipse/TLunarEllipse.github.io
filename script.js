@@ -13,27 +13,42 @@ var code1;
 
 var FUNCTIONS = ["print", "var", "or", "if", "else", "loop", "and", "not"];
 
-var TT_CHARACTERS = ["TT_PLU","TT_MIN","TT_MUL","TT_DIV","TT_POW","TT_LP
-
-var TT_PLU = "+";
-var TT_MIN = "-";
-var TT_MUL = "*";
-var TT_DIV = "/";
-var TT_POW = "^";
-
-var TT_LPA = "(";
-var TT_RPA = ")";
-var TT_LSQ = "[";
-var TT_RSQ = "]";
-
-var TT_COM = ",";
-var TT_SEM = ";";
-var TT_EQU = "=";
-var TT_LES = "<";
-var TT_GRE = ">";
-
-var TT_SAS = "'";
-var TT_ASP = '"';
+var CHARACTERS = [
+  "+",
+  "-",
+  "*",
+  "/",
+  "^",
+  "(",
+  ")",
+  "[",
+  "]",
+  ",",
+  ";",
+  "=",
+  "<",
+  ">",
+  "'",
+  '"'
+];
+var TT_CHARACTERS = [
+  "TT_PLU",
+  "TT_MIN",
+  "TT_MUL",
+  "TT_DIV",
+  "TT_POW",
+  "TT_LPA",
+  "TT_RPA",
+  "TT_LSQ",
+  "TT_RSQ",
+  "TT_COM",
+  "TT_SEM",
+  "TT_EQU",
+  "TT_LES",
+  "TT_GRE",
+  "TT_SAS",
+  "TT_ASP"
+];
 
 //run code:
 
@@ -74,11 +89,10 @@ function execute() {}
 
 //lexical analysis:
 function lexer() {
-  
   code1 = document.getElementById("console3").value;
-  
+
   code1 = code1.replace(",", " TT_COM ");
-  
+
   code1 = code1.split(" ");
 
   alert(code1);
