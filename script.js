@@ -94,6 +94,7 @@ function lexer() {
   code1 = code1.replace(",", " TT_COM ");
 
   code1 = code1.split(" ");
+  
 
   alert(code1);
   execute();
