@@ -132,6 +132,9 @@ function lexer() {
   while (code1.includes(",")) {
     code1 = code1.replace(",", "TT_COM");
   }
+  while (code1.includes(";")) {
+    code1 = code1.replace(";", "TT_SEM");
+  }
   while (code1.includes("=")) {
     code1 = code1.replace("=", "TT_EQU");
   }
