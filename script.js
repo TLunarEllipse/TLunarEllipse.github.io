@@ -94,7 +94,7 @@ function lexer() {
 
   code1 = code1.replace(",", "TT_COM");
 
-  code1 = code1.replace("+", "TT_PLU");
+  code1 = code1.replace(/"+"/gi, "TT_PLU");
   
   alert(code1);
 }
