@@ -95,7 +95,7 @@ function lexer() {
    
 ///start commas system 1:
   while (code1.includes(" ")) {
-    code1 = code1.replace(" ", "¥¢^");
+    code1 = code1.replace(" ", "∆¶");
   }
 ///end commas system 1
   
@@ -123,13 +123,37 @@ function lexer() {
   while (code1.includes(")")) {
     code1 = code1.replace(")", "TT_RPA");
   }
+  while (code1.includes("[")) {
+    code1 = code1.replace("[", "TT_LSQ");
+  }
+  while (code1.includes("]")) {
+    code1 = code1.replace("]", "TT_RSQ");
+  }
+  while (code1.includes(",")) {
+    code1 = code1.replace(",", "TT_COM");
+  }
+  while (code1.includes("=")) {
+    code1 = code1.replace("=", "TT_EQU");
+  }
+  while (code1.includes("<")) {
+    code1 = code1.replace("", "TT_LES");
+  }
+  while (code1.includes(">")) {
+    code1 = code1.replace(">", "TT_GRE");
+  }
   
+  while (code1.includes("'")) {
+    code1 = code1.replace("'", "TT_SAS");
+  }
+  while (code1.includes('"')) {
+    code1 = code1.replace('"', "TT_ASP");
+  }
   
   
   
 ///start commas system 2:
-  while (code1.includes("¥¢^")) {
-    code1 = code1.replace("¥¢^", ",");
+  while (code1.includes("∆¶")) {
+    code1 = code1.replace("∆¶", ",");
   }
 ///end commas system 2
   
