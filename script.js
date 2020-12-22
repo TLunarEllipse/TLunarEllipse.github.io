@@ -73,9 +73,11 @@ function execute() {}
 //lexical analysis:
 function lexer() {
   code1 = document.getElementById("console3").value;
+
+  code1 = code1.split(" ");
   
-  code1 = code1.split;
-  
+  code1 = code1.repalce(",","bruh");
+
   alert(code1);
   execute();
 }
