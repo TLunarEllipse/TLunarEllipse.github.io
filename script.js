@@ -40,10 +40,15 @@ function run() {
 }
 
 //execute code:
-function execute() {}
+function execute() {
+  
+  
+}
 
 //lexical analysis:
-function lexer() {}
+function lexer() {
+  execute();
+}
 
 //statistics:
 function stats() {
