@@ -76,7 +76,7 @@ function lexer() {
   code1 = document.getElementById("console3").value;
   code1 = code1.replace(",", " TT_COM ");
   code1 = code1.split(" ");
-  
+  code1 = code1.replace(",", " TT_COM ");
   
 
 
