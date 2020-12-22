@@ -10,9 +10,25 @@ var erro = "No Errors Found";
 
 //specifyions:
 
-var functions =['',''];
+var FUNCTIONS =['',''];
 
-var 
+
+var TT_ADD = "+";
+var TT_MIN = "-";
+var TT_MUL = "*";
+var TT_DIV = "÷";
+var TT_POW = "^";
+
+var TT_LPA = "(";
+var TT_RPA = ")";
+var TT_LSQ = "[";
+var TT_RSQ = "]";
+
+var TT_COM = ",";
+var TT_SEM = ";";
+var TT_EQU = "=";
+var TT_LES = "<";
+var TT_GRE = ">";
 
 
 //run code:
