@@ -8,6 +8,7 @@ var console3 = document.getElementById("console3");
 var fulldate;
 var erro = "No Errors Found";
 var code1;
+var code2;
 
 //specifyions:
 
@@ -90,13 +91,17 @@ function execute() {}
 //lexical analysis:
 function lexer() {
   code1 = document.getElementById("console3").value;
-
+  
   code1 = code1.replace(",", " TT_COM ");
-
+  
   code1 = code1.split(" ");
   
-
+  code2 = code1;
+  
+  code2 = code2.replace("+","");
+  
   alert(code1);
+
   execute();
 }
 
