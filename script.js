@@ -51,21 +51,19 @@ var CH_CHARACTERS = [
   "CH_ASP"
 ];
 
-
-
 var INT_NUMBERS = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
 
 var NU_INT_NUMBERS = [
-  "NU_INT_ZERO",
-  "NU_INT_ONE",
-  "NU_INT_TWO",
-  "NU_INT_THREE",
-  "NU_INT_FOUR",
-  "NU_INT_FIVE ",
-  "NU_INT_SIX",
-  "NU_INT_SEVEN",
-  "NU_INT_EIGHT ",
-  "NU_INT_NINE"
+  "NU_INT_ZERO∆",
+  "NU_INT_ONE∆",
+  "NU_INT_TWO∆",
+  "NU_INT_THREE∆",
+  "NU_INT_FOUR∆",
+  "NU_INT_FIVE∆",
+  "NU_INT_SIX∆",
+  "NU_INT_SEVEN∆",
+  "NU_INT_EIGHT∆",
+  "NU_INT_NINE∆"
 ];
 
 //run code:
@@ -111,7 +109,7 @@ function lexer() {
 
   ///start commas system 1:
   while (code1.includes(" ")) {
-    code1 = code1.replace(" ", "∆¶");
+    code1 = code1.replace(" ", "√•√");
   }
   ///end commas system 1
 
@@ -181,6 +179,9 @@ function lexer() {
     code1 = code1.replace('"', "CH_ASP");
   }
 
+  while (code1.includes(".")) {
+    code1 = code1.replace(".", "¶");
+  }
   //FUNCTIONS:
 
   //STRINGS:
@@ -188,47 +189,47 @@ function lexer() {
   //NUMBERS:
 
   ////FLOAT:
-  
-    while (code1.includes("0")) {
-    if(code1.includes('.')){
-   code1 = code1.replace("0.", "NU_FLO_/");
 
-  }}
- 
+  while (code1.includes("0")) {
+    if (code1.includes(".")) {
+      code1 = code1.replace("0.", "NU_FLO_/");
+    }
+  }
+
   ////INT:
   while (code1.includes("0")) {
-    code1 = code1.replace("0", "NU_INT_ZERO");
+    code1 = code1.replace("0", "NU_ZERO∆");
   }
   while (code1.includes("1")) {
-    code1 = code1.replace("1", "NU_INT_ONE");
+    code1 = code1.replace("1", "NU_ONE∆");
   }
   while (code1.includes("2")) {
-    code1 = code1.replace("2", "NU_INT_TWO");
+    code1 = code1.replace("2", "NU_TWO∆");
   }
   while (code1.includes("3")) {
-    code1 = code1.replace("3", "NU_INT_THREE");
+    code1 = code1.replace("3", "NU_THREE∆");
   }
   while (code1.includes("4")) {
-    code1 = code1.replace("4", "NU_INT_FOUR");
+    code1 = code1.replace("4", "NU_FOUR∆");
   }
   while (code1.includes("5")) {
-    code1 = code1.replace("5", "NU_INT_FIVE");
+    code1 = code1.replace("5", "NU_FIVE∆");
   }
   while (code1.includes("6")) {
-    code1 = code1.replace("6", "NU_INT_SIX");
+    code1 = code1.replace("6", "NU_SIX∆");
   }
   while (code1.includes("7")) {
-    code1 = code1.replace("7", "NU_INT_SEVEN");
+    code1 = code1.replace("7", "NU_SEVEN∆");
   }
   while (code1.includes("8")) {
-    code1 = code1.replace("8", "NU_INT_EIGHT");
+    code1 = code1.replace("8", "NU_EIGHT∆");
   }
   while (code1.includes("9")) {
-    code1 = code1.replace("9", "NU_INT_NINE");
+    code1 = code1.replace("9", "NU_NINE∆");
   }
   ///start commas system 2:
-  while (code1.includes("∆¶")) {
-    code1 = code1.replace("∆¶", ",");
+  while (code1.includes("√•√")) {
+    code1 = code1.replace("√•√", ",");
   }
   ///end commas system 2
 
