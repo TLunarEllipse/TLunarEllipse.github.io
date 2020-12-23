@@ -188,7 +188,8 @@ function lexer() {
   //NUMBERS:
 
   ////FLOAT:
-
+ 
+ 
   ////INT:
   while (code1.includes("0")) {
     code1 = code1.replace("0", "NU_INT_ZERO");
