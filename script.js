@@ -90,7 +90,6 @@ function run() {
       erro +
       ");";
     document.getElementById("console2").innerHTML = "Console Output:" + "";
-    execute();
   }
   //wrong:
   if ((work = 0)) {
@@ -100,8 +99,8 @@ function run() {
   }
 }
 
-//execute code:
-function execute() {}
+//syntax analisys:
+function phaser() {}
 
 //lexical analysis:
 function lexer() {
@@ -234,6 +233,7 @@ function lexer() {
   ///end commas system 2
 
   alert(code1);
+  phaser();
 }
 
 //statistics:
