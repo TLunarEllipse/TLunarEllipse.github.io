@@ -191,7 +191,7 @@ function lexer() {
   
     while (code1.includes("0")) {
     if(code1.includes('.')){
-   code1 = code1.replace("", "NU_FLO_/");
+   code1 = code1.replace("0.", "NU_FLO_/");
 
   }}
  
