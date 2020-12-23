@@ -12,26 +12,7 @@ var code2;
 
 //specifyions:
 
-//functions:
 var FUNCTIONS = ["print", "var", "or", "if", "else", "loop", "and", "not"];
-
-var FU_PRINT = new Object();
-
-var FU_VAR = new Object();
-
-var FU_OR = new Object();
-
-var FU_IF = new Object();
-
-var FU_ELSE = new Object();
-
-var FU_LOOP = new Object();
-
-var FU_AND = new Object();
-
-var FU_NOT = new Object();
-
-//characters:
 
 var CHARACTERS = [
   "+",
@@ -70,37 +51,20 @@ var CH_CHARACTERS = [
   "CH_ASP"
 ];
 
-var CH_PLU = new Object();
+var INT_NUMBERS = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
 
-var CH_MIN = new Object();
-
-var CH_MUL = new Object();
-
-var CH_DIV = new Object();
-
-var CH_POW = new Object();
-
-var CH_LPA = new Object();
-
-var CH_RPA = new Object();
-
-var CH_LSQ = new Object();
-
-var CH_RSQ = new Object();
-
-var CH_COM = new Object();
-
-var CH_SEM = new Object();
-
-var CH_EQU = new Object();
-
-var CH_LES = new Object();
-
-var CH_GRE = new Object();
-
-var CH_SAS = new Object();
-
-var CH_ASP = new Object();
+var NU_INT_NUMBERS = [
+  "NU_INT_ZERO∆",
+  "NU_INT_ONE∆",
+  "NU_INT_TWO∆",
+  "NU_INT_THREE∆",
+  "NU_INT_FOUR∆",
+  "NU_INT_FIVE∆",
+  "NU_INT_SIX∆",
+  "NU_INT_SEVEN∆",
+  "NU_INT_EIGHT∆",
+  "NU_INT_NINE∆"
+];
 
 //run code:
 
@@ -218,6 +182,43 @@ function lexer() {
 
   //STRINGS:
 
+  //NUMBERS:
+
+  ////FLOAT:
+  while (code1.includes(".")) {
+    code1 = code1.replace(".", "¶");
+  }
+  ////INT:
+  while (code1.includes("0")) {
+    code1 = code1.replace("0", "NU_ZERO∆");
+  }
+  while (code1.includes("1")) {
+    code1 = code1.replace("1", "NU_ONE∆");
+  }
+  while (code1.includes("2")) {
+    code1 = code1.replace("2", "NU_TWO∆");
+  }
+  while (code1.includes("3")) {
+    code1 = code1.replace("3", "NU_THREE∆");
+  }
+  while (code1.includes("4")) {
+    code1 = code1.replace("4", "NU_FOUR∆");
+  }
+  while (code1.includes("5")) {
+    code1 = code1.replace("5", "NU_FIVE∆");
+  }
+  while (code1.includes("6")) {
+    code1 = code1.replace("6", "NU_SIX∆");
+  }
+  while (code1.includes("7")) {
+    code1 = code1.replace("7", "NU_SEVEN∆");
+  }
+  while (code1.includes("8")) {
+    code1 = code1.replace("8", "NU_EIGHT∆");
+  }
+  while (code1.includes("9")) {
+    code1 = code1.replace("9", "NU_NINE∆");
+  }
   ///start commas system 2:
   while (code1.includes("√•√")) {
     code1 = code1.replace("√•√", ",");
