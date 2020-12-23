@@ -51,13 +51,22 @@ var CH_CHARACTERS = [
   "CH_ASP"
 ];
 
-var INT_NUMBERS = ["0","1","2","3","4","5","6","7","8","9"];
 
-var NU_INT_NUMBERS = ["NU_INT_ZERO"," NU_INT_ONE"," NU_INT_TWO"," NU_INT_THREE"," NU_INT_FOUR"," NU_INT_FIVE "," NU_INT_SIX"," NU_INT_SEVEN"," NU_INT_EIGHT "," NU_INT_NINE
 
-  
+var INT_NUMBERS = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
 
- ];
+var NU_INT_NUMBERS = [
+  "NU_INT_ZERO",
+  "NU_INT_ONE",
+  "NU_INT_TWO",
+  "NU_INT_THREE",
+  "NU_INT_FOUR",
+  "NU_INT_FIVE ",
+  "NU_INT_SIX",
+  "NU_INT_SEVEN",
+  "NU_INT_EIGHT ",
+  "NU_INT_NINE"
+];
 
 //run code:
 
