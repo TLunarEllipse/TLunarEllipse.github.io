@@ -12,7 +12,26 @@ var code2;
 
 //specifyions:
 
+//functions:
 var FUNCTIONS = ["print", "var", "or", "if", "else", "loop", "and", "not"];
+
+var FU_PRINT = new Object();
+
+var FU_VAR = new Object();
+
+var FU_OR = new Object();
+
+var FU_IF = new Object();
+
+var FU_ELSE = new Object();
+
+var FU_LOOP = new Object();
+
+var FU_AND = new Object();
+
+var FU_NOT = new Object();
+
+//characters:
 
 var CHARACTERS = [
   "+",
@@ -50,6 +69,38 @@ var CH_CHARACTERS = [
   "CH_SAS",
   "CH_ASP"
 ];
+
+var CH_PLU = new Object();
+
+var CH_MIN = new Object();
+
+var CH_MUL = new Object();
+
+var CH_DIV = new Object();
+
+var CH_POW = new Object();
+
+var CH_LPA = new Object();
+
+var CH_RPA = new Object();
+
+var CH_LSQ = new Object();
+
+var CH_RSQ = new Object();
+
+var CH_COM = new Object();
+
+var CH_SEM = new Object();
+
+var CH_EQU = new Object();
+
+var CH_LES = new Object();
+
+var CH_GRE = new Object();
+
+var CH_SAS = new Object();
+
+var CH_ASP = new Object();
 
 //run code:
 
