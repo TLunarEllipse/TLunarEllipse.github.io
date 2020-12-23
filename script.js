@@ -178,9 +178,6 @@ function lexer() {
     code1 = code1.replace('"', "CH_ASP");
   }
 
-  while (code1.includes(".")) {
-    code1 = code1.replace(".", "¶");
-  }
   //FUNCTIONS:
 
   //STRINGS:
@@ -188,13 +185,9 @@ function lexer() {
   //NUMBERS:
 
   ////FLOAT:
-
-  while (code1.includes("0")) {
-    if (code1.includes(".")) {
-      code1 = code1.replace("0.", "NU_FLO_/");
-    }
+  while (code1.includes(".")) {
+    code1 = code1.replace(".", "¶");
   }
-
   ////INT:
   while (code1.includes("0")) {
     code1 = code1.replace("0", "NU_ZERO∆");
