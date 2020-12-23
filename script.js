@@ -51,6 +51,8 @@ var CH_CHARACTERS = [
   "CH_ASP"
 ];
 
+var INT_NUMBERS = ["0","1","2","3","4","5",
+
 //run code:
 
 if (system) {
@@ -169,11 +171,40 @@ function lexer() {
   //STRINGS:
 
   //NUMBERS:
-  
-  while (code1.includes('0')) {
-    code1 = code1.replace('0', "NU_");
-  }
 
+  ////FLOAT:
+
+  ////INT:
+  while (code1.includes("0")) {
+    code1 = code1.replace("0", "NU_INT_ZERO");
+  }
+  while (code1.includes("1")) {
+    code1 = code1.replace("1", "NU_INT_ONE");
+  }
+  while (code1.includes("2")) {
+    code1 = code1.replace("2", "NU_INT_TWO");
+  }
+  while (code1.includes("3")) {
+    code1 = code1.replace("3", "NU_INT_THREE");
+  }
+  while (code1.includes("4")) {
+    code1 = code1.replace("4", "NU_INT_FOUR");
+  }
+  while (code1.includes("5")) {
+    code1 = code1.replace("5", "NU_INT_FIVE");
+  }
+  while (code1.includes("6")) {
+    code1 = code1.replace("6", "NU_INT_SIX");
+  }
+  while (code1.includes("7")) {
+    code1 = code1.replace("7", "NU_INT_SEVEN");
+  }
+  while (code1.includes("8")) {
+    code1 = code1.replace("8", "NU_INT_EIGHT");
+  }
+  while (code1.includes("9")) {
+    code1 = code1.replace("9", "NU_INT_NINE");
+  }
   ///start commas system 2:
   while (code1.includes("∆¶")) {
     code1 = code1.replace("∆¶", ",");
