@@ -32,23 +32,23 @@ var CHARACTERS = [
   "'",
   '"'
 ];
-var TT_CHARACTERS = [
-  "TT_PLU",
-  "TT_MIN",
-  "TT_MUL",
-  "TT_DIV",
-  "TT_POW",
-  "TT_LPA",
-  "TT_RPA",
-  "TT_LSQ",
-  "TT_RSQ",
-  "TT_COM",
-  "TT_SEM",
-  "TT_EQU",
-  "TT_LES",
-  "TT_GRE",
-  "TT_SAS",
-  "TT_ASP"
+var CH_CHARACTERS = [
+  "CH_PLU",
+  "CH_MIN",
+  "CH_MUL",
+  "CH_DIV",
+  "CH_POW",
+  "CH_LPA",
+  "CH_RPA",
+  "CH_LSQ",
+  "CH_RSQ",
+  "CH_COM",
+  "CH_SEM",
+  "CH_EQU",
+  "CH_LES",
+  "CH_GRE",
+  "CH_SAS",
+  "CH_ASP"
 ];
 
 //run code:
@@ -91,75 +91,95 @@ function execute() {}
 //lexical analysis:
 function lexer() {
   code1 = document.getElementById("console3").value;
-  
-   
-///start commas system 1:
+
+  ///start commas system 1:
   while (code1.includes(" ")) {
     code1 = code1.replace(" ", "∆¶");
   }
-///end commas system 1
-  
+  ///end commas system 1
+
   //CHARACTERS:
-  
+
   while (code1.includes("+")) {
-    code1 = code1.replace("+", "TT_PLU");
+    code1 = code1.replace("+", "CH_PLU");
   }
+
   while (code1.includes("-")) {
-    code1 = code1.replace("-", "TT_MIN");
+    code1 = code1.replace("-", "CH_MIN");
   }
+
   while (code1.includes("*")) {
-    code1 = code1.replace("*", "TT_MUL");
+    code1 = code1.replace("*", "CH_MUL");
   }
+
   while (code1.includes("/")) {
-    code1 = code1.replace("/", "TT_DIV");
+    code1 = code1.replace("/", "CH_DIV");
   }
+
   while (code1.includes("^")) {
-    code1 = code1.replace("^", "TT_POW");
+    code1 = code1.replace("^", "CH_POW");
   }
-  
+
   while (code1.includes("(")) {
-    code1 = code1.replace("(", "TT_LPA");
+    code1 = code1.replace("(", "CH_LPA");
   }
+
   while (code1.includes(")")) {
-    code1 = code1.replace(")", "TT_RPA");
+    code1 = code1.replace(")", "CH_RPA");
   }
+
   while (code1.includes("[")) {
-    code1 = code1.replace("[", "TT_LSQ");
+    code1 = code1.replace("[", "CH_LSQ");
   }
+
   while (code1.includes("]")) {
-    code1 = code1.replace("]", "TT_RSQ");
+    code1 = code1.replace("]", "CH_RSQ");
   }
+
   while (code1.includes(",")) {
-    code1 = code1.replace(",", "TT_COM");
+    code1 = code1.replace(",", "CH_COM");
   }
+
   while (code1.includes(";")) {
-    code1 = code1.replace(";", "TT_SEM");
+    code1 = code1.replace(";", "CH_SEM");
   }
+
   while (code1.includes("=")) {
-    code1 = code1.replace("=", "TT_EQU");
+    code1 = code1.replace("=", "CH_EQU");
   }
+
   while (code1.includes("<")) {
-    code1 = code1.replace("", "TT_LES");
+    code1 = code1.replace("", "CH_LES");
   }
+
   while (code1.includes(">")) {
-    code1 = code1.replace(">", "TT_GRE");
+    code1 = code1.replace(">", "CH_GRE");
   }
-  
+
   while (code1.includes("'")) {
-    code1 = code1.replace("'", "TT_SAS");
+    code1 = code1.replace("'", "CH_SAS");
   }
+
   while (code1.includes('"')) {
-    code1 = code1.replace('"', "TT_ASP");
+    code1 = code1.replace('"', "CH_ASP");
   }
+
+  //FUNCTIONS:
+
+  //STRINGS:
+
+  //NUMBERS:
   
-  
-  
-///start commas system 2:
+  while (code1.includes('0')) {
+    code1 = code1.replace('0', "NU_");
+  }
+
+  ///start commas system 2:
   while (code1.includes("∆¶")) {
     code1 = code1.replace("∆¶", ",");
   }
-///end commas system 2
-  
+  ///end commas system 2
+
   alert(code1);
 }
 
