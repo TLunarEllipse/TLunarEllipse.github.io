@@ -188,7 +188,12 @@ function lexer() {
   //NUMBERS:
 
   ////FLOAT:
- 
+  
+    while (code1.includes("0")) {
+    if(code1.includes('.')){
+   code1 = code1.replace("", "NU_FLO_/");
+
+  }}
  
   ////INT:
   while (code1.includes("0")) {
