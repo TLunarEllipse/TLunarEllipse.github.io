@@ -12,45 +12,6 @@ var code2;
 
 //specifyions:
 
-var FUNCTIONS = ["print", "var", "or", "if", "else", "loop", "and", "not"];
-
-var CHARACTERS = [
-  "+",
-  "-",
-  "*",
-  "/",
-  "^",
-  "(",
-  ")",
-  "[",
-  "]",
-  ",",
-  ";",
-  "=",
-  "<",
-  ">",
-  "'",
-  '"'
-];
-var CH_CHARACTERS = [
-  "CH_PLU",
-  "CH_MIN",
-  "CH_MUL",
-  "CH_DIV",
-  "CH_POW",
-  "CH_LPA",
-  "CH_RPA",
-  "CH_LSQ",
-  "CH_RSQ",
-  "CH_COM",
-  "CH_SEM",
-  "CH_EQU",
-  "CH_LES",
-  "CH_GRE",
-  "CH_SAS",
-  "CH_ASP"
-];
-
 //run code:
 
 if (system) {
