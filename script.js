@@ -9,7 +9,6 @@ var fulldate;
 var erro = "No Errors Found";
 var code1;
 var code2;
-var bl = "";
 
 //species:
 var FUNCTIONS = ["print", "var", "or", "if", "else", "loop", "and", "not"];
@@ -94,12 +93,12 @@ function lexer() {
   ///start commas system 1:
   while (code1.includes(" ")) {
     code1 = code1.replace(" ", "√•√");
-  }
-  while (code1.includes("")) {
-
+  }de1.replace(" ", "√•√");}
+                              
+while (code1.includes("") {
     code1 = code1.replace("", "√•√");
-
   }
+  
   ///end commas system 1
 
   //CHARACTERS:
