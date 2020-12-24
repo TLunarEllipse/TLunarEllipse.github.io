@@ -9,7 +9,9 @@ var fulldate;
 var erro = "No Errors Found";
 var code1;
 var code2;
-var bl = '
+var bl = "";
+
+//species:
 var FUNCTIONS = ["print", "var", "or", "if", "else", "loop", "and", "not"];
 
 var CHARACTERS = [
