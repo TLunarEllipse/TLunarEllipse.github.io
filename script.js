@@ -91,12 +91,12 @@ function lexer() {
   code1 = document.getElementById("console3").value;
 
   ///start commas system 1:
-  while (code1.includes(" ")) {
-    code1 = code1.replace(" ", "√•√");
-  }de1.replace(" ", "√•√");}
-                              
-while (code1.includes("") {
+  while (code1.includes("")) {
     code1 = code1.replace("", "√•√");
+  }
+                              
+while(code1.includes()){
+  code1 = code1.replace("", "√•√");
   }
   
   ///end commas system 1
