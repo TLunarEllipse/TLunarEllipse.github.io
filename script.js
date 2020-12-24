@@ -94,7 +94,6 @@ function lexer() {
   while (code1.includes(" ")) {
     code1 = code1.replace(" ", "√•√");
   }
- code1 = code1.split("b");
   ///end commas system 1
 
   //CHARACTERS:
