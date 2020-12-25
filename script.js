@@ -12,7 +12,16 @@ var code2;
 var bey = 0;
 
 //species:
-var FUNCTIONS = ["print", "var", "or", "if", "else", "loop", "and", "not"];
+var FUNCTIONS = [
+  "!print",
+  "!var",
+  "!or",
+  "!if",
+  "!else",
+  "!loop",
+  "!and",
+  "!not"
+];
 
 var CHARACTERS = [
   "+",
@@ -92,13 +101,11 @@ function lexer() {
   code1 = document.getElementById("console3").value;
 
   ///start commas system 1:
-   
-  
+
   while (code1.includes(" ")) {
     code1 = code1.replace(" ", "√•√");
   }
-  
- 
+
   ///end commas system 1
 
   //CHARACTERS:
@@ -168,39 +175,38 @@ function lexer() {
   }
 
   //FUNCTIONS:
-  while (code1.includes("print")) {
-    code1 = code1.replace("print", "FU_PRINT");
+  while (code1.includes("!print")) {
+    code1 = code1.replace("!print", "FU_PRINT");
   }
-  while (code1.includes("var")) {
-    code1 = code1.replace("var", "FU_VAR");
+  while (code1.includes("!var")) {
+    code1 = code1.replace("!var", "FU_VAR");
   }
-  while (code1.includes("or")) {
-    code1 = code1.replace("or", "FU_OR");
+  while (code1.includes("!or")) {
+    code1 = code1.replace("!or", "FU_OR");
   }
-  while (code1.includes("if")) {
-    code1 = code1.replace("if", "FU_IF");
+  while (code1.includes("!if")) {
+    code1 = code1.replace("!if", "FU_IF");
   }
-  while (code1.includes("else")) {
-    code1 = code1.replace("else", "FU_ELSE");
+  while (code1.includes("!else")) {
+    code1 = code1.replace("!else", "FU_ELSE");
   }
-  while (code1.includes("loop")) {
-    code1 = code1.replace("loop", "FU_LOOP");
+  while (code1.includes("!loop")) {
+    code1 = code1.replace("!loop", "FU_LOOP");
   }
-  while (code1.includes("and")) {
-    code1 = code1.replace("and", "FU_AND");
+  while (code1.includes("!and")) {
+    code1 = code1.replace("!and", "FU_AND");
   }
-  while (code1.includes("not")) {
-    code1 = code1.replace("not", "FU_NOT");
+  while (code1.includes("!not")) {
+    code1 = code1.replace("!not", "FU_NOT");
   }
   //STRINGS:
 
   ///start commas system 2:
-  
-  
+
   while (code1.includes("√•√")) {
     code1 = code1.replace("√•√", ",");
   }
-  code1 = code1.split(/\r\n|\r|\n/g)
+  code1 = code1.split(/\r\n|\r|\n/g);
   ///end commas system 2
 
   alert(code1);
