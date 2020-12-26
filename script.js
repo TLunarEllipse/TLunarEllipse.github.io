@@ -108,6 +108,10 @@ function lexer() {
 
   ///end commas system 1
 
+  //STRINGS:
+
+  //WORDS:
+
   //CHARACTERS:
 
   while (code1.includes("+")) {
@@ -199,8 +203,6 @@ function lexer() {
   while (code1.includes("!not")) {
     code1 = code1.replace("!not", "FU_NOT");
   }
-  //STRINGS:
-
   ///start commas system 2:
 
   while (code1.includes("√•√")) {
