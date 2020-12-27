@@ -114,18 +114,23 @@ function lexer() {
   ///end commas system 1
 
   //STRINGS:
-  string = Object.create({}, {st_name: { value: value } });
-
-  alert(string.st_name);
-
+ while (code1.includes("!VarString")) {
+   code1 = code1.replace("!VarString", "ST_");
+  }
+ while (code1.includes("!VarNumeric")) {
+    code1 = code1.replace("!VarNumeric", "NU_");
+  } 
+ while (code1.includes("!VarBoolean")) {
+    code1 = code1.replace("!VarBoolean", "BO_");
+  }
+  
   //WORDS:
 
   //CHARACTERS:
-
-  while (code1.includes("+")) {
+ while (code1.includes("+")) {
     code1 = code1.replace("+", "CH_PLU");
-  }
-
+ }
+  
   while (code1.includes("-")) {
     code1 = code1.replace("-", "CH_MIN");
   }
