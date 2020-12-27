@@ -107,7 +107,7 @@ function lexer() {
   code1 = document.getElementById("console3").value;
  
   while (code1.includes(' " ')) {
-    code1 = code1.replace(' " ', "_");
+    code1 = code1.replace(' " ', "~");
   }
   
   ///start commas system 1:
@@ -128,8 +128,6 @@ function lexer() {
     code1 = code1.replace("!VarBoolean", "BO");
   }
   
-  
-
  
 
   //CHARACTERS:
@@ -178,7 +176,7 @@ function lexer() {
   }
 
   while (code1.includes("=")) {
-    code1 = code1.replace("=", "CH_EQU");
+    code1 = code1.replace("=", "CH_EQU:");
   }
 
   while (code1.includes("<")) {
