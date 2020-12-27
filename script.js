@@ -10,10 +10,12 @@ var erro = "No Errors Found";
 var code1;
 var code2;
 var bey = 0;
+var name = "name1"
+var value = "value1";
 
 var string = {
-  name: "beuh",
-  };
+  name: "beuh"
+};
 
 //species:
 var FUNCTIONS = [
@@ -110,18 +112,16 @@ function lexer() {
   }
 
   ///end commas system 1
-  
+
   //STRINGS:
-  string ="";
-  
-  alert(string.bruh);
-   while (code1.includes('!var')) {
-     
-    code1 = code1.replace('st', "");
+  string = Object.create({}, {st_+ name+: { value: value } });
+
+  alert(string.st_ + name +:);
+
+  while (code1.includes("!var")) {
+    code1 = code1.replace("st", "");
   }
 
-  
- 
   //WORDS:
 
   //CHARACTERS:
@@ -185,7 +185,6 @@ function lexer() {
   while (code1.includes("'")) {
     code1 = code1.replace("'", "CH_SAS");
   }
-
 
   //FUNCTIONS:
   while (code1.includes("!print")) {
