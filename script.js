@@ -10,7 +10,7 @@ var erro = "No Errors Found";
 var code1;
 var code2;
 var bey = 0;
-var name = "name1"
+var name = "name1";
 var value = "value1";
 
 var string = {
@@ -105,7 +105,11 @@ function phaser() {}
 //lexical analysis:
 function lexer() {
   code1 = document.getElementById("console3").value;
-
+ 
+  while (code1.includes(' " ')) {
+    code1 = code1.replace(' " ', "_");
+  }
+  
   ///start commas system 1:
   while (code1.includes(" ")) {
     code1 = code1.replace(" ", "√•√");
@@ -114,23 +118,25 @@ function lexer() {
   ///end commas system 1
 
   //STRINGS:
- while (code1.includes("!VarString")) {
-   code1 = code1.replace("!VarString", "ST_");
+  while (code1.includes("!VarString")) {
+    code1 = code1.replace("!VarString", "ST");
   }
- while (code1.includes("!VarNumeric")) {
-    code1 = code1.replace("!VarNumeric", "NU_");
-  } 
- while (code1.includes("!VarBoolean")) {
-    code1 = code1.replace("!VarBoolean", "BO_");
+  while (code1.includes("!VarNumeric")) {
+    code1 = code1.replace("!VarNumeric", "NU");
+  }
+  while (code1.includes("!VarBoolean")) {
+    code1 = code1.replace("!VarBoolean", "BO");
   }
   
-  //WORDS:
+  
+
+ 
 
   //CHARACTERS:
- while (code1.includes("+")) {
+  while (code1.includes("+")) {
     code1 = code1.replace("+", "CH_PLU");
- }
-  
+  }
+
   while (code1.includes("-")) {
     code1 = code1.replace("-", "CH_MIN");
   }
@@ -168,7 +174,7 @@ function lexer() {
   }
 
   while (code1.includes(";")) {
-    code1 = code1.replace(";", "CH_SEM");
+    code1 = code1.replace(";", "TT_END");
   }
 
   while (code1.includes("=")) {
