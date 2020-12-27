@@ -109,12 +109,11 @@ function lexer() {
   //STRINGS:
   if (code1.includes("!var")) {
     code1 = code1.replace("!var", "ST_VAR");
-
-    while (code1.includes('"')) {
-      code1 = code1.replace('"', "");
-    }
   }
-
+  while (code1.includes('"')){
+  var codet = code1.fromCodePoint(0,2);
+  alert(codet);
+    }
   //WORDS:
 
   //CHARACTERS:
