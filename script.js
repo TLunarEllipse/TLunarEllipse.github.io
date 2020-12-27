@@ -106,8 +106,18 @@ function lexer() {
   }
 
   ///end commas system 1
-  //STRINGS:
   
+  //STRINGS:
+    while (code1.includes('"')) {
+    code1 = code1.replace('"', "_");
+
+  }
+    while (code1.includes('!var')) {
+    code1 = code1.replace('st', "");
+  }
+
+  
+ 
   //WORDS:
 
   //CHARACTERS:
@@ -172,9 +182,6 @@ function lexer() {
     code1 = code1.replace("'", "CH_SAS");
   }
 
-  while (code1.includes('"')) {
-    code1 = code1.replace('"', "CH_ASP");
-  }
 
   //FUNCTIONS:
   while (code1.includes("!print")) {
