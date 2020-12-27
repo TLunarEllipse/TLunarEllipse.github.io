@@ -114,13 +114,9 @@ function lexer() {
   ///end commas system 1
 
   //STRINGS:
-  string = Object.create({}, {st_+ name+: { value: value } });
+  string = Object.create({}, {st_name: { value: value } });
 
-  alert(string.st_ + name +:);
-
-  while (code1.includes("!var")) {
-    code1 = code1.replace("st", "");
-  }
+  alert(string.st_name);
 
   //WORDS:
 
