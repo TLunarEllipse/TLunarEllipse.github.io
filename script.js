@@ -77,7 +77,7 @@ function run() {
   if ((work = 1)) {
     document.getElementById("console1").innerHTML =
       "Program statistics:" +
-      " TLunarElipse Lang; Version: 1.0.0; " +
+      " TLunarEllipse Lang; Version: 1.0.0; " +
       fulldate +
       "; " +
       "(" +
