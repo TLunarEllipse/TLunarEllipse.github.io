@@ -101,14 +101,19 @@ function lexer() {
   code1 = document.getElementById("console3").value;
 
   ///start commas system 1:
-
   while (code1.includes(" ")) {
     code1 = code1.replace(" ", "√•√");
   }
 
   ///end commas system 1
-
   //STRINGS:
+  if (code1.includes("!var")) {
+    code1 = code1.replace("!var", "ST_VAR");
+
+    while (code1.includes('"')) {
+      code1 = code1.replace('"', "");
+    }
+  }
 
   //WORDS:
 
@@ -182,9 +187,7 @@ function lexer() {
   while (code1.includes("!print")) {
     code1 = code1.replace("!print", "FU_PRINT");
   }
-  while (code1.includes("!var")) {
-    code1 = code1.replace("!var", "FU_VAR");
-  }
+
   while (code1.includes("!or")) {
     code1 = code1.replace("!or", "FU_OR");
   }
