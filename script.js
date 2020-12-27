@@ -11,6 +11,10 @@ var code1;
 var code2;
 var bey = 0;
 
+var string = {
+  name: "beuh",
+  };
+
 //species:
 var FUNCTIONS = [
   "!print",
@@ -108,11 +112,11 @@ function lexer() {
   ///end commas system 1
   
   //STRINGS:
-    while (code1.includes('"')) {
-    code1 = code1.replace('"', "_");
-
-  }
-    while (code1.includes('!var')) {
+  string ="";
+  
+  alert(string.bruh);
+   while (code1.includes('!var')) {
+     
     code1 = code1.replace('st', "");
   }
 
