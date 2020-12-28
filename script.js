@@ -16,59 +16,6 @@ var bey = 0;
 var name = "name1";
 var value = "value1";
 
-var string = {
-  name: "beuh"
-};
-
-//species:
-var FUNCTIONS = [
-  "!print",
-  "!var",
-  "!or",
-  "!if",
-  "!else",
-  "!loop",
-  "!and",
-  "!not"
-];
-
-var CHARACTERS = [
-  "+",
-  "-",
-  "*",
-  "/",
-  "^",
-  "(",
-  ")",
-  "[",
-  "]",
-  ",",
-  ";",
-  "=",
-  "<",
-  ">",
-  "'",
-  '"'
-];
-var CH_CHARACTERS = [
-  "CH_PLU",
-  "CH_MIN",
-  "CH_MUL",
-  "CH_DIV",
-  "CH_POW",
-  "CH_LPA",
-  "CH_RPA",
-  "CH_LSQ",
-  "CH_RSQ",
-  "CH_COM",
-  "CH_SEM",
-  "CH_EQU",
-  "CH_LES",
-  "CH_GRE",
-  "CH_SAS",
-  "CH_ASP"
-];
-
 //run code:
 
 if (system) {
@@ -139,6 +86,9 @@ function lexer() {
   }
   while (code1.includes("!VarNumeric")) {
     code1 = code1.replace("!VarNumeric", "NU");
+  }
+  while (code1.includes("!VarDecimal")) {
+    code1 = code1.replace("!VarDecimal", "DE");
   }
   while (code1.includes("!VarBoolean")) {
     code1 = code1.replace("!VarBoolean", "BO");
