@@ -105,10 +105,10 @@ function phaser() {}
 //lexical analysis:
 function lexer() {
   code1 = document.getElementById("console3").value;
-  
-  //additional and completely experimental commands that work on the basis of the gamea
-  
- while (code1.includes("= ")) {
+
+  //additional and completely experimental commands:
+
+  while (code1.includes("= ")) {
     code1 = code1.replace("= ", "CH_EQU:");
   }
   while (code1.includes(' " ')) {
@@ -135,7 +135,6 @@ function lexer() {
   while (code1.includes("!VarBoolean")) {
     code1 = code1.replace("!VarBoolean", "BO");
   }
-  
 
   //CHARACTERS:
   while (code1.includes("+")) {
