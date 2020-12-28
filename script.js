@@ -12,15 +12,12 @@ var code1;
 var code2;
 var code3;
 var code4;
-var bey = 0;
+var num01 = 0;
 var name = "name1";
 var value = "value1";
 
 //run code:
-
-if (system) {
-  setTimeout(run, 5);
-}
+setTimeout(run,5)
 
 function run() {
   //date system:
