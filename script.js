@@ -7,8 +7,10 @@ var console2 = document.getElementById("console2");
 var console3 = document.getElementById("console3");
 var fulldate;
 var erro = "No Errors Found";
+var code0;
 var code1;
 var code2;
+var code3;
 var bey = 0;
 var name = "name1";
 var value = "value1";
@@ -75,7 +77,7 @@ if (system) {
 function run() {
   //date system:
   stats();
-  lexer();
+  spacing();
 
   //define whether the code is right or wrong:
 
@@ -98,22 +100,27 @@ function run() {
     alert("[i]error");
   }
 }
+//pre-analysis spacing:
+function spacing() {
+  code0 = document.getElementById("console3").value;
+  
+  while (code0.includes("= ")) {
+    code0 = code0.replace("= ", "CH_EQU:");
+  }
 
-//syntax analisys:
-function phaser() {}
+  while (code0.includes(' " ')) {
+    code0 = code0.replace(' " ', "~");
+  }
+  
+  alert(code0);
+  lexer();
+}
 
 //lexical analysis:
 function lexer() {
-  code1 = document.getElementById("console3").value;
-
+  code1 = code0;
   //additional and completely experimental commands:
 
-  while (code1.includes("= ")) {
-    code1 = code1.replace("= ", "CH_EQU:");
-  }
-  while (code1.includes(' " ')) {
-    code1 = code1.replace(' " ', "~");
-  }
   while (code1.includes('"')) {
     code1 = code1.replace('"', "~");
   }
@@ -230,6 +237,9 @@ function lexer() {
   phaser();
 }
 
+//syntax analisys:
+
+function phaser() {}
 //statistics:
 function stats() {
   var dataAtual = new Date();
