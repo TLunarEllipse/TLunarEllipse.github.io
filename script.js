@@ -11,6 +11,7 @@ var code0;
 var code1;
 var code2;
 var code3;
+var code4;
 var bey = 0;
 var name = "name1";
 var value = "value1";
@@ -103,7 +104,7 @@ function run() {
 //pre-analysis spacing:
 function spacing() {
   code0 = document.getElementById("console3").value;
-  
+
   while (code0.includes("= ")) {
     code0 = code0.replace("= ", "CH_EQU:");
   }
@@ -111,7 +112,7 @@ function spacing() {
   while (code0.includes(' " ')) {
     code0 = code0.replace(' " ', "~");
   }
-  
+
   alert(code0);
   lexer();
 }
@@ -239,7 +240,24 @@ function lexer() {
 
 //syntax analisys:
 
-function phaser() {}
+function phaser() {
+  code2 = code1;
+
+  alert(code2);
+  semantics();
+}
+function semantics() {
+  code3 = code2;
+
+  alert(code3);
+  intermediatecode();
+}
+//intermediate code generator:
+function intermediatecode() {
+  code4 = code3;
+
+  alert(code4);
+}
 //statistics:
 function stats() {
   var dataAtual = new Date();
