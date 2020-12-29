@@ -17,7 +17,7 @@ var name = "name1";
 var value = "value1";
 
 //run code:
-setTimeout(run,5)
+setTimeout(run, 5);
 
 function run() {
   //date system:
@@ -45,6 +45,7 @@ function run() {
     alert("[i]error");
   }
 }
+
 //pre-analysis spacing:
 function spacing() {
   code0 = document.getElementById("console3").value;
@@ -78,8 +79,8 @@ function lexer() {
   ///end commas system 1
 
   //STRINGS:
-  while (code1.includes("!VarString")) {
-    code1 = code1.replace("!VarString", "ST");
+  while (code1.includes("!VarCharacters")) {
+    code1 = code1.replace("!VarCharacters", "VC");
   }
   while (code1.includes("!VarNumeric")) {
     code1 = code1.replace("!VarNumeric", "NU");
@@ -205,6 +206,7 @@ function intermediatecode() {
 
   alert(code4);
 }
+
 //statistics:
 function stats() {
   var dataAtual = new Date();
