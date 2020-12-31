@@ -174,8 +174,42 @@ function lexer() {
   while (code1.includes("!not")) {
     code1 = code1.replace("!not", "FU_NOT");
   }
-  ///start commas system 2:
 
+  alert(code1);
+  spacing2();
+}
+function spacing2() {
+  ///strings:
+
+  ///symbols:
+
+  //plus:
+  
+  while (code1.includes("CH_PLU")) {
+    code1 = code1.replace("CH_PLU", "√•√CH\√•√");
+  }
+  
+  //minus:
+
+  //multi:
+
+  //divi:
+
+  //pow:
+
+  //parents:
+
+  //squads:
+
+  //great:
+
+  //less:
+
+  //asps:
+
+  ///functions:
+
+  ///start commas system 2:
   while (code1.includes("√•√")) {
     code1 = code1.replace("√•√", ",");
   }
@@ -185,9 +219,7 @@ function lexer() {
   alert(code1);
   phaser();
 }
-
 //syntax analisys:
-
 function phaser() {
   code2 = code1;
 
