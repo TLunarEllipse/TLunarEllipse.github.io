@@ -235,6 +235,24 @@ function spacing2() {
     codeS = codeS.replace("CH_RPA", "√•√CH√RPA√•√");
   }
   //squads:
+  while (codeS.includes("√•√CH_LSQ√•√")) {
+    codeS = codeS.replace("√•√CH_LSQ√•√", "√•√CH√LSQ√•√");
+  }
+  while (codeS.includes("CH_LSQ")) {
+    codeS = codeS.replace("CH_LSQ", "√•√CH√LSQ√•√");
+  }
+
+  while (codeS.includes("√•√CH_RSQ√•√")) {
+    codeS = codeS.replace("√•√CH_RSQ√•√", "√•√CH√RSQ√•√");
+  }
+  while (codeS.includes("CH_RSQ")) {
+    codeS = codeS.replace("CH_RSQ", "√•√CH√RSQ√•√");
+  }
+  //commas:
+
+  //semicolon:
+
+  //equal:
 
   //great:
 
@@ -248,10 +266,15 @@ function spacing2() {
   while (codeS.includes("√•√")) {
     codeS = codeS.replace("√•√", ",");
   }
+
   codeS = codeS.split(/\r\n|\r|\n/g);
+
+  while (codeS.includes(",,")) {
+    codeS = codeS.replace(",,", ",");
+  }
   ///end commas system 2
 
-  alert(code1);
+  alert(codeS);
   phaser();
 }
 //syntax analisys:
