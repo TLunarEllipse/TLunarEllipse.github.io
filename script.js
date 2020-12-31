@@ -214,9 +214,26 @@ function spacing2() {
     codeS = codeS.replace("CH_DIV", "√•√CH√DIV√•√");
   }
   //pow:
-
+  while (codeS.includes("√•√CH_POW√•√")) {
+    codeS = codeS.replace("√•√CH_POW√•√", "√•√CH√POW√•√");
+  }
+  while (codeS.includes("CH_POW")) {
+    codeS = codeS.replace("CH_POW", "√•√CH√POW√•√");
+  }
   //parents:
+  while (codeS.includes("√•√CH_LPA√•√")) {
+    codeS = codeS.replace("√•√CH_LPA√•√", "√•√CH√LPA√•√");
+  }
+  while (codeS.includes("CH_LPA")) {
+    codeS = codeS.replace("CH_LPA", "√•√CH√LPA√•√");
+  }
 
+  while (codeS.includes("√•√CH_RPA√•√")) {
+    codeS = codeS.replace("√•√CH_RPA√•√", "√•√CH√RPA√•√");
+  }
+  while (codeS.includes("CH_RPA")) {
+    codeS = codeS.replace("CH_RPA", "√•√CH√RPA√•√");
+  }
   //squads:
 
   //great:
