@@ -258,13 +258,13 @@ function spacing2() {
   }
 
   //semicolon:
-  while (codeS.includes("√•√CH_SEM√•√")) {
-    codeS = codeS.replace("√•√TT_END√•√", "√•√CH√SEM√•√");
+  while (codeS.includes("√•√TT_END√•√")) {
+    codeS = codeS.replace("√•√TT_END√•√", "√•√TT√END√•√");
   }
   while (codeS.includes("TT_END")) {
-    codeS = codeS.replace("TT_END", "√•√CH√SEM√•√");
+    codeS = codeS.replace("TT_END", "√•√TT√END√•√");
   }
-  
+
   //great:
   while (codeS.includes("√•√CH_LES√•√")) {
     codeS = codeS.replace("√•√CH_LES√•√", "√•√CH√LES√•√");
@@ -280,7 +280,15 @@ function spacing2() {
   while (codeS.includes("CH_GRE")) {
     codeS = codeS.replace("CH_GRE", "√•√CH√GRE√•√");
   }
+
   //asps:
+  while (codeS.includes("√•√CH_SAS√•√")) {
+    codeS = codeS.replace("√•√CH_SAS√•√", "√•√CH√SAS√•√");
+  }
+
+  while (codeS.includes("CH_SAS")) {
+    codeS = codeS.replace("CH_SAS", "√•√CH√SAS√•√");
+  }
 
   ///functions:
 
