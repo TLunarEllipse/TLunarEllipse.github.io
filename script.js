@@ -263,15 +263,14 @@ function spacing2() {
   ///functions:
 
   ///start commas system 2:
+  while (codeS.includes("√•√√•√")) {
+    codeS = codeS.replace("√•√√•√", "√•√");
+  }
   while (codeS.includes("√•√")) {
     codeS = codeS.replace("√•√", ",");
   }
-
   codeS = codeS.split(/\r\n|\r|\n/g);
 
-  while (codeS.includes(",,")) {
-    codeS = codeS.replace(",,", ",");
-  }
   ///end commas system 2
 
   alert(codeS);
