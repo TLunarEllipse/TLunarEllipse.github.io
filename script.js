@@ -9,6 +9,7 @@ var fulldate;
 var erro = "No Errors Found";
 var code0;
 var code1;
+var codeS;
 var code2;
 var code3;
 var code4;
@@ -179,22 +180,39 @@ function lexer() {
   spacing2();
 }
 function spacing2() {
+  codeS = code1;
   ///strings:
 
   ///symbols:
 
   //plus:
-  
-  while (code1.includes("CH_PLU")) {
-    code1 = code1.replace("CH_PLU", "√•√CH\√•√");
+  while (codeS.includes("√•√CH_PLU√•√")) {
+    codeS = codeS.replace("√•√CH_PLU√•√", "√•√CH√PLU√•√");
   }
-  
+  while (codeS.includes("CH_PLU")) {
+    codeS = codeS.replace("CH_PLU", "√•√CH√PLU√•√");
+  }
   //minus:
-
+  while (codeS.includes("√•√CH_MIN√•√")) {
+    codeS = codeS.replace("√•√CH_MIN√•√", "√•√CH√MIN√•√");
+  }
+  while (codeS.includes("CH_MIN")) {
+    codeS = codeS.replace("CH_MIN", "√•√CH√MIN√•√");
+  }
   //multi:
-
+  while (codeS.includes("√•√CH_MUL√•√")) {
+    codeS = codeS.replace("√•√CH_MUL√•√", "√•√CH√MUL√•√");
+  }
+  while (codeS.includes("CH_MUL")) {
+    codeS = codeS.replace("CH_MUL", "√•√CH√MUL√•√");
+  }
   //divi:
-
+  while (codeS.includes("√•√CH_DIV√•√")) {
+    codeS = codeS.replace("√•√CH_DIV√•√", "√•√CH√DIV√•√");
+  }
+  while (codeS.includes("CH_DIV")) {
+    codeS = codeS.replace("CH_DIV", "√•√CH√DIV√•√");
+  }
   //pow:
 
   //parents:
@@ -210,10 +228,10 @@ function spacing2() {
   ///functions:
 
   ///start commas system 2:
-  while (code1.includes("√•√")) {
-    code1 = code1.replace("√•√", ",");
+  while (codeS.includes("√•√")) {
+    codeS = codeS.replace("√•√", ",");
   }
-  code1 = code1.split(/\r\n|\r|\n/g);
+  codeS = codeS.split(/\r\n|\r|\n/g);
   ///end commas system 2
 
   alert(code1);
@@ -221,7 +239,7 @@ function spacing2() {
 }
 //syntax analisys:
 function phaser() {
-  code2 = code1;
+  code2 = codeS;
 
   alert(code2);
   semantics();
