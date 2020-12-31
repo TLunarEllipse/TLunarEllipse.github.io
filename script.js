@@ -248,16 +248,31 @@ function spacing2() {
   while (codeS.includes("CH_RSQ")) {
     codeS = codeS.replace("CH_RSQ", "√•√CH√RSQ√•√");
   }
+  
   //commas:
-
+  while (codeS.includes("√•√CH_COM√•√")) {
+    codeS = codeS.replace("√•√CH_COM√•√", "√•√CH√COM√•√");
+  }
+  while (codeS.includes("CH_GRE")) {
+    codeS = codeS.replace("CH_GRE", "√•√CH√GRE√•√");
+  }
   //semicolon:
 
-  //equal:
-
   //great:
+  while (codeS.includes("√•√CH_LES√•√")) {
+    codeS = codeS.replace("√•√CH_LES√•√", "√•√CH√LES√•√");
+  }
 
+  while (codeS.includes("CH_LES")) {
+    codeS = codeS.replace("CH_LES", "√•√CH√LES√•√");
+  }
   //less:
-
+  while (codeS.includes("√•√CH_GRE√•√")) {
+    codeS = codeS.replace("√•√CH_GRE√•√", "√•√CH√GRE√•√");
+  }
+  while (codeS.includes("CH_GRE")) {
+    codeS = codeS.replace("CH_GRE", "√•√CH√GRE√•√");
+  }
   //asps:
 
   ///functions:
