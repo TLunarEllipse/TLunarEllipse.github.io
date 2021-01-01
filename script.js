@@ -303,13 +303,47 @@ function spacing2() {
   while (codeS.includes("FU_PRINT")) {
     codeS = codeS.replace("FU_PRINT", "√•√FU√PRINT√•√");
   }
-  
+
+  while (codeS.includes("√•√FU_OR√•√")) {
+    codeS = codeS.replace("√•√FU_OR√•√", "√•√FU√OR√•√");
+  }
   while (codeS.includes("FU_OR")) {
     codeS = codeS.replace("FU_OR", "√•√FU√OR√•√");
   }
-  
+
+  while (codeS.includes("√•√FU_IF√•√")) {
+    codeS = codeS.replace("√•√FU_IF√•√", "√•√FU√IF√•√");
+  }
   while (codeS.includes("FU_IF")) {
     codeS = codeS.replace("FU_IF", "√•√FU√IF√•√");
+  }
+
+  while (codeS.includes("√•√FU_ELSE√•√")) {
+    codeS = codeS.replace("√•√FU_ELSE√•√", "√•√FU√ELSE√•√");
+  }
+  while (codeS.includes("FU_ELSE")) {
+    codeS = codeS.replace("FU_ELSE", "√•√FU√ELSE√•√");
+  }
+
+  while (codeS.includes("√•√FU_LOOP√•√")) {
+    codeS = codeS.replace("√•√FU_LOOP√•√", "√•√FU√LOOP√•√");
+  }
+  while (codeS.includes("FU_LOOP")) {
+    codeS = codeS.replace("FU_LOOP", "√•√FU√LOOP√•√");
+  }
+
+  while (codeS.includes("√•√FU_AND√•√")) {
+    codeS = codeS.replace("√•√FU_AND√•√", "√•√FU√AND√•√");
+  }
+  while (codeS.includes("FU_AND")) {
+    codeS = codeS.replace("FU_AND", "√•√FU√AND√•√");
+  }
+
+  while (codeS.includes("√•√FU_NOT√•√")) {
+    codeS = codeS.replace("√•√FU_NOT√•√", "√•√FU√NOT√•√");
+  }
+  while (codeS.includes("FU_NOT")) {
+    codeS = codeS.replace("FU_NOT", "√•√FU√NOT√•√");
   }
 
   ///start commas system 2:
