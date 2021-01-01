@@ -105,9 +105,15 @@ function lexer() {
   while (code1.includes("*")) {
     code1 = code1.replace("*", "CH_MUL");
   }
+  while (code1.includes("×")) {
+    code1 = code1.replace("×", "CH_MUL");
+  }
 
   while (code1.includes("/")) {
     code1 = code1.replace("/", "CH_DIV");
+  }
+  while (code1.includes("÷")) {
+    code1 = code1.replace("÷", "CH_DIV");
   }
 
   while (code1.includes("^")) {
@@ -291,6 +297,20 @@ function spacing2() {
   }
 
   ///functions:
+  while (codeS.includes("√•√FU_PRINT√•√")) {
+    codeS = codeS.replace("√•√FU_PRINT√•√", "√•√FU√PRINT√•√");
+  }
+  while (codeS.includes("FU_PRINT")) {
+    codeS = codeS.replace("FU_PRINT", "√•√FU√PRINT√•√");
+  }
+  
+  while (codeS.includes("FU_OR")) {
+    codeS = codeS.replace("FU_OR", "√•√FU√OR√•√");
+  }
+  
+  while (codeS.includes("FU_IF")) {
+    codeS = codeS.replace("FU_IF", "√•√FU√IF√•√");
+  }
 
   ///start commas system 2:
   while (codeS.includes("√•√√•√")) {
@@ -300,7 +320,9 @@ function spacing2() {
     codeS = codeS.replace("√•√", ",");
   }
   codeS = codeS.split(/\r\n|\r|\n/g);
-
+  while (codeS.includes(",,")) {
+    codeS = codeS.replace(",,", ",");
+  }
   ///end commas system 2
 
   alert(codeS);
