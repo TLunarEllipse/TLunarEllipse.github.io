@@ -51,6 +51,7 @@ function run() {
 function spacing() {
   code0 = document.getElementById("console3").value;
 
+  //strings (accessories):
   while (code0.includes("= ")) {
     code0 = code0.replace("= ", "CH_EQU:");
   }
@@ -66,10 +67,13 @@ function spacing() {
 //lexical analysis:
 function lexer() {
   code1 = code0;
-  //additional and completely experimental commands:
+  //additional and completely experimental cands:
 
   while (code1.includes('"')) {
     code1 = code1.replace('"', "~");
+  }
+  while (code1.includes(' "')) {
+    code1 = code1.replace(' "', "~");
   }
 
   ///start commas system 1:
@@ -187,8 +191,6 @@ function lexer() {
 }
 function spacing2() {
   codeS = code1;
-  ///strings:
-
   ///symbols:
 
   //plus:
