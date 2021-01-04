@@ -72,11 +72,11 @@ function lexer() {
   while (code1.includes('"')) {
     code1 = code1.replace('"', "~");
   }
-  while (code1.includes(' ~')) {
-    code1 = code1.replace(' ~', "~");
+  while (code1.includes(" ~")) {
+    code1 = code1.replace(" ~", "~");
   }
-  while (code1.includes('~ ')) {
-    code1 = code1.replace('~ ', "~");
+  while (code1.includes("~ ")) {
+    code1 = code1.replace("~ ", "~");
   }
 
   ///start commas system 1:
@@ -87,14 +87,14 @@ function lexer() {
   ///end commas system 1
 
   //STRINGS:
-  while (code1.includes("!VarCharacters")) {
-    code1 = code1.replace("!VarCharacters", "VC");
+  while (code1.includes("!VarChar")) {
+    code1 = code1.replace("!VarChar", "VC");
   }
-  while (code1.includes("!VarNumeric")) {
-    code1 = code1.replace("!VarNumeric", "NU");
+  while (code1.includes("!VarInt")) {
+    code1 = code1.replace("!VarInt", "IN");
   }
-  while (code1.includes("!VarDecimal")) {
-    code1 = code1.replace("!VarDecimal", "DE");
+  while (code1.includes("!VarFloat")) {
+    code1 = code1.replace("!VarFloat", "FO");
   }
   while (code1.includes("!VarBoolean")) {
     code1 = code1.replace("!VarBoolean", "BO");
