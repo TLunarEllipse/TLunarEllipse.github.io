@@ -370,10 +370,9 @@ function spacing2() {
 //syntax analisys:
 function phaser() {
   code2 = "(" + codeS + ")";
-  
-  
 
   alert(code2);
+  document.getElementById("console2").value = code2;
   semantics();
 }
 function semantics() {
