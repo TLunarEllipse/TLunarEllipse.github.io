@@ -13,6 +13,7 @@ var codeS;
 var code2;
 var code3;
 var code4;
+var debug = 0;
 var num01 = 0;
 var name = "name1";
 var value = "value1";
@@ -372,7 +373,6 @@ function phaser() {
   code2 = "(" + codeS + ")";
 
   alert(code2);
-  document.getElementById("console2").value = code2;
   semantics();
 }
 function semantics() {
