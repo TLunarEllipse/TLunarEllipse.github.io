@@ -13,6 +13,7 @@ var codeS;
 var code2;
 var code3;
 var code4;
+var debug = 1;
 var num01 = 0;
 var name = "name1";
 var value = "value1";
@@ -26,6 +27,12 @@ function run() {
   spacing();
 
   //define whether the code is right or wrong:
+
+  //debug:
+  if (code1.includes("#!#debug")) {
+    debug = 1;
+    alert("debug mode enabled");
+  }
 
   //right:
   if ((work = 1)) {
@@ -59,15 +66,16 @@ function spacing() {
   while (code0.includes(' " ')) {
     code0 = code0.replace(' " ', "~");
   }
-
-  alert(code0);
+  if (debug == 1) {
+    alert(code0);
+  }
   lexer();
 }
 
 //lexical analysis:
 function lexer() {
   code1 = code0;
-  //additional and completely experimental cands:
+  //additional and completely experimental codes:
 
   while (code1.includes('"')) {
     code1 = code1.replace('"', "~");
@@ -188,8 +196,9 @@ function lexer() {
   while (code1.includes("!not")) {
     code1 = code1.replace("!not", "FU_NOT");
   }
-
-  alert(code1);
+  if (debug == 1) {
+    alert(code1);
+  }
   spacing2();
 }
 function spacing2() {
@@ -364,28 +373,33 @@ function spacing2() {
   }
   ///end commas system 2
 
-  alert(codeS);
+  if (debug == 1) {
+    alert(codeS);
+  }
   phaser();
 }
 //syntax analisys:
 function phaser() {
   code2 = "(" + codeS + ")";
-
-  alert(code2);
-  document.getElementById("console2").value = code2;
+  if (debug == 1) {
+    alert(code2);
+  }
   semantics();
 }
 function semantics() {
   code3 = code2;
 
-  alert(code3);
+  if (debug == 1) {
+    alert(code3);
+  }
   intermediatecode();
 }
 //intermediate code generator:
 function intermediatecode() {
   code4 = code3;
-
-  alert(code4);
+  if (debug == 1) {
+    alert(code4);
+  }
 }
 
 //statistics:
