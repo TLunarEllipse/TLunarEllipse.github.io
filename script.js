@@ -179,8 +179,8 @@ function lexer() {
   while (code1.includes("!else")) {
     code1 = code1.replace("!else", "FU_ELSE");
   }
-  while (code1.includes("!loop")) {
-    code1 = code1.replace("!loop", "FU_LOOP");
+  while (code1.includes("!while")) {
+    code1 = code1.replace("!while", "FU_WHILE");
   }
   while (code1.includes("!and")) {
     code1 = code1.replace("!and", "FU_AND");
@@ -330,11 +330,11 @@ function spacing2() {
     codeS = codeS.replace("FU_ELSE", "√•√FU√ELSE√•√");
   }
 
-  while (codeS.includes("√•√FU_LOOP√•√")) {
-    codeS = codeS.replace("√•√FU_LOOP√•√", "√•√FU√LOOP√•√");
+  while (codeS.includes("√•√FU_WHILE√•√")) {
+    codeS = codeS.replace("√•√FU_WHILE√•√", "√•√FU√WHILE√•√");
   }
-  while (codeS.includes("FU_LOOP")) {
-    codeS = codeS.replace("FU_LOOP", "√•√FU√LOOP√•√");
+  while (codeS.includes("FU_WHILE")) {
+    codeS = codeS.replace("FU_WHILE", "√•√FU√WHILE√•√");
   }
 
   while (codeS.includes("√•√FU_AND√•√")) {
