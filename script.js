@@ -126,6 +126,23 @@ function lexer() {
   while (code1.includes("^")) {
     code1 = code1.replace("^", "CH_POW");
   }
+
+  while (code1.includes("(")) {
+    code1 = code1.replace("(", "CH_LPA");
+  }
+
+  while (code1.includes(")")) {
+    code1 = code1.replace(")", "CH_RPA");
+  }
+
+  while (code1.includes("[")) {
+    code1 = code1.replace("[", "CH_LSQ");
+  }
+
+  while (code1.includes("]")) {
+    code1 = code1.replace("]", "CH_RSQ");
+  }
+
   while (code1.includes(",")) {
     code1 = code1.replace(",", "CH_COM");
   }
@@ -215,11 +232,33 @@ function spacing2() {
     codeS = codeS.replace("CH_POW", "√•√CH√POW√•√");
   }
   //parents:
-
-  while (codeS.includes("(")) {
-    codeS = codeS.replace("(", "√•√(√•√");
+  while (codeS.includes("√•√CH_LPA√•√")) {
+    codeS = codeS.replace("√•√CH_LPA√•√", "√•√CH√LPA√•√");
   }
-  //squares:
+  while (codeS.includes("CH_LPA")) {
+    codeS = codeS.replace("CH_LPA", "√•√CH√LPA√•√");
+  }
+
+  while (codeS.includes("√•√CH_RPA√•√")) {
+    codeS = codeS.replace("√•√CH_RPA√•√", "√•√CH√RPA√•√");
+  }
+  while (codeS.includes("CH_RPA")) {
+    codeS = codeS.replace("CH_RPA", "√•√CH√RPA√•√");
+  }
+  //squads:
+  while (codeS.includes("√•√CH_LSQ√•√")) {
+    codeS = codeS.replace("√•√CH_LSQ√•√", "√•√CH√LSQ√•√");
+  }
+  while (codeS.includes("CH_LSQ")) {
+    codeS = codeS.replace("CH_LSQ", "√•√CH√LSQ√•√");
+  }
+
+  while (codeS.includes("√•√CH_RSQ√•√")) {
+    codeS = codeS.replace("√•√CH_RSQ√•√", "√•√CH√RSQ√•√");
+  }
+  while (codeS.includes("CH_RSQ")) {
+    codeS = codeS.replace("CH_RSQ", "√•√CH√RSQ√•√");
+  }
 
   //commas:
   while (codeS.includes("√•√CH_COM√•√")) {
