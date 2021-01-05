@@ -369,7 +369,9 @@ function spacing2() {
 }
 //syntax analisys:
 function phaser() {
-  code2 = codeS;
+  code2 = "(" + codeS + ")";
+  
+  
 
   alert(code2);
   semantics();
