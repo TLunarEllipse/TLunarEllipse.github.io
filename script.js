@@ -170,9 +170,20 @@ function lexer() {
   while (code1.includes(";")) {
     code1 = code1.replace(";", "TT_END");
   }
-  while (code1.includes("=")) {
-    code1 = code1.replace("=", "CH_EQU:");
+
+  while (code1.includes("<=")) {
+    code1 = code1.replace("<=", "CH_LOE:");
   }
+  while (code1.includes(">=")) {
+    code1 = code1.replace(">=", "CH_GOE:");
+  }
+  while (code1.includes("==")) {
+    code1 = code1.replace("==", "CH_EQU:");
+  }
+  while (code1.includes("=")) {
+    code1 = code1.replace("=", "CH_SET:");
+  }
+
   while (code1.includes("<")) {
     code1 = code1.replace("<", "CH_LES");
   }
@@ -296,7 +307,20 @@ function spacing2() {
   while (codeS.includes("TT_END")) {
     codeS = codeS.replace("TT_END", "√•√TT√END√•√");
   }
-
+  //less or Equal:
+  while (codeS.includes("√•√TT_LOE:√•√")) {
+    codeS = codeS.replace("√•√TT_LOE:√•√", "√•√TT√LOE:√•√");
+  }
+  while (codeS.includes("TT_LOE:")) {
+    codeS = codeS.replace("TT_LOE:", "√•√TT√LOE:√•√");
+  }
+  //great or Equal:
+  while (codeS.includes("√•√TT_GOE:√•√")) {
+    codeS = codeS.replace("√•√TT_GOE:√•√", "√•√TT√GOE:√•√");
+  }
+  while (codeS.includes("TT_GOE:")) {
+    codeS = codeS.replace("TT_GOE:", "√•√TT√GOE:√•√");
+  }
   //great:
   while (codeS.includes("√•√CH_LES√•√")) {
     codeS = codeS.replace("√•√CH_LES√•√", "√•√CH√LES√•√");
