@@ -75,7 +75,6 @@ function spacing() {
   }
 
   //strings (accessories):
-
   while (code0.includes("= ")) {
     code0 = code0.replace("= ", "CH_SET:");
   }
