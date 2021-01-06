@@ -71,8 +71,18 @@ function spacing() {
   code0 = document.getElementById("console3").value;
 
   //strings (accessories):
-  while (code0.includes("= ")) {
-    code0 = code0.replace("= ", "CH_EQU:");
+  while (code0.includes('== ')) {
+    code0 = code0.replace('== ', 'CH_EQU:');
+  }
+  while (code0.includes('>= ')) {
+    code0 = code0.replace('>= ', 'CH_GOE:');
+  }
+  while (code0.includes('<= ')) {
+    code0 = code0.replace('=< ', 'CH_LOE:');
+  }
+  
+  while (code0.includes('= ')) {
+    code0 = code0.replace('= ', 'CH_SET:');
   }
 
   while (code0.includes(' " ')) {
