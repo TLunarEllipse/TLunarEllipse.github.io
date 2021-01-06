@@ -70,14 +70,9 @@ function run() {
 function spacing() {
   code0 = document.getElementById("console3").value;
 
-  while (code0.includes("== ")) {
-    code0 = code0.replace("== ", "CH_EQU:");
-  }
-
   //strings (accessories):
-
   while (code0.includes("= ")) {
-    code0 = code0.replace("= ", "CH_SET:");
+    code0 = code0.replace("= ", "CH_EQU:");
   }
 
   while (code0.includes(' " ')) {
@@ -313,25 +308,18 @@ function spacing2() {
     codeS = codeS.replace("TT_END", "√•√TT√END√•√");
   }
   //less or Equal:
-  while (codeS.includes("√•√CH_LOE:√•√")) {
-    codeS = codeS.replace("√•√CH_LOE:√•√", "√•√CH√LOE:√•√");
+  while (codeS.includes("√•√TT_LOE:√•√")) {
+    codeS = codeS.replace("√•√TT_LOE:√•√", "√•√TT√LOE:√•√");
   }
-  while (codeS.includes("CH_LOE:")) {
-    codeS = codeS.replace("CH_LOE:", "√•√CH√LOE:√•√");
+  while (codeS.includes("TT_LOE:")) {
+    codeS = codeS.replace("TT_LOE:", "√•√TT√LOE:√•√");
   }
   //great or Equal:
-  while (codeS.includes("√•√CH_GOE:√•√")) {
-    codeS = codeS.replace("√•√CH_GOE:√•√", "√•√CH√GOE:√•√");
+  while (codeS.includes("√•√TT_GOE:√•√")) {
+    codeS = codeS.replace("√•√TT_GOE:√•√", "√•√TT√GOE:√•√");
   }
-  while (codeS.includes("CH_GOE:")) {
-    codeS = codeS.replace("CH_GOE:", "√•√CH√GOE:√•√");
-  }
-  //Equal:
-  while (codeS.includes("√•√CH_EQU:√•√")) {
-    codeS = codeS.replace("√•√CH_EQU:√•√", "√•√CH√EQU:√•√");
-  }
-  while (codeS.includes("CH_EQU:")) {
-    codeS = codeS.replace("CH_EQU:", "√•√CH√EQU:√•√");
+  while (codeS.includes("TT_GOE:")) {
+    codeS = codeS.replace("TT_GOE:", "√•√TT√GOE:√•√");
   }
   //great:
   while (codeS.includes("√•√CH_LES√•√")) {
@@ -482,5 +470,4 @@ function stats() {
     ":" +
     segundo +
     ")";
-}
 }
