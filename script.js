@@ -1,19 +1,19 @@
-//system:
-
+//system variables:
 var work = 1;
 var system = true;
 var console1 = document.getElementById("console1");
 var console2 = document.getElementById("console2");
 var console3 = document.getElementById("console3");
 var fulldate;
-var erro = "No Errors Found";
+var erro = "teste teste teste teste teste teste teste teste teste teste teste";
+var code;
 var code0;
 var code1;
 var codeS;
 var code2;
 var code3;
 var code4;
-var debug = 1;
+var debug = 0;
 var num01 = 0;
 var name = "name1";
 var value = "value1";
@@ -22,17 +22,29 @@ var value = "value1";
 setTimeout(run, 5);
 
 function run() {
+  code = document.getElementById("console3").value;
   //date system:
   stats();
+
+  //debug:
+  if (code.includes("#?#debug")) {
+    if (debug == 1) {
+      debug = 0;
+      alert("debug mode disabled");
+    }
+  }
+
+  if (code.includes("#!#debug")) {
+    if (debug == 0) {
+      debug = 1;
+      alert("debug mode enabled");
+    }
+  }
+
+  //start compiler process:
   spacing();
 
   //define whether the code is right or wrong:
-
-  //debug:
-  if (code1.includes("#!#debug")) {
-    debug = 1;
-    alert("debug mode enabled");
-  }
 
   //right:
   if ((work = 1)) {
