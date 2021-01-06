@@ -388,10 +388,10 @@ function spacing2() {
   if (debug == 1) {
     alert(codeS);
   }
-  phaser();
+  parser();
 }
 //syntax analisys:
-function phaser() {
+function parser() {
   code2 = "(" + codeS + ")";
   if (debug == 1) {
     alert(code2);
