@@ -323,6 +323,13 @@ function spacing2() {
   while (codeS.includes("CH_EQU:")) {
     codeS = codeS.replace("CH_EQU:", "√•√CH√EQU:√•√");
   }
+  //set:
+  while (codeS.includes("√•√TT_SET:√•√")) {
+    codeS = codeS.replace("√•√TT_SET:√•√", "√•√CH√SET:√•√");
+  }
+  while (codeS.includes("CH_SET:")) {
+    codeS = codeS.replace("CH_SET:", "√•√CH√SET:√•√");
+  }
   //great:
   while (codeS.includes("√•√CH_LES√•√")) {
     codeS = codeS.replace("√•√CH_LES√•√", "√•√CH√LES√•√");
