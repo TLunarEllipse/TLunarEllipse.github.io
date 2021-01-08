@@ -10,8 +10,6 @@ div[id="total"] {
   overflow: auto;
   background: #252525;
   color: #fff;
-  
-  
 }
 textarea{
   font-size: 70%;
@@ -26,6 +24,7 @@ textarea[id="console1"] {
   border: none;
   box-shadow: 0 0 0 0;
   outline: 0;
+  
 }
 textarea[id="console2"] {
   width: 100%;
