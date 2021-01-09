@@ -412,10 +412,11 @@ function spacing2() {
   while (codeS.includes("√•√")) {
     codeS = codeS.replace("√•√", ",");
   }
-  codeS = codeS.split(/\r\n|\r|\n/g);
   while (codeS.includes(",,")) {
     codeS = codeS.replace(",,", ",");
   }
+  codeS = codeS.split(/\r\n|\r|\n/g);
+
   ///end commas system 2
 
   if (debug == 1) {
@@ -423,9 +424,9 @@ function spacing2() {
   }
   parser();
 }
+
 //syntax analisys:
 function parser() {
-  code2 = "(" + codeS + ")";
   if (debug == 1) {
     alert(code2);
   }
