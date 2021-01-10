@@ -429,7 +429,7 @@ function interpreter() {
 
   while (codeS.includes(",")) {
     codeS = codeS.replace(",", "-");
-  }
+  
 
   if (debug == 1) {
     alert(code2);
