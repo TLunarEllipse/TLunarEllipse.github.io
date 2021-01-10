@@ -11,8 +11,6 @@ var code0;
 var code1;
 var codeS;
 var code2;
-var code3;
-var code4;
 var debug = 0;
 var num01 = 0;
 var name = "name1";
@@ -422,29 +420,15 @@ function spacing2() {
   if (debug == 1) {
     alert(codeS);
   }
-  parser();
+  interpreter();
 }
 
-//syntax analisys:
-function parser() {
+//intermediate code generator:
+function interpreter() {
+  code2 = codeS;
+
   if (debug == 1) {
     alert(code2);
-  }
-  semantics();
-}
-function semantics() {
-  code3 = code2;
-
-  if (debug == 1) {
-    alert(code3);
-  }
-  intermediatecode();
-}
-//intermediate code generator:
-function intermediatecode() {
-  code4 = code3;
-  if (debug == 1) {
-    alert(code4);
   }
 }
 
