@@ -11,7 +11,7 @@ var code0;
 var code1;
 var codeS;
 var code2;
-var debug = 0;
+var debug = 1;
 var num01 = 0;
 var name = "name1";
 var value = "value1";
@@ -413,8 +413,8 @@ function spacing2() {
   while (codeS.includes(",,")) {
     codeS = codeS.replace(",,", ",");
   }
-  codeS = codeS.split(/\r\n|\r|\n/g);
 
+  codeS = codeS.split(/\r\n|\r|\n/g);
   ///end commas system 2
 
   if (debug == 1) {
@@ -426,6 +426,10 @@ function spacing2() {
 //intermediate code generator:
 function interpreter() {
   code2 = codeS;
+
+  while (codeS.includes(",")) {
+    codeS = codeS.replace(",", "-");
+  }
 
   if (debug == 1) {
     alert(code2);
