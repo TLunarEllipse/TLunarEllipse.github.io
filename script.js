@@ -415,7 +415,7 @@ function spacing2() {
   }
 
   codeS = codeS.split(/\r\n|\r|\n/g);
-  codeS.join(',');
+  codeS = codeS.toString();
   ///end commas system 2
 
   if (debug == 1) {
@@ -427,10 +427,6 @@ function spacing2() {
 //intermediate code generator:
 function interpreter() {
   code2 = codeS;
-
-  while (code2.includes(",")) {
-    code2 = code2.replace(",", "-");
-  }
 
   if (debug == 1) {
     alert(code2);
