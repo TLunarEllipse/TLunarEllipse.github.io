@@ -432,6 +432,8 @@ function interpreter() {
     alert(code2);
   }
 }
+//erros founder:
+
 
 //statistics:
 function stats() {
