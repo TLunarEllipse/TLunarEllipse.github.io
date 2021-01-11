@@ -432,14 +432,19 @@ function interpreter() {
   while (code2.includes(",")) {
     code2 = code2.replace(",", "|");
   }
-  code2.split("|");
+  code3 = code2;
+  while (code3.includes("|TT√END|")) {
+    code3 = code3.replace("|TT√END|", "•");
+  }
+  code3 = code3.split("•");
   
   //error finder:
 
   //translator and interpreter per line:
 
+  //debug:
   if (debug == 1) {
-    alert(code2);
+    alert(code3);
   }
 }
 
