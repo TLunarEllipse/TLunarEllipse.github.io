@@ -435,9 +435,9 @@ function interpreter() {
   }
   code3 = code2;
   while (code3.includes("|TT√END|")) {
-    code3 = code3.replace("|TT√END|", "•");
+    code3 = code3.replace("|TT√END|", "`√√`");
   }
-  code3 = code3.split("•");
+  code3 = code3.split("`√√`");
 
   //error finder:
 
