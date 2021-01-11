@@ -48,7 +48,7 @@ function run() {
   if ((work = 1)) {
     document.getElementById("console1").innerHTML =
       "Program statistics:" +
-      " TLunarEllipse Lang; Version: 1.0.0; " +
+      " TLunarEllipse Lang; Version: [beta 1.0.0]; " +
       fulldate +
       "; " +
       "(" +
@@ -427,15 +427,12 @@ function spacing2() {
 //intermediate code generator:
 function interpreter() {
   code2 = codeS;
-  
-  
 
   if (debug == 1) {
     alert(code2);
   }
 }
 //erros founder:
-
 
 //statistics:
 function stats() {
