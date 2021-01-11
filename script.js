@@ -13,7 +13,7 @@ var codeS;
 var code2;
 var code3;
 var debug = 1;
-var num01 = 0;
+var maxtimes;
 var name = "name1";
 var value = "value1";
 
@@ -438,7 +438,7 @@ function interpreter() {
     code3 = code3.replace("|TT√END|", "`√√`");
   }
   code3 = code3.split("`√√`");
-
+  maxtimes = code3.length;
   //error finder:
 
   //translator and interpreter per line:
@@ -446,6 +446,7 @@ function interpreter() {
   //debug:
   if (debug == 1) {
     alert(code3);
+    alert(maxtimes);
   }
 }
 
