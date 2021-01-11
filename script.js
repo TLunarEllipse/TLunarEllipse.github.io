@@ -427,6 +427,8 @@ function spacing2() {
 //intermediate code generator:
 function interpreter() {
   code2 = codeS;
+  
+  
 
   if (debug == 1) {
     alert(code2);
