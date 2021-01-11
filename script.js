@@ -190,8 +190,8 @@ function lexer() {
   }
 
   //FUNCTIONS:
-  while (code1.includes("!print")) {
-    code1 = code1.replace("!print", "FU_PRINT");
+  while (code1.includes("!alert")) {
+    code1 = code1.replace("!alert", "FU_ALERT");
   }
 
   while (code1.includes("!or")) {
@@ -354,11 +354,11 @@ function spacing2() {
   }
 
   ///functions:
-  while (codeS.includes("√•√FU_PRINT√•√")) {
-    codeS = codeS.replace("√•√FU_PRINT√•√", "√•√FU√PRINT√•√");
+  while (codeS.includes("√•√FU_ALERT√•√")) {
+    codeS = codeS.replace("√•√FU_ALERT√•√", "√•√FU√ALERT√•√");
   }
-  while (codeS.includes("FU_PRINT")) {
-    codeS = codeS.replace("FU_PRINT", "√•√FU√PRINT√•√");
+  while (codeS.includes("FU_ALERT")) {
+    codeS = codeS.replace("FU_ALERT", "√•√FU√ALERT√•√");
   }
 
   while (codeS.includes("√•√FU_OR√•√")) {
@@ -413,9 +413,15 @@ function spacing2() {
   while (codeS.includes(",,")) {
     codeS = codeS.replace(",,", ",");
   }
-
+  while (codeS.includes(",,")) {
+    codeS = codeS.replace(",,", ",");
+  }
   codeS = codeS.split(/\r\n|\r|\n/g);
   codeS = codeS.toString();
+
+  while (codeS.includes(",,")) {
+    codeS = codeS.replace(",,", ",");
+  }
   ///end commas system 2
 
   if (debug == 1) {
@@ -432,7 +438,6 @@ function interpreter() {
     alert(code2);
   }
 }
-//erros founder:
 
 //statistics:
 function stats() {
