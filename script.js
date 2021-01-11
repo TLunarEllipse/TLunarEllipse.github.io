@@ -410,12 +410,6 @@ function spacing2() {
   while (codeS.includes("√•√")) {
     codeS = codeS.replace("√•√", ",");
   }
-  while (codeS.includes(",,")) {
-    codeS = codeS.replace(",,", ",");
-  }
-  while (codeS.includes(",,")) {
-    codeS = codeS.replace(",,", ",");
-  }
   codeS = codeS.split(/\r\n|\r|\n/g);
   codeS = codeS.toString();
 
@@ -433,6 +427,14 @@ function spacing2() {
 //intermediate code generator:
 function interpreter() {
   code2 = codeS;
+  ///divider per line:
+  while (code2.includes(",")) {
+    code2 = code2.replace(",", "|");
+  }
+  code2.split("TT√END");
+  //error finder:
+
+  //translator and performer per line:
 
   if (debug == 1) {
     alert(code2);
