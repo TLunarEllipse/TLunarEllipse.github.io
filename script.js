@@ -11,6 +11,7 @@ var code0;
 var code1;
 var codeS;
 var code2;
+var code3;
 var debug = 1;
 var num01 = 0;
 var name = "name1";
@@ -431,10 +432,11 @@ function interpreter() {
   while (code2.includes(",")) {
     code2 = code2.replace(",", "|");
   }
-  code2.split("TT√END");
+  code2.split("|");
+  
   //error finder:
 
-  //translator and performer per line:
+  //translator and interpreter per line:
 
   if (debug == 1) {
     alert(code2);
