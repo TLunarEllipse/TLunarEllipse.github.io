@@ -428,6 +428,7 @@ function spacing2() {
 //intermediate code generator:
 function interpreter() {
   code2 = codeS;
+
   ///divider per line:
   while (code2.includes(",")) {
     code2 = code2.replace(",", "|");
@@ -437,7 +438,7 @@ function interpreter() {
     code3 = code3.replace("|TT√END|", "•");
   }
   code3 = code3.split("•");
-  
+
   //error finder:
 
   //translator and interpreter per line:
