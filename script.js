@@ -12,8 +12,9 @@ var code1;
 var codeS;
 var code2;
 var code3;
-var debug = 1;
+var debug = 0;
 var maxtimes;
+var atualtime;
 var name = "name1";
 var value = "value1";
 
@@ -439,14 +440,17 @@ function interpreter() {
   }
   code3 = code3.split("`√√`");
   maxtimes = code3.length;
-  //error finder:
+  ///error finder:
 
-  //translator and interpreter per line:
-
+  ///translator and interpreter per line:
+  while(atualtime == maxtimes) {
+    atualtime = atualtime + 1;
+    alert(atualtime);
+  }
+  
   //debug:
   if (debug == 1) {
     alert(code3);
-    alert(maxtimes);
   }
 }
 
