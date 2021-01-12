@@ -14,6 +14,8 @@ var code2;
 var code3;
 var debug = 1;
 var maxtimes;
+var atualtimebytecode;
+var totaltimebytecode;
 var atualtime = 0;
 var name = "name1";
 var value = "value1";
@@ -74,7 +76,7 @@ function spacing() {
     code0 = code0.replace(' " ', "~");
   }
   if (debug == 1) {
-    alert("spacing1 output:"+code0);
+    alert("spacing1 output:" + code0);
   }
   lexer();
 }
@@ -215,7 +217,7 @@ function lexer() {
     code1 = code1.replace("!not", "FU_NOT");
   }
   if (debug == 1) {
-    alert("lexer output:"+code1);
+    alert("lexer output:" + code1);
   }
   spacing2();
 }
@@ -421,7 +423,7 @@ function spacing2() {
   ///end commas system 2
 
   if (debug == 1) {
-    alert("spacing2 output:"+codeS);
+    alert("spacing2 output:" + codeS);
   }
   interpreter();
 }
@@ -445,16 +447,20 @@ function interpreter() {
   ///error finder:
 
   ///translator and interpreter per line:
-  while(atualtime < maxtimes) {
+  while (atualtime < maxtimes) {
+    atualtimebytecode = code3[atualtime];
     atualtime = atualtime + 1;
-    
-    if(debug == 1){
-    alert("interpreter reading position:"+atualtime +"/"+maxtimes);
-  }}
-  
+
+    //internal debug:
+    if (debug == 1) {
+      alert("interpreter reading position:" + atualtime + "/" + maxtimes);
+      alert(atualtimebytecode);
+    }
+  }
+
   //debug:
   if (debug == 1) {
-    alert("interpreter output:"+code3);
+    alert("interpreter output:" + code3);
   }
 }
 
