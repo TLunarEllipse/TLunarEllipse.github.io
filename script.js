@@ -14,8 +14,8 @@ var code2;
 var code3;
 var debug = 1;
 var maxtimes;
-var atualtimebytecode;
-var totaltimebytecode;
+var atualtimecode;
+var totaltimecode;
 var atualtime = 0;
 var name = "name1";
 var value = "value1";
@@ -103,6 +103,13 @@ function lexer() {
 
   ///end commas system 1
 
+  //DIVISORIES:
+  while (code1.includes(",;")) {
+    code1 = code1.replace(",;", "IT_END");
+  }
+  while (code1.includes(";")) {
+    code1 = code1.replace(";", "TT_END");
+  }
   //STRINGS:
   while (code1.includes("!VarChar")) {
     code1 = code1.replace("!VarChar", "VC");
@@ -163,11 +170,6 @@ function lexer() {
   while (code1.includes(",")) {
     code1 = code1.replace(",", "CH_COM");
   }
-
-  while (code1.includes(";")) {
-    code1 = code1.replace(";", "TT_END");
-  }
-
   while (code1.includes("<=")) {
     code1 = code1.replace("<=", "CH_LOE:");
   }
@@ -296,8 +298,14 @@ function spacing2() {
   while (codeS.includes("CH_COM")) {
     codeS = codeS.replace("CH_COM", "√•√CH√COM√•√");
   }
-
-  //semicolon:
+  //IT:
+  while (codeS.includes("√•√IT_END√•√")) {
+    codeS = codeS.replace("√•√IT_END√•√", "√•√IT√END√•√");
+  }
+  while (codeS.includes("IT_END")) {
+    codeS = codeS.replace("IT_END", "√•√IT√END√•√");
+  }
+  //TT:
   while (codeS.includes("√•√TT_END√•√")) {
     codeS = codeS.replace("√•√TT_END√•√", "√•√TT√END√•√");
   }
@@ -448,13 +456,18 @@ function interpreter() {
 
   ///translator and interpreter per line:
   while (atualtime < maxtimes) {
-    atualtimebytecode = code3[atualtime];
+    atualtimecode = code3[atualtime];
+
+    atualtimecode = atualtimecode.split("|IT√END|");
+
+    
+    atualtimecode = atualtimecode.toString();
     atualtime = atualtime + 1;
 
     //internal debug:
     if (debug == 1) {
       alert("interpreter reading position:" + atualtime + "/" + maxtimes);
-      alert(atualtimebytecode);
+      alert(atualtimecode);
     }
   }
 
