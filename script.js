@@ -584,7 +584,7 @@ function interpreter() {
     ///hard translation:
 
     //javascript runner:
-  
+
     //internal debug:
     if (debug == 1) {
       alert("interpreter reading position:" + atualtime + "/" + maxtimes);
