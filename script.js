@@ -14,6 +14,7 @@ var code2;
 var code3;
 var debug = 1;
 var maxtimes;
+var newWindow;
 var atualtimecode;
 var totaltimecode;
 var atualtime = 0;
@@ -454,20 +455,29 @@ function interpreter() {
     //translator to js:
     
     while (code3.includes("BO~")) {
-      code3 = atualtimecode.replace("BO~", "var");
+      code3 = atualtimecode.replace("BO~", "var ");
     }
-    while (code3.includes("FO~")) {
-      code3 = atualtimecode.replace("FO~", "var");
+    while (.includes("FO~")) {
+      code3 = atualtimecode.replace("FO~", "var ");
     }
-    while (code3.includes("IN~")) {
-      code3 = atualtimecode.replace("IN~", "var");
+    while (atualtimecode.includes("IN~")) {
+      atualtimecode = atualtimecode.replace("IN~", "var ");
     }
-    while (code3.includes("CH~")) {
-      code3 = atualtimecode.replace("CH~", "var");
+    while (atualtimecode.includes("VC~")) {
+      atualtimecode = atualtimecode.replace("VC~", "var ");
+    }
+    while (atualtimecode.includes("~")) {
+      atualtimecode = atualtimecode.replace("~", " ");
+    }
+    while (atualtimecode.includes("|CH√SET:|")) {
+      atualtimecode = atualtimecode.replace("|CH√SET:|", "=");
+    }
+    while (atualtimecode.includes("|CH√SAS|")) {
+      atualtimecode = atualtimecode.replace("|CH√SAS|", "'");
     }
     
     //javascript runner:
-
+   
     //internal debug:
     if (debug == 1) {
       alert("interpreter reading position:" + atualtime + "/" + maxtimes);
@@ -480,7 +490,9 @@ function interpreter() {
     alert("interpreter output:" + code3);
   }
 }
-
+function fnewwindow() {
+    newWindow = window.open("", "", "status,height=200,width=300");
+  }
 //statistics:
 function stats() {
   var dataAtual = new Date();
