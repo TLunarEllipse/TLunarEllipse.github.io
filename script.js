@@ -454,11 +454,11 @@ function interpreter() {
 
     //translator to js:
     
-    while (code3.includes("BO~")) {
-      code3 = atualtimecode.replace("BO~", "var ");
+    while (atualtimecode.includes("BO~")) {
+      atualtimecode = atualtimecode.replace("BO~", "var ");
     }
-    while (.includes("FO~")) {
-      code3 = atualtimecode.replace("FO~", "var ");
+    while (atualtimecode.includes("FO~")) {
+      atualtimecode = atualtimecode.replace("FO~", "var ");
     }
     while (atualtimecode.includes("IN~")) {
       atualtimecode = atualtimecode.replace("IN~", "var ");
@@ -487,7 +487,7 @@ function interpreter() {
 
   //debug:
   if (debug == 1) {
-    alert("interpreter output:" + code3);
+    alert("interpreter output:" + totaltimecode);
   }
 }
 function fnewwindow() {
