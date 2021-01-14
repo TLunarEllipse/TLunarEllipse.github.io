@@ -14,13 +14,8 @@ var code2;
 var code3;
 var debug = 1;
 var maxtimes;
-var atualtimecode;
-var totaltimecode;
-var atualmicrocode;
-var microcode;
-var microtime;
-var maxmicrotime;
-var nomicro;
+var atualtimebytecode;
+var totaltimebytecode;
 var atualtime = 0;
 var name = "name1";
 var value = "value1";
@@ -108,13 +103,6 @@ function lexer() {
 
   ///end commas system 1
 
-  //DIVISORIES:
-  while (code1.includes(",;")) {
-    code1 = code1.replace(",;", "IT_END");
-  }
-  while (code1.includes(";")) {
-    code1 = code1.replace(";", "TT_END");
-  }
   //STRINGS:
   while (code1.includes("!VarChar")) {
     code1 = code1.replace("!VarChar", "VC");
@@ -175,6 +163,11 @@ function lexer() {
   while (code1.includes(",")) {
     code1 = code1.replace(",", "CH_COM");
   }
+
+  while (code1.includes(";")) {
+    code1 = code1.replace(";", "TT_END");
+  }
+
   while (code1.includes("<=")) {
     code1 = code1.replace("<=", "CH_LOE:");
   }
@@ -303,14 +296,8 @@ function spacing2() {
   while (codeS.includes("CH_COM")) {
     codeS = codeS.replace("CH_COM", "√•√CH√COM√•√");
   }
-  //IT:
-  while (codeS.includes("√•√IT_END√•√")) {
-    codeS = codeS.replace("√•√IT_END√•√", "√•√IT√END√•√");
-  }
-  while (codeS.includes("IT_END")) {
-    codeS = codeS.replace("IT_END", "√•√IT√END√•√");
-  }
-  //TT:
+
+  //semicolon:
   while (codeS.includes("√•√TT_END√•√")) {
     codeS = codeS.replace("√•√TT_END√•√", "√•√TT√END√•√");
   }
@@ -445,8 +432,6 @@ function spacing2() {
 function interpreter() {
   maxtimes = 0;
   atualtime = 0;
-  microtime = 0;
-  atualmicrocode = "";
   code2 = codeS;
 
   ///divider per line:
@@ -457,48 +442,19 @@ function interpreter() {
   while (code3.includes("|TT√END|")) {
     code3 = code3.replace("|TT√END|", "`√√`");
   }
-  while (code3.includes("|IT√END|")) {
-    code3 = code3.replace("|IT√END|", "`••`");
-  }
   code3 = code3.split("`√√`");
   maxtimes = code3.length;
   ///error finder:
 
   ///translator and interpreter per line:
   while (atualtime < maxtimes) {
-    atualtimecode = code3[atualtime];
-
-    //micro:
-    if (atualtimecode.incluides("`••`")) {
-      nomicro = 1;
-      microtime = 0;
-      microcode = atualtimecode.split("`••`");
-      maxmicrotime = microcode.length;
-      while (microtime < maxmicrotime) {
-      atualmicrocode = microcode[microtime];
-
-      microtime = microtime + 1;
-        //internal debug:
-        if (debug == 1) {
-          alert("micro reading position:" + microtime + "/" + maxmicrotime);
-          alert(microtime);
-        }
-      }
-    } else {
-      nomicro = 1;
-    }
-
-    //atual:
-    if (nomicro = 1) {
-    }
-
-    atualtimecode = atualtimecode.toString();
+    atualtimebytecode = code3[atualtime];
     atualtime = atualtime + 1;
 
     //internal debug:
     if (debug == 1) {
       alert("interpreter reading position:" + atualtime + "/" + maxtimes);
-      alert(atualtimecode);
+      alert(atualtimebytecode);
     }
   }
 
