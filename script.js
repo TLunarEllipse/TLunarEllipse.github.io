@@ -584,10 +584,6 @@ function interpreter() {
     ///hard translation:
 
     //javascript runner:
-    fnewwindow();
-    newWindow.document.write(atualtimecode);
-    newWindow.document.close();
-    newWindow.focus();
 
     //internal debug:
     if (debug == 1) {
