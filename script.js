@@ -16,8 +16,9 @@ var debug = 1;
 var maxtimes;
 var atualtimecode;
 var totaltimecode;
+var atualmicrocode;
+var microcode;
 var microtime;
-var microtimecode;
 var maxmicrotime;
 var nomicro;
 var atualtime = 0;
@@ -445,6 +446,7 @@ function interpreter() {
   maxtimes = 0;
   atualtime = 0;
   microtime = 0;
+  atualmicrocode = "";
   code2 = codeS;
 
   ///divider per line:
@@ -466,15 +468,28 @@ function interpreter() {
   while (atualtime < maxtimes) {
     atualtimecode = code3[atualtime];
  
-    //micro
+    //micro:
     if(atualtimecode.incluides("`••`")){
+      nomicro = 1;
       microtime = 0;
-      microtimecode = atualtimecode.split("`••`");
-      maxmicrotime = microtimecode.length
-    
+      microcode = atualtimecode.split("`••`");
+      maxmicrotime = microcode.length;
+      while(microtime < maxmicrotime){
+      atualmicrocode = microcode[microtime]
+        
+      microtime = microtime+1;
+       if (debug == 1) {
+      alert("micro reading position:" + atualtime + "/" + maxtimes);
+      alert(microtime);
     }
+  }
+}
+    else{nomicro = 1};
+    
     //atual:
-    if(nomicro = 0){}
+    if(nomicro = 1){
+      
+    }
     
     atualtimecode = atualtimecode.toString();
     atualtime = atualtime + 1;
