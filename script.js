@@ -164,6 +164,14 @@ function lexer() {
     code1 = code1.replace("]", "CH_RSQ");
   }
 
+  while (code1.includes("}")) {
+    code1 = code1.replace("}", "CH_RCB");
+  }
+
+  while (code1.includes("{")) {
+    code1 = code1.replace("{", "CH_LCB");
+  }
+
   while (code1.includes(",")) {
     code1 = code1.replace(",", "CH_COM");
   }
@@ -293,6 +301,20 @@ function spacing2() {
     codeS = codeS.replace("CH_RSQ", "√•√CH√RSQ√•√");
   }
 
+  //CB:
+  while (codeS.includes("√•√CH_LCB√•√")) {
+    codeS = codeS.replace("√•√CH_LCB√•√", "√•√CH√LCB√•√");
+  }
+  while (codeS.includes("CH_LCB")) {
+    codeS = codeS.replace("CH_LCB", "√•√CH√LCB√•√");
+  }
+  while (codeS.includes("√•√CH_RCB√•√")) {
+    codeS = codeS.replace("√•√CH_RCB√•√", "√•√CH√RCB√•√");
+  }
+  while (codeS.includes("CH_RCB")) {
+    codeS = codeS.replace("CH_RCB", "√•√CH√RCB√•√");
+  }
+
   //commas:
   while (codeS.includes("√•√CH_COM√•√")) {
     codeS = codeS.replace("√•√CH_COM√•√", "√•√CH√COM√•√");
@@ -336,7 +358,7 @@ function spacing2() {
   while (codeS.includes("CH_SET:")) {
     codeS = codeS.replace("CH_SET:", "√•√CH√SET:√•√");
   }
-  //great:
+  //less:
   while (codeS.includes("√•√CH_LES√•√")) {
     codeS = codeS.replace("√•√CH_LES√•√", "√•√CH√LES√•√");
   }
@@ -344,7 +366,7 @@ function spacing2() {
   while (codeS.includes("CH_LES")) {
     codeS = codeS.replace("CH_LES", "√•√CH√LES√•√");
   }
-  //less:
+  //great:
   while (codeS.includes("√•√CH_GRE√•√")) {
     codeS = codeS.replace("√•√CH_GRE√•√", "√•√CH√GRE√•√");
   }
@@ -523,6 +545,31 @@ function interpreter() {
     }
     while (atualtimecode.includes("CH√POW")) {
       atualtimecode = atualtimecode.replace("CH√POW", "^");
+    }
+
+    while (atualtimecode.includes("CH√LPA")) {
+      atualtimecode = atualtimecode.replace("CH√LPA", "(");
+    }
+    while (atualtimecode.includes("CH√RPA")) {
+      atualtimecode = atualtimecode.replace("CH√RPA", ")");
+    }
+    while (atualtimecode.includes("CH√LSQ")) {
+      atualtimecode = atualtimecode.replace("CH√LSQ", "[");
+    }
+    while (atualtimecode.includes("CH√RSQ")) {
+      atualtimecode = atualtimecode.replace("CH√RSQ", "]");
+    }
+    while (atualtimecode.includes("CH√LCB")) {
+      atualtimecode = atualtimecode.replace("CH√LCB", "{");
+    }
+    while (atualtimecode.includes("CH√RCB")) {
+      atualtimecode = atualtimecode.replace("CH√RCB", "}");
+    }
+    while (atualtimecode.includes("CH√COM")) {
+      atualtimecode = atualtimecode.replace("CH√COM", ",");
+    }
+    while (atualtimecode.includes("CH√")) {
+      atualtimecode = atualtimecode.replace("CH√", "");
     }
 
     ///hard translation:
