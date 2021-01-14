@@ -568,8 +568,17 @@ function interpreter() {
     while (atualtimecode.includes("CH√COM")) {
       atualtimecode = atualtimecode.replace("CH√COM", ",");
     }
-    while (atualtimecode.includes("CH√")) {
-      atualtimecode = atualtimecode.replace("CH√", "");
+    while (atualtimecode.includes("CH√LOE")) {
+      atualtimecode = atualtimecode.replace("CH√LOE:", "<=");
+    }
+    while (atualtimecode.includes("CH√GOE")) {
+      atualtimecode = atualtimecode.replace("CH√GOE:", ">=");
+    }
+    while (atualtimecode.includes("CH√LES")) {
+      atualtimecode = atualtimecode.replace("CH√LES", "<");
+    }
+    while (atualtimecode.includes("CH√GRE")) {
+      atualtimecode = atualtimecode.replace("CH√GRE", ">");
     }
 
     ///hard translation:
