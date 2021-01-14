@@ -506,7 +506,23 @@ function interpreter() {
       atualtimecode = atualtimecode.replace("FU√ELSE", "else");
     }
     while (atualtimecode.includes("FU√WHILE")) {
-      atualtimecode = atualtimecode.replace("FU√WHILE", "WHILE");
+      atualtimecode = atualtimecode.replace("FU√WHILE", "while");
+    }
+
+    while (atualtimecode.includes("CH√PLU")) {
+      atualtimecode = atualtimecode.replace("CH√PLU", "+");
+    }
+    while (atualtimecode.includes("CH√MIN")) {
+      atualtimecode = atualtimecode.replace("CH√MIN", "-");
+    }
+    while (atualtimecode.includes("CH√MUL")) {
+      atualtimecode = atualtimecode.replace("CH√MUL", "*");
+    }
+    while (atualtimecode.includes("CH√DIV")) {
+      atualtimecode = atualtimecode.replace("CH√DIV", "/");
+    }
+    while (atualtimecode.includes("CH√POW")) {
+      atualtimecode = atualtimecode.replace("CH√POW", "^");
     }
 
     ///hard translation:
