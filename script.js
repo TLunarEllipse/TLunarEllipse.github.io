@@ -96,6 +96,9 @@ function lexer() {
   while (code1.includes("~ ")) {
     code1 = code1.replace("~ ", "~");
   }
+  while (code1.includes(",;")) {
+    code1 = code1.replace(",;", "IT√END");
+  }
 
   ///start commas system 1:
   while (code1.includes(" ")) {
@@ -300,10 +303,10 @@ function spacing2() {
 
   //semicolon:
   while (codeS.includes("√•√TT_END√•√")) {
-    codeS = codeS.replace("√•√TT_END√•√", "√•√TT√END√•√");
+    codeS = codeS.replace("√•√TT_END√•√", ";√•√TT√END√•√");
   }
   while (codeS.includes("TT_END")) {
-    codeS = codeS.replace("TT_END", "√•√TT√END√•√");
+    codeS = codeS.replace("TT_END", ";√•√TT√END√•√");
   }
   //less or Equal:
   while (codeS.includes("√•√CH_LOE:√•√")) {
@@ -421,6 +424,9 @@ function spacing2() {
   while (codeS.includes(",,")) {
     codeS = codeS.replace(",,", ",");
   }
+  while (codeS.includes("IT√END")) {
+    codeS = codeS.replace("IT√END", ";");
+  }
   ///end commas system 2
 
   if (debug == 1) {
@@ -453,7 +459,8 @@ function interpreter() {
     atualtime = atualtime + 1;
 
     //translator to js:
-     ///simple translation:
+
+    ///simple translation:
     while (atualtimecode.includes("BO~")) {
       atualtimecode = atualtimecode.replace("BO~", "var ");
     }
@@ -479,10 +486,10 @@ function interpreter() {
     while (atualtimecode.includes("|")) {
       atualtimecode = atualtimecode.replace("|", "");
     }
-     ///average translation:
-    
-     ///hard translation:
-    
+    ///average translation:
+
+    ///hard translation:
+
     //javascript runner:
 
     //internal debug:
