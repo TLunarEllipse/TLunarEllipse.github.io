@@ -467,30 +467,31 @@ function interpreter() {
   ///translator and interpreter per line:
   while (atualtime < maxtimes) {
     atualtimecode = code3[atualtime];
- 
+
     //micro:
-    if(atualtimecode.incluides("`••`")){
+    if (atualtimecode.incluides("`••`")) {
       nomicro = 1;
       microtime = 0;
       microcode = atualtimecode.split("`••`");
       maxmicrotime = microcode.length;
-      while(microtime < maxmicrotime){
-      atualmicrocode = microcode[microtime]
-        
-      microtime = microtime+1;
-       if (debug == 1) {
-      alert("micro reading position:" + atualtime + "/" + maxtimes);
-      alert(microtime);
+      while (microtime < maxmicrotime) {
+      atualmicrocode = microcode[microtime];
+
+      microtime = microtime + 1;
+        //internal debug:
+        if (debug == 1) {
+          alert("micro reading position:" + microtime + "/" + maxmicrotime);
+          alert(microtime);
+        }
+      }
+    } else {
+      nomicro = 1;
     }
-  }
-}
-    else{nomicro = 1};
-    
+
     //atual:
-    if(nomicro = 1){
-      
+    if (nomicro = 1) {
     }
-    
+
     atualtimecode = atualtimecode.toString();
     atualtime = atualtime + 1;
 
