@@ -14,8 +14,8 @@ var code2;
 var code3;
 var debug = 1;
 var maxtimes;
-var atualtimebytecode;
-var totaltimebytecode;
+var atualtimecode;
+var totaltimecode;
 var atualtime = 0;
 var name = "name1";
 var value = "value1";
@@ -448,13 +448,30 @@ function interpreter() {
 
   ///translator and interpreter per line:
   while (atualtime < maxtimes) {
-    atualtimebytecode = code3[atualtime];
+    atualtimecode = code3[atualtime];
     atualtime = atualtime + 1;
+
+    //translator to js:
+    
+    while (code3.includes("BO~")) {
+      code3 = atualtimecode.replace("BO~", "var");
+    }
+    while (code3.includes("FO~")) {
+      code3 = atualtimecode.replace("FO~", "var");
+    }
+    while (code3.includes("IN~")) {
+      code3 = atualtimecode.replace("IN~", "var");
+    }
+    while (code3.includes("CH~")) {
+      code3 = atualtimecode.replace("CH~", "var");
+    }
+    
+    //javascript runner:
 
     //internal debug:
     if (debug == 1) {
       alert("interpreter reading position:" + atualtime + "/" + maxtimes);
-      alert(atualtimebytecode);
+      alert(atualtimecode);
     }
   }
 
