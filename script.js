@@ -453,7 +453,7 @@ function interpreter() {
     atualtime = atualtime + 1;
 
     //translator to js:
-    
+     ///simple translation:
     while (atualtimecode.includes("BO~")) {
       atualtimecode = atualtimecode.replace("BO~", "var ");
     }
@@ -469,15 +469,22 @@ function interpreter() {
     while (atualtimecode.includes("~")) {
       atualtimecode = atualtimecode.replace("~", " ");
     }
-    while (atualtimecode.includes("|CH√SET:|")) {
-      atualtimecode = atualtimecode.replace("|CH√SET:|", "=");
+    while (atualtimecode.includes("CH√SET:")) {
+      atualtimecode = atualtimecode.replace("CH√SET:", "=");
     }
-    while (atualtimecode.includes("|CH√SAS|")) {
-      atualtimecode = atualtimecode.replace("|CH√SAS|", "'");
+    while (atualtimecode.includes("CH√SAS")) {
+      atualtimecode = atualtimecode.replace("CH√SAS", "'");
     }
+
+    while (atualtimecode.includes("|")) {
+      atualtimecode = atualtimecode.replace("|", "");
+    }
+     ///average translation:
+    
+     ///hard translation:
     
     //javascript runner:
-   
+
     //internal debug:
     if (debug == 1) {
       alert("interpreter reading position:" + atualtime + "/" + maxtimes);
@@ -491,8 +498,8 @@ function interpreter() {
   }
 }
 function fnewwindow() {
-    newWindow = window.open("", "", "status,height=200,width=300");
-  }
+  newWindow = window.open("", "", "status,height=200,width=300");
+}
 //statistics:
 function stats() {
   var dataAtual = new Date();
