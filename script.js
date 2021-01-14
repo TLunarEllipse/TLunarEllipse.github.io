@@ -16,6 +16,10 @@ var debug = 1;
 var maxtimes;
 var atualtimecode;
 var totaltimecode;
+var microtime;
+var microtimecode;
+var maxmicrotime;
+var nomicro;
 var atualtime = 0;
 var name = "name1";
 var value = "value1";
@@ -440,6 +444,7 @@ function spacing2() {
 function interpreter() {
   maxtimes = 0;
   atualtime = 0;
+  microtime = 0;
   code2 = codeS;
 
   ///divider per line:
@@ -450,6 +455,9 @@ function interpreter() {
   while (code3.includes("|TT√END|")) {
     code3 = code3.replace("|TT√END|", "`√√`");
   }
+  while (code3.includes("|IT√END|")) {
+    code3 = code3.replace("|IT√END|", "`••`");
+  }
   code3 = code3.split("`√√`");
   maxtimes = code3.length;
   ///error finder:
@@ -457,9 +465,16 @@ function interpreter() {
   ///translator and interpreter per line:
   while (atualtime < maxtimes) {
     atualtimecode = code3[atualtime];
-
-    atualtimecode = atualtimecode.split("|IT√END|");
-
+ 
+    //micro
+    if(atualtimecode.incluides("`••`")){
+      microtime = 0;
+      microtimecode = atualtimecode.split("`••`");
+      maxmicrotime = microtimecode.length
+    
+    }
+    //atual:
+    if(nomicro = 0){}
     
     atualtimecode = atualtimecode.toString();
     atualtime = atualtime + 1;
