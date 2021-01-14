@@ -443,11 +443,11 @@ function interpreter() {
 
   ///divider per line:
   while (code2.includes(",")) {
-    code2 = code2.replace(",", "|");
+    code2 = code2.replace(",", "¶•¶");
   }
   code3 = code2;
-  while (code3.includes("|TT√END|")) {
-    code3 = code3.replace("|TT√END|", "`√√`");
+  while (code3.includes("¶•¶TT√END¶•¶")) {
+    code3 = code3.replace("¶•¶TT√END¶•¶", "`√√`");
   }
   code3 = code3.split("`√√`");
   maxtimes = code3.length;
@@ -483,10 +483,31 @@ function interpreter() {
       atualtimecode = atualtimecode.replace("CH√SAS", "'");
     }
 
-    while (atualtimecode.includes("|")) {
-      atualtimecode = atualtimecode.replace("|", "");
+    while (atualtimecode.includes("¶•¶")) {
+      atualtimecode = atualtimecode.replace("¶•¶", "");
     }
     ///average translation:
+    while (atualtimecode.includes("FU√IF")) {
+      atualtimecode = atualtimecode.replace("FU√IF", "if");
+    }
+    while (atualtimecode.includes("FU√ALERT")) {
+      atualtimecode = atualtimecode.replace("FU√ALERT", "alert");
+    }
+    while (atualtimecode.includes("FU√OR")) {
+      atualtimecode = atualtimecode.replace("FU√OR", "||");
+    }
+    while (atualtimecode.includes("FU√AND")) {
+      atualtimecode = atualtimecode.replace("FU√AND", "&&");
+    }
+    while (atualtimecode.includes("FU√NOT")) {
+      atualtimecode = atualtimecode.replace("FU√NOT", "!");
+    }
+    while (atualtimecode.includes("FU√ELSE")) {
+      atualtimecode = atualtimecode.replace("FU√ELSE", "else");
+    }
+    while (atualtimecode.includes("FU√WHILE")) {
+      atualtimecode = atualtimecode.replace("FU√WHILE", "WHILE");
+    }
 
     ///hard translation:
 
