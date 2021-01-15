@@ -12,6 +12,7 @@ var code1;
 var codeS;
 var code2;
 var code3;
+var timecode;
 var debug = 0;
 var maxtimes;
 var newWindow;
@@ -475,7 +476,7 @@ function interpreter() {
   maxtimes = code3.length;
   ///error finder:
 
-  ///translator and interpreter per line:
+  ///translator and compilator:
   while (atualtime < maxtimes) {
     atualtimecode = code3[atualtime];
     atualtime = atualtime + 1;
@@ -584,7 +585,8 @@ function interpreter() {
     ///hard translation:
 
     //javascript runner:
-    eval(atualtimecode);
+    timecode = new Function(atualtimecode);
+    return timecode();
     //internal debug:
     if (debug == 1) {
       alert("interpreter reading position:" + atualtime + "/" + maxtimes);
