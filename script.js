@@ -593,7 +593,8 @@ function interpreter() {
     }
   }
   //runner
-  eval(totaltimecode);
+  var F = new Function(totaltimecode);
+  return F();
 
   //debug:
   if (debug == 1) {
