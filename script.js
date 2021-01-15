@@ -12,8 +12,7 @@ var code1;
 var codeS;
 var code2;
 var code3;
-var debug = 1;
-var F;
+var debug = 0;
 var maxtimes;
 var newWindow;
 var atualtimecode;
@@ -460,7 +459,6 @@ function spacing2() {
 
 //intermediate code generator:
 function interpreter() {
-  totaltimecode = "";
   maxtimes = 0;
   atualtime = 0;
   code2 = codeS;
@@ -585,21 +583,17 @@ function interpreter() {
 
     ///hard translation:
 
-    //join times
+    //javascript runner:
+    eval(atualtimecode);
     //internal debug:
     if (debug == 1) {
       alert("interpreter reading position:" + atualtime + "/" + maxtimes);
       alert(atualtimecode);
     }
   }
-  
-  //runner
-  F = new Function(totaltimecode);
-  return F();
 
   //debug:
   if (debug == 1) {
-    alert (totaltimecode);
     alert("interpreter output:" + totaltimecode);
   }
 }
