@@ -461,6 +461,7 @@ function spacing2() {
 //intermediate code generator:
 function interpreter() {
   maxtimes = 0;
+  timecode = "";
   atualtime = 0;
   code2 = codeS;
 
@@ -584,9 +585,11 @@ function interpreter() {
 
     ///hard translation:
 
-    //javascript runner:
+    //
+    atualtimecode.toString;
     timecode = new Function(atualtimecode);
     return timecode();
+    
     //internal debug:
     if (debug == 1) {
       alert("interpreter reading position:" + atualtime + "/" + maxtimes);
