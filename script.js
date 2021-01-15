@@ -582,9 +582,9 @@ function interpreter() {
     }
 
     ///hard translation:
-
+    
     //javascript runner:
-    document.write(atualtimecode);
+     
     //internal debug:
     if (debug == 1) {
       alert("interpreter reading position:" + atualtime + "/" + maxtimes);
