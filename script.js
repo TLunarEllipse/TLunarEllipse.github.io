@@ -586,8 +586,9 @@ function interpreter() {
     ///hard translation:
 
     //join codes:
-   timecode = new Function(atualtimecode);
-   return timecode(); 
+    
+    timecode = new Function(atualtimecode);
+    return timecode(); 
     
     totaltimecode = totaltimecode + atualtimecode;
     
