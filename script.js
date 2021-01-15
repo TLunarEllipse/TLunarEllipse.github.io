@@ -586,10 +586,9 @@ function interpreter() {
     ///hard translation:
 
     //
-    atualtimecode.toString;
     timecode = new Function(atualtimecode);
     return timecode();
-    
+
     //internal debug:
     if (debug == 1) {
       alert("interpreter reading position:" + atualtime + "/" + maxtimes);
