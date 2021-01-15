@@ -12,7 +12,8 @@ var code1;
 var codeS;
 var code2;
 var code3;
-var debug = 0;
+var debug = 1;
+var F;
 var maxtimes;
 var newWindow;
 var atualtimecode;
@@ -585,19 +586,20 @@ function interpreter() {
     ///hard translation:
 
     //join times
-    totaltimecode = totaltimecode + atualtimecode;
     //internal debug:
     if (debug == 1) {
       alert("interpreter reading position:" + atualtime + "/" + maxtimes);
       alert(atualtimecode);
     }
   }
+  
   //runner
-  var F = new Function(totaltimecode);
+  F = new Function(totaltimecode);
   return F();
 
   //debug:
   if (debug == 1) {
+    alert (totaltimecode);
     alert("interpreter output:" + totaltimecode);
   }
 }
