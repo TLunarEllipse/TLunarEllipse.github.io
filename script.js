@@ -460,8 +460,8 @@ function spacing2() {
 
 //intermediate code generator:
 function interpreter() {
-  timecode = "";
   maxtimes = 0;
+  timecode = "";
   atualtime = 0;
   code2 = codeS;
 
@@ -585,12 +585,10 @@ function interpreter() {
 
     ///hard translation:
 
-    //join codes:
-    
+    //
+    atualtimecode.toString;
     timecode = new Function(atualtimecode);
-    return timecode(); 
-    
-    totaltimecode = totaltimecode + atualtimecode;
+    return timecode();
     
     //internal debug:
     if (debug == 1) {
@@ -598,8 +596,7 @@ function interpreter() {
       alert(atualtimecode);
     }
   }
-  //run:
-   
+
   //debug:
   if (debug == 1) {
     alert("interpreter output:" + totaltimecode);
