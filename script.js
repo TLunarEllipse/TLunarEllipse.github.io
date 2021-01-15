@@ -459,6 +459,7 @@ function spacing2() {
 
 //intermediate code generator:
 function interpreter() {
+  totaltimecode = "";
   maxtimes = 0;
   atualtime = 0;
   code2 = codeS;
@@ -583,14 +584,16 @@ function interpreter() {
 
     ///hard translation:
 
-    //javascript runner:
-    eval(atualtimecode);
+    //join times
+    totaltimecode = totaltimecode + atualtimecode;
     //internal debug:
     if (debug == 1) {
       alert("interpreter reading position:" + atualtime + "/" + maxtimes);
       alert(atualtimecode);
     }
   }
+  //runner
+  eval(totaltimecode);
 
   //debug:
   if (debug == 1) {
