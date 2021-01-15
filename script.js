@@ -580,6 +580,9 @@ function interpreter() {
     while (atualtimecode.includes("CH√GRE")) {
       atualtimecode = atualtimecode.replace("CH√GRE", ">");
     }
+    while (atualtimecode.includes("CH√EQU")) {
+      atualtimecode = atualtimecode.replace("CH√EQU:", "==");
+    }
 
     ///hard translation:
 
