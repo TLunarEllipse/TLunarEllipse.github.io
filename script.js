@@ -227,6 +227,9 @@ function lexer() {
   while (code1.includes("!not")) {
     code1 = code1.replace("!not", "FU_NOT");
   }
+  while (code1.includes("!function")) {
+    code1 = code1.replace("!function", "FU_FUNCTION");
+  }
   if (debug == 1) {
     alert("lexer output:" + code1);
   }
@@ -431,6 +434,13 @@ function spacing2() {
   while (codeS.includes("FU_NOT")) {
     codeS = codeS.replace("FU_NOT", "√•√FU√NOT√•√");
   }
+  
+  while (codeS.includes("√•√FU_FUNCTION√•√")) {
+    codeS = codeS.replace("√•√FU_FUNCTION√•√", "√•√FU√FUNCTIOM√•√");
+  }
+  while (codeS.includes("FU_FUNCTION")) {
+    codeS = codeS.replace("FU_FUNCTION", "√•√FU√FUNCTION√•√");
+  }
 
   ///start commas system 2:
   while (codeS.includes("√•√√•√")) {
@@ -528,6 +538,9 @@ function interpreter() {
     }
     while (atualtimecode.includes("FU√WHILE")) {
       atualtimecode = atualtimecode.replace("FU√WHILE", "while");
+    }
+    while (atualtimecode.includes("FU√FUNCTION")) {
+      atualtimecode = atualtimecode.replace("FU√FUNCTION", "function ");
     }
 
     while (atualtimecode.includes("CH√PLU")) {
