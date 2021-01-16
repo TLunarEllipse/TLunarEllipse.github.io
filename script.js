@@ -3,7 +3,6 @@ var work = 1;
 var system = true;
 var console1 = document.getElementById("console1");
 var console2 = document.getElementById("console2");
-var console3 = document.getElementById("console3");
 var fulldate;
 var erro = "No erros found";
 var code;
@@ -25,7 +24,7 @@ var value = "value1";
 setTimeout(run, 5);
 
 function run() {
-  code = document.getElementById("console3").value;
+  code = document.getElementById("console2").value;
   //date system:
   stats();
 
@@ -59,19 +58,17 @@ function run() {
       "(" +
       erro +
       ");";
-    document.getElementById("console2").innerHTML = "Console Output:" + "";
   }
   //wrong:
   if ((work = 0)) {
     document.getElementById("console1").innerHTML = "Program statistics:" + "";
-    document.getElementById("console2").innerHTML = "Console Output:" + "";
     alert("[i]error");
   }
 }
 
 //pre-analysis spacing:
 function spacing() {
-  code0 = document.getElementById("console3").value;
+  code0 = document.getElementById("console2").value;
 
   while (code0.includes(' " ')) {
     code0 = code0.replace(' " ', "~");
@@ -434,7 +431,7 @@ function spacing2() {
   while (codeS.includes("FU_NOT")) {
     codeS = codeS.replace("FU_NOT", "√•√FU√NOT√•√");
   }
-  
+
   while (codeS.includes("√•√FU_FUNCTION√•√")) {
     codeS = codeS.replace("√•√FU_FUNCTION√•√", "√•√FU√FUNCTIOM√•√");
   }
