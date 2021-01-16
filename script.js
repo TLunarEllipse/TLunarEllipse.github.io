@@ -99,11 +99,8 @@ function lexer() {
   while (code1.includes("!VarChar")) {
     code1 = code1.replace("!VarChar", "VC");
   }
-  while (code1.includes("!VarInt")) {
-    code1 = code1.replace("!VarInt", "IN");
-  }
-  while (code1.includes("!VarFloat")) {
-    code1 = code1.replace("!VarFloat", "FO");
+  while (code1.includes("!VarNumeric")) {
+    code1 = code1.replace("!VarNumeric", "NU");
   }
   while (code1.includes("!VarBoolean")) {
     code1 = code1.replace("!VarBoolean", "BO");
@@ -131,7 +128,6 @@ function lexer() {
   while (code1.includes("÷")) {
     code1 = code1.replace("÷", "CH_DIV");
   }
-
   while (code1.includes("^")) {
     code1 = code1.replace("^", "CH_POW");
   }
@@ -484,11 +480,8 @@ function interpreter() {
     while (atualtimecode.includes("BO~")) {
       atualtimecode = atualtimecode.replace("BO~", "var ");
     }
-    while (atualtimecode.includes("FO~")) {
-      atualtimecode = atualtimecode.replace("FO~", "var ");
-    }
-    while (atualtimecode.includes("IN~")) {
-      atualtimecode = atualtimecode.replace("IN~", "var ");
+    while (atualtimecode.includes("NU~")) {
+      atualtimecode = atualtimecode.replace("NU~", "var ");
     }
     while (atualtimecode.includes("VC~")) {
       atualtimecode = atualtimecode.replace("VC~", "var ");
