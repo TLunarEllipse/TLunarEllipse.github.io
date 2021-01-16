@@ -45,10 +45,6 @@ function run() {
 
   //start compiler process:
   spacing();
-
-  //define whether the code is right or wrong:
-
-  //right:
   if ((work = 1)) {
     document.getElementById("console1").innerHTML =
       "Program statistics:" +
@@ -58,11 +54,6 @@ function run() {
       "(" +
       erro +
       ");";
-  }
-  //wrong:
-  if ((work = 0)) {
-    document.getElementById("console1").innerHTML = "Program statistics:" + "";
-    alert("[i]error");
   }
 }
 
