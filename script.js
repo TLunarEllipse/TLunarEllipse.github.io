@@ -12,7 +12,7 @@ var code1;
 var codeS;
 var code2;
 var code3;
-var debug = 0;
+var debug = 1;
 var maxtimes;
 var newWindow;
 var atualtimecode;
@@ -209,7 +209,6 @@ function lexer() {
   while (code1.includes("!alert")) {
     code1 = code1.replace("!alert", "FU_ALERT");
   }
-
   while (code1.includes("!or")) {
     code1 = code1.replace("!or", "FU_OR");
   }
