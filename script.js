@@ -470,12 +470,13 @@ function interpreter() {
   }
   code3 = code3.split("`√√`");
   maxtimes = code3.length;
-  ///error finder:
 
-  ///translator and interpreter per line:
   while (atualtime < maxtimes) {
     atualtimecode = code3[atualtime];
     atualtime = atualtime + 1;
+    ///error finder:
+
+    ///translator and interpreter per line:
 
     //translator to js:
 
