@@ -4,7 +4,7 @@ body {
   overflow: hidden;
   font-family: sans-serif;
 }
-div[id="total"] {
+div[id="%t%total"] {
   width: 100%;
   height: 100%;
   overflow: auto;
@@ -14,7 +14,7 @@ div[id="total"] {
 textarea {
   font-size: 70%;
 }
-textarea[id="console1"] {
+textarea[id="%t%console1"] {
   width: 100%;
   height: 10%;
   position: absolute;
@@ -25,7 +25,7 @@ textarea[id="console1"] {
   box-shadow: 0 0 0 0;
   outline: 0;
 }
-textarea[id="console2"] {
+textarea[id="%t%console2"] {
   width: 100%;
   height: 59%;
   position: absolute;
@@ -39,7 +39,7 @@ textarea[id="console2"] {
   padding: 1px 3px;
   border-top: 8.85px solid #fff;
 }
-div[id="menu"] {
+div[id="%t%menu"] {
   position: absolute;
   right: 0px;
   bottom: 0px;
@@ -49,11 +49,11 @@ div[id="menu"] {
 img {
   width: 50px;
 }
-img[id="run"] {
+img[id="%t%run"] {
   position: absolute;
   right: 10px;
 }
-img[id="logo"] {
+img[id="%t%logo"] {
   position: absolute;
   right: 105px;
 }
