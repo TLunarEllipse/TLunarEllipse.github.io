@@ -11,6 +11,7 @@ var ltlcodeS;
 var ltlcode2;
 var ltlcode3;
 var ltldebug = 0;
+var ltltokenspacing = 1;
 var ltlmaxtimes;
 var ltlnewWindow;
 var ltlatualtimecode;
@@ -28,19 +29,33 @@ function run() {
   stats();
 
   //ltldebug:
-  if (ltlcode.includes("#?#ltldebug")) {
+  if (ltlcode.includes("#?#debug")) {
     if (ltldebug == 1) {
       ltldebug = 0;
-      alert("ltldebug mode disabled");
+      alert("debug mode disabled");
     }
   }
 
+  if (ltlcode.includes("#!#debug")) {
+    if (ltldebug == 0) {
+      ltldebug = 1;
+      alert("debug mode enabled");
+    }
+  }
+  //token spacing:
+  if (ltlcode.includes("#?#tokenspacing")) {
+    if (ltldebug == 1) {
+      ltldebug = 0;
+      alert("tokenspacing filter on");
+    }
+  }
   if (ltlcode.includes("#!#ltldebug")) {
     if (ltldebug == 0) {
       ltldebug = 1;
       alert("ltldebug mode enabled");
     }
   }
+  
 
   //start compiler process:
   spacing();
@@ -423,8 +438,10 @@ function spacing2() {
   }
 
   ///start commas system 2:
-  while (ltlcodeS.includes("√•√√•√")) {
-    ltlcodeS = ltlcodeS.replace("√•√√•√", "√•√");
+  if (ltltokenspacing == 0) {
+    while (ltlcodeS.includes("√•√√•√")) {
+      ltlcodeS = ltlcodeS.replace("√•√√•√", "√•√");
+    }
   }
   while (ltlcodeS.includes("√•√")) {
     ltlcodeS = ltlcodeS.replace("√•√", ",");
@@ -432,9 +449,12 @@ function spacing2() {
   ltlcodeS = ltlcodeS.split(/\r\n|\r|\n/g);
   ltlcodeS = ltlcodeS.toString();
 
-  while (ltlcodeS.includes(",,")) {
-    ltlcodeS = ltlcodeS.replace(",,", ",");
+  if (ltltokenspacing == 0){
+    while (ltlcodeS.includes(",,")) {
+      ltlcodeS = ltlcodeS.replace(",,", ",");
+    }
   }
+
   while (ltlcodeS.includes("IT√END")) {
     ltlcodeS = ltlcodeS.replace("IT√END", ";");
   }
