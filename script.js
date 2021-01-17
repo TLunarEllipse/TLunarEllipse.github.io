@@ -10,7 +10,7 @@ var code1;
 var codeS;
 var code2;
 var code3;
-var debug = 1;
+var debug = 0;
 var maxtimes;
 var newWindow;
 var atualtimecode;
@@ -451,6 +451,7 @@ function interpreter() {
   maxtimes = 0;
   atualtime = 0;
   code2 = codeS;
+  totaltimecode = "";
 
   ///divider per line:
   while (code2.includes(",")) {
@@ -577,7 +578,7 @@ function interpreter() {
 
     ///hard translation:
 
-    //javascript runner:
+    //javascript runner 1:
     
     totaltimecode = totaltimecode + atualtimecode;
     //internal debug:
@@ -586,9 +587,9 @@ function interpreter() {
       alert(atualtimecode);
     }
   }
-  if(atualtime == maxtime){
+  //javascript runner 2:
     eval(totaltimecode);
-    }
+    
 
   //debug:
   if (debug == 1) {
