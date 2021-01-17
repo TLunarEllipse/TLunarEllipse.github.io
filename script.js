@@ -466,7 +466,8 @@ function interpreter() {
   while (atualtime < maxtimes) {
     atualtimecode = code3[atualtime];
     atualtime = atualtime + 1;
-    ///javascript blocker:
+    
+    ///TlunnarEllipse isolation in console:
 
     ///translator and interpreter per line:
 
@@ -577,7 +578,7 @@ function interpreter() {
     ///hard translation:
 
     //javascript runner:
-    eval(atualtimecode);
+    
     totaltimecode = totaltimecode + atualtimecode;
     //internal debug:
     if (debug == 1) {
@@ -585,6 +586,9 @@ function interpreter() {
       alert(atualtimecode);
     }
   }
+  if(atualtime == maxtime){
+    eval(totaltimecode);
+    }
 
   //debug:
   if (debug == 1) {
