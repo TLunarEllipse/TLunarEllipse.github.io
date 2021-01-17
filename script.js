@@ -42,20 +42,20 @@ function run() {
       alert("debug mode enabled");
     }
   }
+  
   //token spacing:
   if (ltlcode.includes("#?#tokenspacing")) {
-    if (ltldebug == 1) {
-      ltldebug = 0;
+    if (ltltokenspacing == 1) {
+      ltltokenspacing = 0;
+      alert("tokenspacing filter off");
+    }
+  }
+  if (ltlcode.includes("#!#tokenspacing")) {
+    if (ltltokenspacing == 0) {
+      ltltokenspacing = 1;
       alert("tokenspacing filter on");
     }
   }
-  if (ltlcode.includes("#!#ltldebug")) {
-    if (ltldebug == 0) {
-      ltldebug = 1;
-      alert("ltldebug mode enabled");
-    }
-  }
-  
 
   //start compiler process:
   spacing();
@@ -85,10 +85,6 @@ function spacing() {
 function lexer() {
   ltlcode1 = ltlcode0;
   //additional and completely experimental ltlcodes:
-
-  while (ltlcode1.includes('"')) {
-    ltlcode1 = ltlcode1.replace('"', "~");
-  }
   while (ltlcode1.includes(" ~")) {
     ltlcode1 = ltlcode1.replace(" ~", "~");
   }
@@ -449,7 +445,7 @@ function spacing2() {
   ltlcodeS = ltlcodeS.split(/\r\n|\r|\n/g);
   ltlcodeS = ltlcodeS.toString();
 
-  if (ltltokenspacing == 0){
+  if (ltltokenspacing == 0) {
     while (ltlcodeS.includes(",,")) {
       ltlcodeS = ltlcodeS.replace(",,", ",");
     }
