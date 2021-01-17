@@ -10,7 +10,7 @@ var code1;
 var codeS;
 var code2;
 var code3;
-var debug = 1;
+var debug = 0;
 var maxtimes;
 var newWindow;
 var atualtimecode;
@@ -577,7 +577,6 @@ function interpreter() {
     ///hard translation:
 
     //javascript runner:
-    eval(atualtimecode);
     totaltimecode = totaltimecode + atualtimecode;
     //internal debug:
     if (debug == 1) {
@@ -585,6 +584,13 @@ function interpreter() {
       alert(atualtimecode);
     }
   }
+  if (atualtime == maxtimes){
+    var F = new Function (totaltimecode);
+    return(F());
+    totaltimecode = "";
+    atualtimecode = "";
+    F = "";
+    }
 
   //debug:
   if (debug == 1) {
