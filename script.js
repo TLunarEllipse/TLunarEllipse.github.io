@@ -42,7 +42,7 @@ function run() {
       alert("debug mode enabled");
     }
   }
-  
+
   //token spacing:
   if (ltlcode.includes("#?#tokenspacing")) {
     if (ltltokenspacing == 1) {
@@ -75,6 +75,18 @@ function spacing() {
   while (ltlcode0.includes(' " ')) {
     ltlcode0 = ltlcode0.replace(' " ', "~");
   }
+  while (ltlcode0.includes('"')) {
+    ltlcode0 = ltlcode0.replace('"', "~");
+  }
+  while (ltlcode0.includes(" ~")) {
+    ltlcode0 = ltlcode0.replace(" ~", "~");
+  }
+  while (ltlcode0.includes("~ ")) {
+    ltlcode0 = ltlcode0.replace("~ ", "~");
+  }
+  while (ltlcode0.includes(",;")) {
+    ltlcode0 = ltlcode0.replace(",;", "IT√END");
+  }
   if (ltldebug == 1) {
     alert("spacing1 output:" + ltlcode0);
   }
@@ -85,16 +97,20 @@ function spacing() {
 function lexer() {
   ltlcode1 = ltlcode0;
   //additional and completely experimental ltlcodes:
-  while (ltlcode1.includes(" ~")) {
-    ltlcode1 = ltlcode1.replace(" ~", "~");
+
+  while (ltlcode1.includes("#!#tokenspacing")) {
+    ltlcode1 = ltlcode1.replace("#!#tokenspacing", "");
   }
-  while (ltlcode1.includes("~ ")) {
-    ltlcode1 = ltlcode1.replace("~ ", "~");
-  }
-  while (ltlcode1.includes(",;")) {
-    ltlcode1 = ltlcode1.replace(",;", "IT√END");
+  while (ltlcode1.includes("#?#tokenspacing")) {
+    ltlcode1 = ltlcode1.replace("#?#tokenspacing", "");
   }
 
+  while (ltlcode1.includes("#!#debug")) {
+    ltlcode1 = ltlcode1.replace("#!#debug", "");
+  }
+  while (ltlcode1.includes("#?#debug")) {
+    ltlcode1 = ltlcode1.replace("#?#debug", "");
+  }
   ///start commas system 1:
   while (ltlcode1.includes(" ")) {
     ltlcode1 = ltlcode1.replace(" ", "√•√");
