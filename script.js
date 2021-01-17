@@ -4,18 +4,18 @@ var system = true;
 var console1 = document.getElementById("console1");
 var console2 = document.getElementById("console2");
 var fulldate;
-var erro = "No erros found";
+var Impediments = "No erros found";
 var code;
 var code0;
 var code1;
 var codeS;
 var code2;
 var code3;
-var debug = 0;
+var debug = 1;
 var maxtimes;
 var newWindow;
 var atualtimecode;
-var totaltimecode;
+var totaltimecode = "";
 var atualtime = 0;
 var name = "name1";
 var value = "value1";
@@ -52,7 +52,7 @@ function run() {
       fulldate +
       "; " +
       "(" +
-      erro +
+      Impediments +
       ");";
   }
 }
@@ -582,6 +582,7 @@ function interpreter() {
 
     //javascript runner:
     eval(atualtimecode);
+    totaltimecode = totaltimecode + atualtimecode;
     //internal debug:
     if (debug == 1) {
       alert("interpreter reading position:" + atualtime + "/" + maxtimes);
