@@ -4,7 +4,6 @@ var system = true;
 var console1 = document.getElementById("console1");
 var console2 = document.getElementById("console2");
 var fulldate;
-var Impediments = "No erros found";
 var code;
 var code0;
 var code1;
@@ -50,10 +49,7 @@ function run() {
       "Program statistics:" +
       " TLunarEllipse Lang; Version: [beta 1.0.0]; " +
       fulldate +
-      "; " +
-      "(" +
-      Impediments +
-      ");";
+      "; ";
   }
 }
 
@@ -470,7 +466,7 @@ function interpreter() {
   while (atualtime < maxtimes) {
     atualtimecode = code3[atualtime];
     atualtime = atualtime + 1;
-    ///error finder:
+    ///javascript blocker:
 
     ///translator and interpreter per line:
 
