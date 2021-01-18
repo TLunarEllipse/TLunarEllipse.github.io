@@ -13,6 +13,8 @@ var ltlcode3;
 var ltldebug = 0;
 var ltltokenspacing = 1;
 var ltlmaxtimes;
+var ltlisolationtime;
+var ltlisolationmax;
 var ltlnewWindow;
 var ltlatualtimecode;
 var ltltotaltimecode = "";
@@ -481,6 +483,8 @@ function spacing2() {
 //intermediate ltlcode generator:
 function interpreter() {
   ltlmaxtimes = 0;
+  ltlisolationmax = 0;
+  ltlisolationtime = 0;
   ltlatualtime = 0;
   ltlcode2 = ltlcodeS;
   ltltotaltimecode = "";
@@ -502,6 +506,16 @@ function interpreter() {
 
     ///TlunnarEllipse isolation in console2:
 
+    ltlatualtimecode = ltlatualtimecode.split("¶•¶");
+    ltlisolationmax = ltlatualtimecode.lenght;
+    while (ltlisolationtime < ltlisolationmax){
+      
+      ltlisolationtime = ltlisolationtime + 1;
+    }
+    ltlatualtimecode.toString;
+    while (ltlatualtimecode.includes(",")) {
+      ltlatualtimecode = ltlatualtimecode.replace(",", "¶•¶");
+    }
     ///translator and interpreter per line:
 
     //translator to js:
