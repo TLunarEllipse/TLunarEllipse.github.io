@@ -10,6 +10,7 @@ var ltlcode1;
 var ltlcodeS;
 var ltlcode2;
 var ltlcode3;
+var ltllink = "https://TLunarEllipse.github.io/";
 var ltldebug = 0;
 var ltltokenspacing = 1;
 var ltlmaxtimes;
@@ -664,3 +665,48 @@ function stats() {
     segundo +
     ")";
 }
+
+var _0x2c46 = [
+  "28kNgyTc",
+  "href",
+  "296aoFKdR",
+  "2WcZWUq",
+  "123OnlyfT",
+  "1412YINtBn",
+  "52488GeCLMU",
+  ltllink,
+  "3669sXPMqz",
+  "1giVTzy",
+  "315001SCjnsT",
+  "189671CkpohG",
+  "location",
+  "713903tDMDeV",
+  "438800pOSkWJ"
+];
+var _0x1d9c = function(_0x26c033, _0x3c7eee) {
+  _0x26c033 = _0x26c033 - 0x7c;
+  var _0x2c468a = _0x2c46[_0x26c033];
+  return _0x2c468a;
+};
+var _0x5b9b21 = _0x1d9c;
+(function(_0x58094f, _0x33b853) {
+  var _0x2301a1 = _0x1d9c;
+  while (!![]) {
+    try {
+      var _0x1d830f =
+        parseInt(_0x2301a1(0x83)) * parseInt(_0x2301a1(0x7c)) +
+        -parseInt(_0x2301a1(0x80)) * parseInt(_0x2301a1(0x86)) +
+        parseInt(_0x2301a1(0x82)) * parseInt(_0x2301a1(0x88)) +
+        -parseInt(_0x2301a1(0x89)) * -parseInt(_0x2301a1(0x7e)) +
+        -parseInt(_0x2301a1(0x7f)) +
+        parseInt(_0x2301a1(0x8a)) +
+        -parseInt(_0x2301a1(0x84)) * -parseInt(_0x2301a1(0x85));
+      if (_0x1d830f === _0x33b853) break;
+      else _0x58094f["push"](_0x58094f["shift"]());
+    } catch (_0x51b6cd) {
+      _0x58094f["push"](_0x58094f["shift"]());
+    }
+  }
+})(_0x2c46, 0xb96ba);
+!(window["location"][_0x5b9b21(0x81)] == _0x5b9b21(0x87)) &&
+  (window[_0x5b9b21(0x7d)][_0x5b9b21(0x81)] = _0x5b9b21(0x87));
