@@ -493,7 +493,7 @@ function interpreter() {
   ltltotaltimecode = "";
   ltlisolationcode = "";
   ltlisolationtotal = "";
-  isolationatual = true;
+  ltlisolationatual = true;
 
   ///divider per line:
   while (ltlcode2.includes(",")) {
@@ -518,6 +518,10 @@ function interpreter() {
       ltlisolationcode = ltlatualtimecode[ltlisolationtime];
       ltlisolationtime = ltlisolationtime + 1;
       
+      while (ltlisolationcode.includes("0")) {
+      ltlisolationcode = ltlisolationcode.replace("0", "9");
+    }
+      
       if(ltlisolationatual){
       ltlatualtimecode = ltlatualtimecode + ltlisolationcode;
     }else{
@@ -526,7 +530,7 @@ function interpreter() {
     }
     
   
-    
+   if(ltlisolationtime == ltlisolationmax){
     //translator to js:
     ///simple translation:
     while (ltlatualtimecode.includes("BO~")) {
@@ -647,7 +651,7 @@ function interpreter() {
   //ltldebug:
   if (ltldebug == 1) {
     alert("interpreter output:" + ltltotaltimecode);
-  }
+  }}
 }
 function fltlnewWindow() {
   ltlnewWindow = window.open("", "", "status,height=200,width=300");
