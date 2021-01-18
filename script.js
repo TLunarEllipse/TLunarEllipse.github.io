@@ -504,22 +504,9 @@ function interpreter() {
     ltlatualtimecode = ltlcode3[ltlatualtime];
     ltlatualtime = ltlatualtime + 1;
 
-    ///TlunnarEllipse isolation in console2:
-
-    ltlatualtimecode = ltlatualtimecode.split("¶•¶");
-    ltlisolationmax = ltlatualtimecode.lenght;
-    while (ltlisolationtime < ltlisolationmax){
-      
-      ltlisolationtime = ltlisolationtime + 1;
-    }
-    ltlatualtimecode.toString;
-    while (ltlatualtimecode.includes(",")) {
-      ltlatualtimecode = ltlatualtimecode.replace(",", "¶•¶");
-    }
     ///translator and interpreter per line:
 
     //translator to js:
-
     ///simple translation:
     while (ltlatualtimecode.includes("BO~")) {
       ltlatualtimecode = ltlatualtimecode.replace("BO~", "var ");
