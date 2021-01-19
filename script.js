@@ -10,7 +10,7 @@ var ltlcode1;
 var ltlcodeS;
 var ltlcode2;
 var ltlcode3;
-var ltllink = "https://test-30807060pi.glitch.me/";
+var ltllink = "https://TLunarEllipse.github.io/";
 var ltldebug = 0;
 var ltltokenspacing = 1;
 var ltlmaxtimes;
@@ -18,8 +18,6 @@ var ltlisolationtime;
 var ltlisolationmax;
 var ltlnewWindow;
 var ltlatualtimecode;
-var ltlisolationprimary;
-var ltlisolationtotal;
 var ltltotaltimecode = "";
 var ltlatualtime = 0;
 var ltlname = "name1";
@@ -491,8 +489,6 @@ function interpreter() {
   ltlatualtime = 0;
   ltlcode2 = ltlcodeS;
   ltltotaltimecode = "";
-  ltlisolationtotal = "";
-  ltlisolationprimary = "";
 
   ///divider per line:
   while (ltlcode2.includes(",")) {
@@ -510,8 +506,9 @@ function interpreter() {
     ltlatualtime = ltlatualtime + 1;
 
     ///translator and interpreter per line:
+
     //translator to js:
-    // simple translation: \\
+    ///simple translation:
     while (ltlatualtimecode.includes("BO~")) {
       ltlatualtimecode = ltlatualtimecode.replace("BO~", "var ");
     }
