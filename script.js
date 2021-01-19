@@ -506,9 +506,9 @@ function interpreter() {
     ltlatualtime = ltlatualtime + 1;
 
     ///translator and interpreter per line:
-
+    
     //translator to js:
-    ///simple translation:
+    // simple translation: \\
     while (ltlatualtimecode.includes("BO~")) {
       ltlatualtimecode = ltlatualtimecode.replace("BO~", "var ");
     }
