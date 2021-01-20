@@ -8,11 +8,10 @@ Created by: José Florencio (klifull).
 
 If you want to add our compiler to your website or programming program please contact us.
 
-[Functionalities] ("/functions.txt")
+[Functionalities]("/functions.txt")
 
-[Contact] ("mailto:tlunarellipselang@gmail.com")
+[Contact]("mailto:tlunarellipselang@gmail.com")
 
 #Programming sites and programs authorized to use our compiler:
 
 https://TLunarEllipse.github.com
-
