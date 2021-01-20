@@ -1,0 +1,61 @@
+/functions:
+
+•(!if)
+checks whether a condition is true and if it is true executes the sentence.
+Ex: !if(3 < 4){ !alert('true');}
+
+•(!else)
+executes a sentence in the case of the condition checker before he returns false.
+Ex: !if(3 > 4){ !alert('true'); }!else{ !alert('false'); }
+
+•(!while)
+If a condition is positive he will begin to execute a sentence(looped) until it is false
+Ex: !while("varname" < 10){alert("varname"); "varname" = "varname" + 1;}
+
+•(!alert)
+Returns a warning on the screen with a specified value.
+Ex: !alert('hi'); or: !alert("VarName");
+
+•(!and)
+Returns true if both conditions are true.
+Ex: if("varname" < 5 !and "varname" > 1){ !alert('true');};
+
+•(!not)
+Returns true if the condition is false and returns false if the condition is true.
+Ex: !if(!not("varname" == 5)){ !alert('true')};
+
+•(!or)
+Returns true if one of the two conditions is true.
+Ex: !if("varname" > 5 !or 3 > 2){ !alert('true');};
+
+•(!function)
+Defines a sequence of commands that will be executed when the function is called.
+Ex: !function FunctionName(){!alert('hello');};
+
+•(FunctionName();)
+functions as a call to a function.
+Ex: if(condtion){ FunctionName();};
+
+/vars:
+
+•(!VarNumeric)
+Define a Numeric variable value(int and float).
+Ex: !VarNumeric "VarName" = 93;
+Obs: up to version 0.0.3 all variable definitions work on all types, but this will be fixed.
+
+•(!VarChar)
+Define a Characters variable value( numbers,letters or characters).
+Ex: !VarChar "VarName" = 'b19';
+Obs: up to version 0.0.3 all variable definitions work on all types, but this will be fixed.
+
+•(!VarBoolean)
+Define a boolean (true or false) variable value.
+Ex: !VarBoolean "VarName" = true;
+Obs: up to version 0.0.3 all variable definitions work on all types, but this will be fixed.
+
+•("VarName")
+Get or change the value of a variable of any type( that is already defined).
+Ex: "VarName" = 1; or: if( "VarName" = 3){ !alert('true'};
+
+/characters:
+(coming son)
