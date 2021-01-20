@@ -65,7 +65,7 @@ function run() {
   if ((ltlwork = 1)) {
     document.getElementById("ltlconsole1").innerHTML =
       "Program statistics:" +
-      " TLunarEllipse Lang; Version: [beta 0.0.1]; " +
+      " TLunarEllipse Lang; Version: [beta 0.0.2]; " +
       ltlfulldate +
       "; ";
   }
