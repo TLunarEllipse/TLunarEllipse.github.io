@@ -10,7 +10,7 @@ var ltlcode1;
 var ltlcodeS;
 var ltlcode2;
 var ltlcode3;
-var ltllink = "https://test-30807060pi.glitch.me/";
+var ltllink = "https://tlunarellipse.github.io/";
 var ltldebug = 0;
 var ltltokenspacing = 1;
 var ltlmaxtimes;
