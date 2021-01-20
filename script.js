@@ -10,7 +10,7 @@ var ltlcode1;
 var ltlcodeS;
 var ltlcode2;
 var ltlcode3;
-var ltllink = "https://tlunarellipse.github.io/";
+var ltlTlink = "https://tlunarellipse.github.io/";
 var ltldebug = 0;
 var ltltokenspacing = 1;
 var ltlmaxtimes;
@@ -674,7 +674,7 @@ var _0x2c46 = [
   "123OnlyfT",
   "1412YINtBn",
   "52488GeCLMU",
-  ltllink,
+  ltlTlink,
   "3669sXPMqz",
   "1giVTzy",
   "315001SCjnsT",
