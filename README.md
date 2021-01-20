@@ -10,7 +10,7 @@ If you want to add our compiler to your website or programming program please co
 
 [Functionalities]("/functions.txt")
 
-[Contact]("mailto:tlunarellipselang@gmail.com");
+[Contact]("mailto:tlunarellipselang@gmail.com")
 
 #Programming sites and programs authorized to use our compiler:
 
