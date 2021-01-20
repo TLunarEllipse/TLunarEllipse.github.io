@@ -8,9 +8,9 @@ Created by: José Florencio (klifull).
 
 If you want to add our compiler to your website or programming program please contact us.
 
-[Functionalities]("https://tlunarellipse.github.com/functions.txt")
+[Functionalities](https://tlunarellipse.github.com/functions.txt)
 
-[Contact]("mailto:tlunarellipselang@gmail.com")
+[Contact](mailto:tlunarellipselang@gmail.com)
 
 #Programming sites and programs authorized to use our compiler:
 
