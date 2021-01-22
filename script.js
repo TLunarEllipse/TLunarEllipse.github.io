@@ -39,33 +39,24 @@ function run() {
   stats();
   ltlrunedtimes = ltlrunedtimes + 1;
 
+  ltldebug = 0;
+  ltltokenspacing = 1;
+
   //ltldebug:
   if (ltlcode.includes("#?#debug")) {
-    if (ltldebug == 1) {
       ltldebug = 0;
-      alert("debug mode disabled");
-    }
   }
 
   if (ltlcode.includes("#!#debug")) {
-    if (ltldebug == 0) {
       ltldebug = 1;
-      alert("debug mode enabled");
-    }
   }
 
   //token spacing:
   if (ltlcode.includes("#?#tokenspacing")) {
-    if (ltltokenspacing == 1) {
       ltltokenspacing = 0;
-      alert("tokenspacing filter off");
-    }
   }
   if (ltlcode.includes("#!#tokenspacing")) {
-    if (ltltokenspacing == 0) {
       ltltokenspacing = 1;
-      alert("tokenspacing filter on");
-    }
   }
 
   //start compiler process:
