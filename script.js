@@ -845,7 +845,7 @@ while (ltlatualtimecode.includes('"')) {
   }
   //ltldebug:
   if (ltldebug == 1) {
-    alert("interpreter output:" + ltltotaltimecode);
+    document.getElementById('console1').value = ("interpreter output:" + ltltotaltimecode);
   }
 }
 function fltlnewWindow() {
