@@ -10,11 +10,12 @@ Ex: !if(3 > 4){ !alert('true'); }!else{ !alert('false'); }
 
 •(!while)
 If a condition is positive he will begin to execute a sentence(looped) until it is false
-Ex: !while("varname" < 10){alert("varname"); "varname" = "varname" + 1;}
+Ex: !while("varname" < 10){alert("varname");"varname" = "varname" + 1;}
 
 •(!alert)
 Returns a warning on the screen with a specified value.
-Ex: !alert('hi'); or: !alert("VarName");
+Ex: !alert('hi');
+Ex:!alert("VarName");
 
 •(!and)
 Returns true if both conditions are true.
@@ -38,24 +39,31 @@ Ex: if(condtion){ FunctionName();};
 
 /vars:
 
+•(!Var)
+Defines all types of variables.
+Ex: !Var "VarName" = 93;
+Ex: !Var "VarName" = 'b19';
+Ex: !Var "VarName" = true;
+
 •(!VarNumeric)
 Define a Numeric variable value(int and float).
 Ex: !VarNumeric "VarName" = 93;
-Obs: up to version 0.0.3 all variable definitions work on all types, but this will be fixed.
+Obs: This definer and all others can be used in any type of variable and only have these specifications for organizational reasons, all can be replaced by •(!Var).
 
 •(!VarChar)
 Define a Characters variable value( numbers,letters or characters).
 Ex: !VarChar "VarName" = 'b19';
-Obs: up to version 0.0.3 all variable definitions work on all types, but this will be fixed.
+Obs: This definer and all others can be used in any type of variable and only have these specifications for organizational reasons, all can be replaced by •(!Var).
 
 •(!VarBoolean)
 Define a boolean (true or false) variable value.
 Ex: !VarBoolean "VarName" = true;
-Obs: up to version 0.0.3 all variable definitions work on all types, but this will be fixed.
+Obs: This definer and all others can be used in any type of variable and only have these specifications for organizational reasons, all can be replaced by •(!Var).
 
 •("VarName")
-Get or change the value of a variable of any type( that is already defined).
-Ex: "VarName" = 1; or: if( "VarName" = 3){ !alert('true'};
+Get or define the value of a variable of any type( that is already defined).
+Ex: "VarName" = 1;
+Ex: if("VarName" == 3){ !alert('true'};
 
 /characters:
 (coming son)
