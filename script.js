@@ -812,8 +812,8 @@ function interpreter() {
         while (ltlatualtimecode.includes("CH√GRE")) {
           ltlatualtimecode = ltlatualtimecode.replace("CH√GRE", ">");
         }
-        while (ltlatualtimecode.includes("CH√EQU")) {
-          ltlatualtimecode = ltlatualtimecode.replace("CH√EQU", "=");
+        while (ltlatualtimecode.includes("CH√EQU:")) {
+          ltlatualtimecode = ltlatualtimecode.replace("CH√EQU:", "==");
         }
         while (ltlatualtimecode.includes("CH_UNL")) {
           ltlatualtimecode = ltlatualtimecode.replace("CH_UNL", " ");
