@@ -39,25 +39,33 @@ function run() {
   stats();
   ltlrunedtimes = ltlrunedtimes + 1;
 
-  ltldebug = 0;
-  ltltokenspacing = 1;
-
   //ltldebug:
   if (ltlcode.includes("#?#debug")) {
-    ltldebug = 0;
+    if (ltldebug == 1) {
+      ltldebug = 0;
+      alert("debug mode disabled");
+    }
   }
 
   if (ltlcode.includes("#!#debug")) {
-    ltldebug = 1;
+    if (ltldebug == 0) {
+      ltldebug = 1;
+      alert("debug mode enabled");
+    }
   }
+
   //token spacing:
-
   if (ltlcode.includes("#?#tokenspacing")) {
-    ltltokenspacing = 0;
+    if (ltltokenspacing == 1) {
+      ltltokenspacing = 0;
+      alert("tokenspacing filter off");
+    }
   }
-
   if (ltlcode.includes("#!#tokenspacing")) {
-    ltltokenspacing = 1;
+    if (ltltokenspacing == 0) {
+      ltltokenspacing = 1;
+      alert("tokenspacing filter on");
+    }
   }
 
   //start compiler process:
@@ -218,7 +226,7 @@ function lexer() {
     ltlcode1 = ltlcode1.replace("'", "CH_SAS");
   }
   while (ltlcode1.includes("|")) {
-    ltlcode1 = ltlcode1.replace("|", "CH_UNL");
+    ltlcode1 = ltlcode1.replace("|", "CH_SUB");
   }
 
   //FUNCTIONS:
@@ -399,14 +407,13 @@ function spacing2() {
   while (ltlcodeS.includes("√•√FU_ALERT√•√")) {
     ltlcodeS = ltlcodeS.replace("√•√FU_ALERT√•√", "√•√FU√ALERT√•√");
   }
-
   while (ltlcodeS.includes("FU_ALERT")) {
     ltlcodeS = ltlcodeS.replace("FU_ALERT", "√•√FU√ALERT√•√");
   }
-
   while (ltlcodeS.includes("√•√FU_PROMPT√•√")) {
     ltlcodeS = ltlcodeS.replace("√•√FU_PROMPT√•√", "√•√FU√PROMPT√•√");
   }
+
   while (ltlcodeS.includes("FU_PROMPT")) {
     ltlcodeS = ltlcodeS.replace("FU_PROMPT", "√•√FU√PROMPT√•√");
   }
@@ -548,6 +555,9 @@ function interpreter() {
               if (ltlisolationcode == "¶×¶") {
                 ltlisolation = true;
               }
+              if (ltlisolationcode.includes("CH√SUB")) {
+                ltlisolation = true;
+              }
               if (ltlisolationcode.includes("CH√PLU")) {
                 ltlisolation = true;
               }
@@ -608,9 +618,6 @@ function interpreter() {
               if (ltlisolationcode.includes("CH_SAS")) {
                 ltlisolation = true;
               }
-              if (ltlisolationcode.includes("CH_UNL")) {
-                ltlisolation = true;
-              }
               if (ltlisolationcode.includes("BO~")) {
                 ltlisolation = true;
               }
@@ -652,10 +659,6 @@ function interpreter() {
               }
 
               if (ltlisolationcode.includes("~")) {
-                ltlisolation = true;
-              }
-
-              if (ltlisolationcode.includes("''")) {
                 ltlisolation = true;
               }
               if (ltlisolationcode.includes(";")) {
@@ -816,14 +819,11 @@ function interpreter() {
         while (ltlatualtimecode.includes("CH√GRE")) {
           ltlatualtimecode = ltlatualtimecode.replace("CH√GRE", ">");
         }
-        while (ltlatualtimecode.includes("CH√EQU:")) {
+        while (ltlatualtimecode.includes("CH√EQU")) {
           ltlatualtimecode = ltlatualtimecode.replace("CH√EQU:", "==");
         }
-        while (ltlatualtimecode.includes("CH_UNL")) {
-          ltlatualtimecode = ltlatualtimecode.replace("CH_UNL", " ");
-        }
-while (ltlatualtimecode.includes('"')) {
-          ltlatualtimecode = ltlatualtimecode.replace('"', "'"");
+        while (ltlatualtimecode.includes("CH_SUB")) {
+          ltlatualtimecode = ltlatualtimecode.replace("CH_SUB", " ");
         }
 
         ///hard translation:
@@ -845,7 +845,7 @@ while (ltlatualtimecode.includes('"')) {
   }
   //ltldebug:
   if (ltldebug == 1) {
-    document.getElementById('console1').value = ("interpreter output:" + ltltotaltimecode);
+    alert("interpreter output:" + ltltotaltimecode);
   }
 }
 function fltlnewWindow() {
