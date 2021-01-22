@@ -655,7 +655,7 @@ function interpreter() {
                 ltlisolation = true;
               }
 
-              if (ltlisolationcode.includes('"')) {
+              if (ltlisolationcode.includes("''")) {
                 ltlisolation = true;
               }
               if (ltlisolationcode.includes(";")) {
@@ -821,6 +821,9 @@ function interpreter() {
         }
         while (ltlatualtimecode.includes("CH_UNL")) {
           ltlatualtimecode = ltlatualtimecode.replace("CH_UNL", " ");
+        }
+while (ltlatualtimecode.includes('"')) {
+          ltlatualtimecode = ltlatualtimecode.replace('"', "'"");
         }
 
         ///hard translation:
