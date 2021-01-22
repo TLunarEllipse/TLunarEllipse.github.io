@@ -10,7 +10,7 @@ var ltlcode1;
 var ltlcodeS;
 var ltlcode2;
 var ltlcode3;
-var ltlTlink = "https://tlunarellipse.github.io/";
+var ltlTlink = "https://adhesive-south-basin.glitch.me/";
 var ltldebug = 0;
 var ltltokenspacing = 1;
 var ltlmaxtimes;
@@ -21,60 +21,60 @@ var ltlatualtimecode;
 var ltltotaltimecode = "";
 var ltlatualtime = 0;
 var ltlname = "name1";
-var lvalue = "value1";
+var ltlvalue = "value1";
+var ltlisolation = "true";
+var ltlrun = true;
+var ltlisolationprimary = "";
+var ltlisolationtotal = "";
+var ltlisolationcode = "";
+var ltlisolator1 = "";
+var ltlrunedtimes = 0;
 
 //run ltlcode:
 setTimeout(run, 5);
 
 function run() {
   ltlcode = document.getElementById("ltlconsole2").value;
-  //date ltlsystem:
+  //date system:
   stats();
+  ltlrunedtimes = ltlrunedtimes + 1;
+
+  ltldebug = 0;
+  ltltokenspacing = 1;
 
   //ltldebug:
   if (ltlcode.includes("#?#debug")) {
-    if (ltldebug == 1) {
-      ltldebug = 0;
-      alert("debug mode disabled");
-    }
+    ltldebug = 0;
   }
 
   if (ltlcode.includes("#!#debug")) {
-    if (ltldebug == 0) {
-      ltldebug = 1;
-      alert("debug mode enabled");
-    }
+    ltldebug = 1;
+  }
+  //token spacing:
+
+  if (ltlcode.includes("#?#tokenspacing")) {
+    ltltokenspacing = 0;
   }
 
-  //token spacing:
-  if (ltlcode.includes("#?#tokenspacing")) {
-    if (ltltokenspacing == 1) {
-      ltltokenspacing = 0;
-      alert("tokenspacing filter off");
-    }
-  }
   if (ltlcode.includes("#!#tokenspacing")) {
-    if (ltltokenspacing == 0) {
-      ltltokenspacing = 1;
-      alert("tokenspacing filter on");
-    }
+    ltltokenspacing = 1;
   }
 
   //start compiler process:
-  spacing();
+
   if ((ltlwork = 1)) {
     document.getElementById("ltlconsole1").innerHTML =
       "Program statistics:" +
-      " TLunarEllipse Lang; Version: [beta 0.0.2]; " +
+      " TLunarEllipse Lang; Version: [beta 0.0.3]; " +
       ltlfulldate +
       "; ";
   }
+  spacing();
 }
-
 //pre-analysis spacing:
 function spacing() {
   ltlcode0 = document.getElementById("ltlconsole2").value;
-
+  ltlcode0 = " " + ltlcode0;
   while (ltlcode0.includes(' " ')) {
     ltlcode0 = ltlcode0.replace(' " ', "~");
   }
@@ -130,6 +130,9 @@ function lexer() {
   }
   while (ltlcode1.includes("!VarBoolean")) {
     ltlcode1 = ltlcode1.replace("!VarBoolean", "BO");
+  }
+  while (ltlcode1.includes("!Var")) {
+    ltlcode1 = ltlcode1.replace("!Var", "VA");
   }
 
   //CHARACTERS:
@@ -386,15 +389,6 @@ function spacing2() {
     ltlcodeS = ltlcodeS.replace("CH_GRE", "√•√CH√GRE√•√");
   }
 
-  //asps:
-  while (ltlcodeS.includes("√•√CH_SAS√•√")) {
-    ltlcodeS = ltlcodeS.replace("√•√CH_SAS√•√", "√•√CH√SAS√•√");
-  }
-
-  while (ltlcodeS.includes("CH_SAS")) {
-    ltlcodeS = ltlcodeS.replace("CH_SAS", "√•√CH√SAS√•√");
-  }
-
   ///functions:
   while (ltlcodeS.includes("√•√FU_ALERT√•√")) {
     ltlcodeS = ltlcodeS.replace("√•√FU_ALERT√•√", "√•√FU√ALERT√•√");
@@ -488,7 +482,14 @@ function interpreter() {
   ltlisolationtime = 0;
   ltlatualtime = 0;
   ltlcode2 = ltlcodeS;
-  ltltotaltimecode = "";
+  ltltotaltimecode = " ";
+  ltlisolation = "true";
+  ltlrun = true;
+  ltlisolationprimary = "";
+  ltlisolationtotal = "";
+  ltlisolationcode = "";
+  ltlisolator1 = "";
+  var ltlisolation = false;
 
   ///divider per line:
   while (ltlcode2.includes(",")) {
@@ -500,130 +501,315 @@ function interpreter() {
   }
   ltlcode3 = ltlcode3.split("`√√`");
   ltlmaxtimes = ltlcode3.length;
+  if (ltlrun) {
+    while (ltlatualtime < ltlmaxtimes) {
+      ltlatualtimecode = "¶•¶" + ltlcode3[ltlatualtime];
+      ltlatualtime = ltlatualtime + 1;
+      ltlisolationtime = 0;
 
-  while (ltlatualtime < ltlmaxtimes) {
-    ltlatualtimecode = ltlcode3[ltlatualtime];
-    ltlatualtime = ltlatualtime + 1;
+      //error finder:
+      ///isolator:
+      if (ltlrunedtimes > 1) {
+        if (ltlrun) {
+          while (ltlatualtimecode.includes("¶•¶")) {
+            ltlatualtimecode = ltlatualtimecode.replace("¶•¶", "¶×¶∆•∆");
+          }
+          ltlisolator1 = ltlatualtimecode;
+          ltlatualtimecode = "";
+          ltlisolationprimary = ltlisolator1.split("∆•∆");
+          ltlisolationmax = ltlisolationprimary.length;
 
-    ///translator and interpreter per line:
+          while (ltlisolationtime < ltlisolationmax) {
+            if (ltlrun) {
+              ltlisolationcode = ltlisolationprimary[ltlisolationtime];
+              ltlisolationtime = ltlisolationtime + 1;
+              ltlisolation = false;
+              if (
+                ltlisolationtime == 1 ||
+                ltlisolationtime == ltlisolationmax
+              ) {
+                ltlisolation = true;
+              }
 
-    //translator to js:
-    ///simple translation:
-    while (ltlatualtimecode.includes("BO~")) {
-      ltlatualtimecode = ltlatualtimecode.replace("BO~", "var ");
-    }
-    while (ltlatualtimecode.includes("NU~")) {
-      ltlatualtimecode = ltlatualtimecode.replace("NU~", "var ");
-    }
-    while (ltlatualtimecode.includes("VC~")) {
-      ltlatualtimecode = ltlatualtimecode.replace("VC~", "var ");
-    }
-    while (ltlatualtimecode.includes("~")) {
-      ltlatualtimecode = ltlatualtimecode.replace("~", " ");
-    }
-    while (ltlatualtimecode.includes("CH√SET:")) {
-      ltlatualtimecode = ltlatualtimecode.replace("CH√SET:", "=");
-    }
-    while (ltlatualtimecode.includes("CH√SAS")) {
-      ltlatualtimecode = ltlatualtimecode.replace("CH√SAS", "'");
-    }
+              if (ltlisolationcode == "¶×¶") {
+                ltlisolation = true;
+              }
+              if (ltlisolationcode.includes("CH√PLU")) {
+                ltlisolation = true;
+              }
+              if (ltlisolationcode.includes("CH√MIN")) {
+                ltlisolation = true;
+              }
+              if (ltlisolationcode.includes("CH√MUL")) {
+                ltlisolation = true;
+              }
+              if (ltlisolationcode.includes("CH√DIV")) {
+                ltlisolation = true;
+              }
+              if (ltlisolationcode.includes("CH√POW")) {
+                ltlisolation = true;
+              }
+              if (ltlisolationcode.includes("CH√LPA")) {
+                ltlisolation = true;
+              }
+              if (ltlisolationcode.includes("CH√RPA")) {
+                ltlisolation = true;
+              }
+              if (ltlisolationcode.includes("CH√LSQ")) {
+                ltlisolation = true;
+              }
+              if (ltlisolationcode.includes("CH√RSQ")) {
+                ltlisolation = true;
+              }
+              if (ltlisolationcode.includes("CH√LCB")) {
+                ltlisolation = true;
+              }
+              if (ltlisolationcode.includes("CH√RCB")) {
+                ltlisolation = true;
+              }
+              if (ltlisolationcode.includes("CH√COM")) {
+                ltlisolation = true;
+              }
+              if (ltlisolationcode.includes("TT√END")) {
+                ltlisolation = true;
+              }
+              if (ltlisolationcode.includes("CH√LOE:")) {
+                ltlisolation = true;
+              }
+              if (ltlisolationcode.includes("CH√GOE:")) {
+                ltlisolation = true;
+              }
+              if (ltlisolationcode.includes("CH√EQU:")) {
+                ltlisolation = true;
+              }
+              if (ltlisolationcode.includes("CH√SET:")) {
+                ltlisolation = true;
+              }
+              if (ltlisolationcode.includes("CH√LES")) {
+                ltlisolation = true;
+              }
+              if (ltlisolationcode.includes("CH√GRE")) {
+                ltlisolation = true;
+              }
+              if (ltlisolationcode.includes("CH_SAS")) {
+                ltlisolation = true;
+              }
+              if (ltlisolationcode.includes("BO~")) {
+                ltlisolation = true;
+              }
+              if (ltlisolationcode.includes("NU~")) {
+                ltlisolation = true;
+              }
+              if (ltlisolationcode.includes("VC~")) {
+                ltlisolation = true;
+              }
+              if (ltlisolationcode.includes("VA~")) {
+                ltlisolation = true;
+              }
+              if (ltlisolationcode.includes("FU√IF")) {
+                ltlisolation = true;
+              }
+              if (ltlisolationcode.includes("FU√ALERT")) {
+                ltlisolation = true;
+              }
+              if (ltlisolationcode.includes("FU√OR")) {
+                ltlisolation = true;
+              }
+              if (ltlisolationcode.includes("FU√AND")) {
+                ltlisolation = true;
+              }
+              if (ltlisolationcode.includes("FU√NOT")) {
+                ltlisolation = true;
+              }
+              if (ltlisolationcode.includes("FU√ELSE")) {
+                ltlisolation = true;
+              }
+              if (ltlisolationcode.includes("FU√WHILE")) {
+                ltlisolation = true;
+              }
+              if (ltlisolationcode.includes("FU√FUNCTION")) {
+                ltlisolation = true;
+              }
 
-    while (ltlatualtimecode.includes("¶•¶")) {
-      ltlatualtimecode = ltlatualtimecode.replace("¶•¶", " ");
-    }
-    ///average translation:
-    while (ltlatualtimecode.includes("FU√IF")) {
-      ltlatualtimecode = ltlatualtimecode.replace("FU√IF", "if");
-    }
-    while (ltlatualtimecode.includes("FU√ALERT")) {
-      ltlatualtimecode = ltlatualtimecode.replace("FU√ALERT", "alert");
-    }
-    while (ltlatualtimecode.includes("FU√OR")) {
-      ltlatualtimecode = ltlatualtimecode.replace("FU√OR", "||");
-    }
-    while (ltlatualtimecode.includes("FU√AND")) {
-      ltlatualtimecode = ltlatualtimecode.replace("FU√AND", "&&");
-    }
-    while (ltlatualtimecode.includes("FU√NOT")) {
-      ltlatualtimecode = ltlatualtimecode.replace("FU√NOT", "!");
-    }
-    while (ltlatualtimecode.includes("FU√ELSE")) {
-      ltlatualtimecode = ltlatualtimecode.replace("FU√ELSE", "else");
-    }
-    while (ltlatualtimecode.includes("FU√WHILE")) {
-      ltlatualtimecode = ltlatualtimecode.replace("FU√WHILE", "while");
-    }
-    while (ltlatualtimecode.includes("FU√FUNCTION")) {
-      ltlatualtimecode = ltlatualtimecode.replace("FU√FUNCTION", "function ");
-    }
+              if (ltlisolationcode.includes("~")) {
+                ltlisolation = true;
+              }
+              if (ltlisolationcode.includes(";")) {
+                ltlisolation = true;
+              }
+              if (ltlisolationcode.includes("0")) {
+                ltlisolation = true;
+              }
+              if (ltlisolationcode.includes("1")) {
+                ltlisolation = true;
+              }
+              if (ltlisolationcode.includes("2")) {
+                ltlisolation = true;
+              }
+              if (ltlisolationcode.includes("3")) {
+                ltlisolation = true;
+              }
+              if (ltlisolationcode.includes("4")) {
+                ltlisolation = true;
+              }
+              if (ltlisolationcode.includes("5")) {
+                ltlisolation = true;
+              }
+              if (ltlisolationcode.includes("6")) {
+                ltlisolation = true;
+              }
+              if (ltlisolationcode.includes("7")) {
+                ltlisolation = true;
+              }
+              if (ltlisolationcode.includes("8")) {
+                ltlisolation = true;
+              }
+              if (ltlisolationcode.includes("9")) {
+                ltlisolation = true;
+              }
 
-    while (ltlatualtimecode.includes("CH√PLU")) {
-      ltlatualtimecode = ltlatualtimecode.replace("CH√PLU", "+");
-    }
-    while (ltlatualtimecode.includes("CH√MIN")) {
-      ltlatualtimecode = ltlatualtimecode.replace("CH√MIN", "-");
-    }
-    while (ltlatualtimecode.includes("CH√MUL")) {
-      ltlatualtimecode = ltlatualtimecode.replace("CH√MUL", "*");
-    }
-    while (ltlatualtimecode.includes("CH√DIV")) {
-      ltlatualtimecode = ltlatualtimecode.replace("CH√DIV", "/");
-    }
-    while (ltlatualtimecode.includes("CH√POW")) {
-      ltlatualtimecode = ltlatualtimecode.replace("CH√POW", "^");
-    }
+              ////reverse:
+              if (ltlisolationcode.includes("var")) {
+                ltlisolation = false;
+              }
+              if (ltlisolation) {
+                ltlatualtimecode = ltlatualtimecode + ltlisolationcode;
+              } else {
+                alert(
+                  "[Erro]Empty console,unknown token or unidentified programming language, make sure that there are no errors in the code and that you are not using another language."
+                );
+              }
+            }
+          }
+        }
+      }
+      if (ltlrun) {
+        //translator to js:
+        ///simple translation:
+        while (ltlatualtimecode.includes("BO~")) {
+          ltlatualtimecode = ltlatualtimecode.replace("BO~", "var ");
+        }
+        while (ltlatualtimecode.includes("NU~")) {
+          ltlatualtimecode = ltlatualtimecode.replace("NU~", "var ");
+        }
+        while (ltlatualtimecode.includes("VC~")) {
+          ltlatualtimecode = ltlatualtimecode.replace("VC~", "var ");
+        }
+        while (ltlatualtimecode.includes("VA~")) {
+          ltlatualtimecode = ltlatualtimecode.replace("VA~", "var ");
+        }
+        while (ltlatualtimecode.includes("~")) {
+          ltlatualtimecode = ltlatualtimecode.replace("~", " ");
+        }
+        while (ltlatualtimecode.includes("CH√SET:")) {
+          ltlatualtimecode = ltlatualtimecode.replace("CH√SET:", "=");
+        }
+        while (ltlatualtimecode.includes("CH_SAS")) {
+          ltlatualtimecode = ltlatualtimecode.replace("CH_SAS", "'");
+        }
 
-    while (ltlatualtimecode.includes("CH√LPA")) {
-      ltlatualtimecode = ltlatualtimecode.replace("CH√LPA", "(");
-    }
-    while (ltlatualtimecode.includes("CH√RPA")) {
-      ltlatualtimecode = ltlatualtimecode.replace("CH√RPA", ")");
-    }
-    while (ltlatualtimecode.includes("CH√LSQ")) {
-      ltlatualtimecode = ltlatualtimecode.replace("CH√LSQ", "[");
-    }
-    while (ltlatualtimecode.includes("CH√RSQ")) {
-      ltlatualtimecode = ltlatualtimecode.replace("CH√RSQ", "]");
-    }
-    while (ltlatualtimecode.includes("CH√LCB")) {
-      ltlatualtimecode = ltlatualtimecode.replace("CH√LCB", "{");
-    }
-    while (ltlatualtimecode.includes("CH√RCB")) {
-      ltlatualtimecode = ltlatualtimecode.replace("CH√RCB", "}");
-    }
-    while (ltlatualtimecode.includes("CH√COM")) {
-      ltlatualtimecode = ltlatualtimecode.replace("CH√COM", ",");
-    }
-    while (ltlatualtimecode.includes("CH√LOE")) {
-      ltlatualtimecode = ltlatualtimecode.replace("CH√LOE:", "<=");
-    }
-    while (ltlatualtimecode.includes("CH√GOE")) {
-      ltlatualtimecode = ltlatualtimecode.replace("CH√GOE:", ">=");
-    }
-    while (ltlatualtimecode.includes("CH√LES")) {
-      ltlatualtimecode = ltlatualtimecode.replace("CH√LES", "<");
-    }
-    while (ltlatualtimecode.includes("CH√GRE")) {
-      ltlatualtimecode = ltlatualtimecode.replace("CH√GRE", ">");
-    }
-    while (ltlatualtimecode.includes("CH√EQU")) {
-      ltlatualtimecode = ltlatualtimecode.replace("CH√EQU:", "==");
-    }
+        while (ltlatualtimecode.includes("¶×¶")) {
+          ltlatualtimecode = ltlatualtimecode.replace("¶×¶", " ");
+        }
+        ///average translation:
+        while (ltlatualtimecode.includes("FU√IF")) {
+          ltlatualtimecode = ltlatualtimecode.replace("FU√IF", "if");
+        }
+        while (ltlatualtimecode.includes("FU√ALERT")) {
+          ltlatualtimecode = ltlatualtimecode.replace("FU√ALERT", "alert");
+        }
+        while (ltlatualtimecode.includes("FU√OR")) {
+          ltlatualtimecode = ltlatualtimecode.replace("FU√OR", "||");
+        }
+        while (ltlatualtimecode.includes("FU√AND")) {
+          ltlatualtimecode = ltlatualtimecode.replace("FU√AND", "&&");
+        }
+        while (ltlatualtimecode.includes("FU√NOT")) {
+          ltlatualtimecode = ltlatualtimecode.replace("FU√NOT", "!");
+        }
+        while (ltlatualtimecode.includes("FU√ELSE")) {
+          ltlatualtimecode = ltlatualtimecode.replace("FU√ELSE", "else");
+        }
+        while (ltlatualtimecode.includes("FU√WHILE")) {
+          ltlatualtimecode = ltlatualtimecode.replace("FU√WHILE", "while");
+        }
+        while (ltlatualtimecode.includes("FU√FUNCTION")) {
+          ltlatualtimecode = ltlatualtimecode.replace(
+            "FU√FUNCTION",
+            "function "
+          );
+        }
 
-    ///hard translation:
+        while (ltlatualtimecode.includes("CH√PLU")) {
+          ltlatualtimecode = ltlatualtimecode.replace("CH√PLU", "+");
+        }
+        while (ltlatualtimecode.includes("CH√MIN")) {
+          ltlatualtimecode = ltlatualtimecode.replace("CH√MIN", "-");
+        }
+        while (ltlatualtimecode.includes("CH√MUL")) {
+          ltlatualtimecode = ltlatualtimecode.replace("CH√MUL", "*");
+        }
+        while (ltlatualtimecode.includes("CH√DIV")) {
+          ltlatualtimecode = ltlatualtimecode.replace("CH√DIV", "/");
+        }
+        while (ltlatualtimecode.includes("CH√POW")) {
+          ltlatualtimecode = ltlatualtimecode.replace("CH√POW", "^");
+        }
 
-    //javascript runner 1:
+        while (ltlatualtimecode.includes("CH√LPA")) {
+          ltlatualtimecode = ltlatualtimecode.replace("CH√LPA", "(");
+        }
+        while (ltlatualtimecode.includes("CH√RPA")) {
+          ltlatualtimecode = ltlatualtimecode.replace("CH√RPA", ")");
+        }
+        while (ltlatualtimecode.includes("CH√LSQ")) {
+          ltlatualtimecode = ltlatualtimecode.replace("CH√LSQ", "[");
+        }
+        while (ltlatualtimecode.includes("CH√RSQ")) {
+          ltlatualtimecode = ltlatualtimecode.replace("CH√RSQ", "]");
+        }
+        while (ltlatualtimecode.includes("CH√LCB")) {
+          ltlatualtimecode = ltlatualtimecode.replace("CH√LCB", "{");
+        }
+        while (ltlatualtimecode.includes("CH√RCB")) {
+          ltlatualtimecode = ltlatualtimecode.replace("CH√RCB", "}");
+        }
+        while (ltlatualtimecode.includes("CH√COM")) {
+          ltlatualtimecode = ltlatualtimecode.replace("CH√COM", ",");
+        }
+        while (ltlatualtimecode.includes("CH√LOE")) {
+          ltlatualtimecode = ltlatualtimecode.replace("CH√LOE:", "<=");
+        }
+        while (ltlatualtimecode.includes("CH√GOE")) {
+          ltlatualtimecode = ltlatualtimecode.replace("CH√GOE:", ">=");
+        }
+        while (ltlatualtimecode.includes("CH√LES")) {
+          ltlatualtimecode = ltlatualtimecode.replace("CH√LES", "<");
+        }
+        while (ltlatualtimecode.includes("CH√GRE")) {
+          ltlatualtimecode = ltlatualtimecode.replace("CH√GRE", ">");
+        }
+        while (ltlatualtimecode.includes("CH√EQU")) {
+          ltlatualtimecode = ltlatualtimecode.replace("CH√EQU:", "==");
+        }
 
-    ltltotaltimecode = ltltotaltimecode + ltlatualtimecode;
-    //internal ltldebug:
-    if (ltldebug == 1) {
-      alert("interpreter reading position:" + ltlatualtime + "/" + ltlmaxtimes);
-      alert(ltlatualtimecode);
+        ///hard translation:
+
+        //javascript runner 1:
+
+        ltltotaltimecode = ltltotaltimecode + ltlatualtimecode;
+        //internal ltldebug:
+      }
+      if (ltldebug == 1) {
+        alert(
+          "interpreter reading position:" + ltlatualtime + "/" + ltlmaxtimes
+        );
+        alert(ltlatualtimecode);
+      }
     }
+    //javascript runner 2:
+    eval(ltltotaltimecode);
   }
-  //javascript runner 2:
-  eval(ltltotaltimecode);
-
   //ltldebug:
   if (ltldebug == 1) {
     alert("interpreter output:" + ltltotaltimecode);
