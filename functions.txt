@@ -17,6 +17,10 @@ Returns a warning on the screen with a specified value.
 Ex: !alert('hi');
 Ex:!alert("VarName");
 
+•(!prompt)
+Issues a notice with a box for writing and a message.
+Ex: !Var "value" = !prompt('Whats|your|name?'); !if(!not("value" == '')){!alert('hello|'+ "value");};
+
 •(!and)
 Returns true if both conditions are true.
 Ex: if("varname" < 5 !and "varname" > 1){ !alert('true');};
@@ -64,6 +68,14 @@ Obs: This definer and all others can be used in any type of variable and only ha
 Get or define the value of a variable of any type( that is already defined).
 Ex: "VarName" = 1;
 Ex: if("VarName" == 3){ !alert('true'};
+
+/system
+
+•(#!#debug)
+Enables console debugging.(It is disabled by default)
+
+•(#?#tokenspacing)
+Disables the token spacing.(it is enabled by default and this can change the result of values)
 
 /characters:
 •(|)
