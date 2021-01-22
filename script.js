@@ -10,7 +10,7 @@ var ltlcode1;
 var ltlcodeS;
 var ltlcode2;
 var ltlcode3;
-var ltlTlink = "https://tlunarellipse.github.io/";
+var ltlTlink = "https://adhesive-south-basin.glitch.me/";
 var ltldebug = 0;
 var ltltokenspacing = 1;
 var ltlmaxtimes;
@@ -217,10 +217,16 @@ function lexer() {
   while (ltlcode1.includes("'")) {
     ltlcode1 = ltlcode1.replace("'", "CH_SAS");
   }
+  while (ltlcode1.includes("|")) {
+    ltlcode1 = ltlcode1.replace("|", "CH_UNL");
+  }
 
   //FUNCTIONS:
   while (ltlcode1.includes("!alert")) {
     ltlcode1 = ltlcode1.replace("!alert", "FU_ALERT");
+  }
+  while (ltlcode1.includes("!prompt")) {
+    ltlcode1 = ltlcode1.replace("!prompt", "FU_PROMPT");
   }
   while (ltlcode1.includes("!or")) {
     ltlcode1 = ltlcode1.replace("!or", "FU_OR");
@@ -393,8 +399,16 @@ function spacing2() {
   while (ltlcodeS.includes("√•√FU_ALERT√•√")) {
     ltlcodeS = ltlcodeS.replace("√•√FU_ALERT√•√", "√•√FU√ALERT√•√");
   }
+
   while (ltlcodeS.includes("FU_ALERT")) {
     ltlcodeS = ltlcodeS.replace("FU_ALERT", "√•√FU√ALERT√•√");
+  }
+
+  while (ltlcodeS.includes("√•√FU_PROMPT√•√")) {
+    ltlcodeS = ltlcodeS.replace("√•√FU_PROMPT√•√", "√•√FU√PROMPT√•√");
+  }
+  while (ltlcodeS.includes("FU_PROMPT")) {
+    ltlcodeS = ltlcodeS.replace("FU_PROMPT", "√•√FU√PROMPT√•√");
   }
 
   while (ltlcodeS.includes("√•√FU_OR√•√")) {
@@ -594,6 +608,9 @@ function interpreter() {
               if (ltlisolationcode.includes("CH_SAS")) {
                 ltlisolation = true;
               }
+              if (ltlisolationcode.includes("CH_UNL")) {
+                ltlisolation = true;
+              }
               if (ltlisolationcode.includes("BO~")) {
                 ltlisolation = true;
               }
@@ -610,6 +627,9 @@ function interpreter() {
                 ltlisolation = true;
               }
               if (ltlisolationcode.includes("FU√ALERT")) {
+                ltlisolation = true;
+              }
+              if (ltlisolationcode.includes("FU√PROMPT")) {
                 ltlisolation = true;
               }
               if (ltlisolationcode.includes("FU√OR")) {
@@ -718,6 +738,9 @@ function interpreter() {
         while (ltlatualtimecode.includes("FU√ALERT")) {
           ltlatualtimecode = ltlatualtimecode.replace("FU√ALERT", "alert");
         }
+        while (ltlatualtimecode.includes("FU√PROMPT")) {
+          ltlatualtimecode = ltlatualtimecode.replace("FU√PROMPT", "prompt");
+        }
         while (ltlatualtimecode.includes("FU√OR")) {
           ltlatualtimecode = ltlatualtimecode.replace("FU√OR", "||");
         }
@@ -790,7 +813,10 @@ function interpreter() {
           ltlatualtimecode = ltlatualtimecode.replace("CH√GRE", ">");
         }
         while (ltlatualtimecode.includes("CH√EQU")) {
-          ltlatualtimecode = ltlatualtimecode.replace("CH√EQU:", "==");
+          ltlatualtimecode = ltlatualtimecode.replace("CH√EQU", "=");
+        }
+        while (ltlatualtimecode.includes("CH_UNL")) {
+          ltlatualtimecode = ltlatualtimecode.replace("CH_UNL", " ");
         }
 
         ///hard translation:
