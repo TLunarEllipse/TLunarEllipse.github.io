@@ -66,4 +66,8 @@ Ex: "VarName" = 1;
 Ex: if("VarName" == 3){ !alert('true'};
 
 /characters:
-(coming son)
+•(|)
+Must be used as a space within values, since common spaces do not work within values ​​with more than two spaces.
+Ex: !alert('How|are|you?');
+
+(More coming son)
