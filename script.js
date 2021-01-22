@@ -654,6 +654,10 @@ function interpreter() {
               if (ltlisolationcode.includes("~")) {
                 ltlisolation = true;
               }
+
+              if (ltlisolationcode.includes('"')) {
+                ltlisolation = true;
+              }
               if (ltlisolationcode.includes(";")) {
                 ltlisolation = true;
               }
