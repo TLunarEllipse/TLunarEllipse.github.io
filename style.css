@@ -57,3 +57,33 @@ img[id="ltllogo"] {
   position: absolute;
   right: 105px;
 }
+div[id="ltltconsole"] {
+  display: none;
+}
+div[id="ltltExecutor"] {
+  display: none;
+}
+div[id="ltlselector"] {
+  display: block;
+}
+h {
+  font-size: 240%;
+}
+p1 {
+  font-size: 120%;
+}
+a {
+  color: #fff;
+  text-decoration: none;
+}
+p1[id="ltlversion"] {
+  position: absolute;
+  bottom: 2%;
+  right: 2%;
+}
+a[id="notice"] {
+  position: fixed;
+  top: 50%;
+  margin: auto;
+  left: 50px;
+}
