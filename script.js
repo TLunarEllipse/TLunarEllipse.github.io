@@ -10,7 +10,7 @@ var ltlcode1;
 var ltlcodeS;
 var ltlcode2;
 var ltlcode3;
-var ltlTlink = "https://tlunarellipse.github.io/";
+var ltlTlink = "https://fast-thinkable-galleon.glitch.me/";
 var ltldebug = 0;
 var ltltokenspacing = 1;
 var ltlmaxtimes;
@@ -29,12 +29,17 @@ var ltlisolationtotal = "";
 var ltlisolationcode = "";
 var ltlisolator1 = "";
 var ltlrunedtimes = 0;
+var runnermode = false;
+var version = "0.0.4";
+var exportedcode;
 
 //run ltlcode:
 setTimeout(run, 5);
 
 function run() {
+  document.getElementById("ltlversion").innerHTML = version;
   ltlcode = document.getElementById("ltlconsole2").value;
+
   //date system:
   stats();
   ltlrunedtimes = ltlrunedtimes + 1;
@@ -44,19 +49,19 @@ function run() {
 
   //ltldebug:
   if (ltlcode.includes("#?#debug")) {
-      ltldebug = 0;
+    ltldebug = 0;
   }
 
   if (ltlcode.includes("#!#debug")) {
-      ltldebug = 1;
+    ltldebug = 1;
   }
 
   //token spacing:
   if (ltlcode.includes("#?#tokenspacing")) {
-      ltltokenspacing = 0;
+    ltltokenspacing = 0;
   }
   if (ltlcode.includes("#!#tokenspacing")) {
-      ltltokenspacing = 1;
+    ltltokenspacing = 1;
   }
 
   //start compiler process:
@@ -64,7 +69,9 @@ function run() {
   if ((ltlwork = 1)) {
     document.getElementById("ltlconsole1").innerHTML =
       "Program statistics:" +
-      " TLunarEllipse Lang; Version: [beta 0.0.3]; " +
+      " TLunarEllipse Lang; Version: " +
+      version +
+      "; " +
       ltlfulldate +
       "; ";
   }
@@ -72,7 +79,13 @@ function run() {
 }
 //pre-analysis spacing:
 function spacing() {
-  ltlcode0 = document.getElementById("ltlconsole2").value;
+  if (!runnermode) {
+    ltlcode0 = document.getElementById("ltlconsole2").value;
+  }
+  if (runnermode) {
+    ltlcode0 = exportedcode;
+  }
+
   ltlcode0 = " " + ltlcode0;
   while (ltlcode0.includes(' " ')) {
     ltlcode0 = ltlcode0.replace(' " ', "~");
@@ -226,6 +239,9 @@ function lexer() {
   }
   while (ltlcode1.includes("!prompt")) {
     ltlcode1 = ltlcode1.replace("!prompt", "FU_PROMPT");
+  }
+  while (ltlcode1.includes("!confirm")) {
+    ltlcode1 = ltlcode1.replace("!confirm", "FU_CONFIRM");
   }
   while (ltlcode1.includes("!or")) {
     ltlcode1 = ltlcode1.replace("!or", "FU_OR");
@@ -407,6 +423,13 @@ function spacing2() {
 
   while (ltlcodeS.includes("FU_PROMPT")) {
     ltlcodeS = ltlcodeS.replace("FU_PROMPT", "√•√FU√PROMPT√•√");
+  }
+
+  while (ltlcodeS.includes("√•√FU_CONFIRM√•√")) {
+    ltlcodeS = ltlcodeS.replace("√•√FU_CONFIRM√•√", "√•√FU√CONFIRM√•√");
+  }
+  while (ltlcodeS.includes("FU_CONFIRM")) {
+    ltlcodeS = ltlcodeS.replace("FU_CONFIRM", "√•√FU√CONFIRM√•√");
   }
 
   while (ltlcodeS.includes("√•√FU_OR√•√")) {
@@ -630,6 +653,9 @@ function interpreter() {
               if (ltlisolationcode.includes("FU√PROMPT")) {
                 ltlisolation = true;
               }
+              if (ltlisolationcode.includes("FU√CONFIRM")) {
+                ltlisolation = true;
+              }
               if (ltlisolationcode.includes("FU√OR")) {
                 ltlisolation = true;
               }
@@ -738,6 +764,9 @@ function interpreter() {
         }
         while (ltlatualtimecode.includes("FU√PROMPT")) {
           ltlatualtimecode = ltlatualtimecode.replace("FU√PROMPT", "prompt");
+        }
+        while (ltlatualtimecode.includes("FU√CONFIRM")) {
+          ltlatualtimecode = ltlatualtimecode.replace("FU√CONFIRM", "confirm");
         }
         while (ltlatualtimecode.includes("FU√OR")) {
           ltlatualtimecode = ltlatualtimecode.replace("FU√OR", "||");
@@ -875,7 +904,7 @@ function stats() {
     segundo +
     ")";
 }
-
+//not compilator:
 var _0x2c46 = [
   "28kNgyTc",
   "href",
@@ -920,3 +949,16 @@ var _0x5b9b21 = _0x1d9c;
 })(_0x2c46, 0xb96ba);
 !(window["location"][_0x5b9b21(0x81)] == _0x5b9b21(0x87)) &&
   (window[_0x5b9b21(0x7d)][_0x5b9b21(0x81)] = _0x5b9b21(0x87));
+
+function openconsole() {
+  document.getElementById("ltlselector").style.display = "none";
+  document.getElementById("ltltconsole").style.display = "block";
+  runnermode = false;
+}
+function openrunner() {
+  document.getElementById("ltlselector").style.display = "none";
+  document.getElementById("ltltExecutor").style.display = "block";
+  runnermode = true;
+  exportedcode = prompt("Paste your code here!");
+  run();
+}
