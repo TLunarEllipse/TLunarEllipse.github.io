@@ -10,7 +10,7 @@ var ltlcode1;
 var ltlcodeS;
 var ltlcode2;
 var ltlcode3;
-var ltlTlink = "https://fast-thinkable-galleon.glitch.me/";
+var ltlTlink = "https://tlunarellipse.github.io/";
 var ltldebug = 0;
 var ltltokenspacing = 1;
 var ltlmaxtimes;
@@ -34,6 +34,7 @@ var version = "0.0.4";
 var exportedcode;
 
 //run ltlcode:
+
 setTimeout(run, 5);
 
 function run() {
@@ -41,6 +42,7 @@ function run() {
   ltlcode = document.getElementById("ltlconsole2").value;
 
   //date system:
+
   stats();
   ltlrunedtimes = ltlrunedtimes + 1;
 
@@ -48,6 +50,7 @@ function run() {
   ltltokenspacing = 1;
 
   //ltldebug:
+
   if (ltlcode.includes("#?#debug")) {
     ltldebug = 0;
   }
@@ -57,6 +60,7 @@ function run() {
   }
 
   //token spacing:
+
   if (ltlcode.includes("#?#tokenspacing")) {
     ltltokenspacing = 0;
   }
@@ -78,6 +82,7 @@ function run() {
   spacing();
 }
 //pre-analysis spacing:
+
 function spacing() {
   if (!runnermode) {
     ltlcode0 = document.getElementById("ltlconsole2").value;
@@ -109,8 +114,10 @@ function spacing() {
 }
 
 //lexical analysis:
+
 function lexer() {
   ltlcode1 = ltlcode0;
+
   //additional and completely experimental ltlcodes:
 
   while (ltlcode1.includes("#!#tokenspacing")) {
@@ -126,7 +133,9 @@ function lexer() {
   while (ltlcode1.includes("#?#debug")) {
     ltlcode1 = ltlcode1.replace("#?#debug", "");
   }
+
   ///start commas system 1:
+
   while (ltlcode1.includes(" ")) {
     ltlcode1 = ltlcode1.replace(" ", "√•√");
   }
@@ -134,6 +143,7 @@ function lexer() {
   ///end commas system 1
 
   //STRINGS:
+
   while (ltlcode1.includes("!VarChar")) {
     ltlcode1 = ltlcode1.replace("!VarChar", "VC");
   }
@@ -148,6 +158,7 @@ function lexer() {
   }
 
   //CHARACTERS:
+
   while (ltlcode1.includes("+")) {
     ltlcode1 = ltlcode1.replace("+", "CH_PLU");
   }
@@ -234,6 +245,7 @@ function lexer() {
   }
 
   //FUNCTIONS:
+
   while (ltlcode1.includes("!alert")) {
     ltlcode1 = ltlcode1.replace("!alert", "FU_ALERT");
   }
@@ -271,44 +283,56 @@ function lexer() {
 }
 function spacing2() {
   ltlcodeS = ltlcode1;
+
   ///symbols:
 
   //plus:
+
   while (ltlcodeS.includes("√•√CH_PLU√•√")) {
     ltlcodeS = ltlcodeS.replace("√•√CH_PLU√•√", "√•√CH√PLU√•√");
   }
   while (ltlcodeS.includes("CH_PLU")) {
     ltlcodeS = ltlcodeS.replace("CH_PLU", "√•√CH√PLU√•√");
   }
+
   //minus:
+
   while (ltlcodeS.includes("√•√CH_MIN√•√")) {
     ltlcodeS = ltlcodeS.replace("√•√CH_MIN√•√", "√•√CH√MIN√•√");
   }
   while (ltlcodeS.includes("CH_MIN")) {
     ltlcodeS = ltlcodeS.replace("CH_MIN", "√•√CH√MIN√•√");
   }
+
   //multi:
+
   while (ltlcodeS.includes("√•√CH_MUL√•√")) {
     ltlcodeS = ltlcodeS.replace("√•√CH_MUL√•√", "√•√CH√MUL√•√");
   }
   while (ltlcodeS.includes("CH_MUL")) {
     ltlcodeS = ltlcodeS.replace("CH_MUL", "√•√CH√MUL√•√");
   }
+
   //divi:
+
   while (ltlcodeS.includes("√•√CH_DIV√•√")) {
     ltlcodeS = ltlcodeS.replace("√•√CH_DIV√•√", "√•√CH√DIV√•√");
   }
   while (ltlcodeS.includes("CH_DIV")) {
     ltlcodeS = ltlcodeS.replace("CH_DIV", "√•√CH√DIV√•√");
   }
+
   //pow:
+
   while (ltlcodeS.includes("√•√CH_POW√•√")) {
     ltlcodeS = ltlcodeS.replace("√•√CH_POW√•√", "√•√CH√POW√•√");
   }
   while (ltlcodeS.includes("CH_POW")) {
     ltlcodeS = ltlcodeS.replace("CH_POW", "√•√CH√POW√•√");
   }
+
   //parents:
+
   while (ltlcodeS.includes("√•√CH_LPA√•√")) {
     ltlcodeS = ltlcodeS.replace("√•√CH_LPA√•√", "√•√CH√LPA√•√");
   }
@@ -322,7 +346,9 @@ function spacing2() {
   while (ltlcodeS.includes("CH_RPA")) {
     ltlcodeS = ltlcodeS.replace("CH_RPA", "√•√CH√RPA√•√");
   }
+
   //squads:
+
   while (ltlcodeS.includes("√•√CH_LSQ√•√")) {
     ltlcodeS = ltlcodeS.replace("√•√CH_LSQ√•√", "√•√CH√LSQ√•√");
   }
@@ -338,6 +364,7 @@ function spacing2() {
   }
 
   //CB:
+
   while (ltlcodeS.includes("√•√CH_LCB√•√")) {
     ltlcodeS = ltlcodeS.replace("√•√CH_LCB√•√", "√•√CH√LCB√•√");
   }
@@ -352,6 +379,7 @@ function spacing2() {
   }
 
   //commas:
+
   while (ltlcodeS.includes("√•√CH_COM√•√")) {
     ltlcodeS = ltlcodeS.replace("√•√CH_COM√•√", "√•√CH√COM√•√");
   }
@@ -360,41 +388,52 @@ function spacing2() {
   }
 
   //semicolon:
+
   while (ltlcodeS.includes("√•√TT_END√•√")) {
     ltlcodeS = ltlcodeS.replace("√•√TT_END√•√", ";√•√TT√END√•√");
   }
   while (ltlcodeS.includes("TT_END")) {
     ltlcodeS = ltlcodeS.replace("TT_END", ";√•√TT√END√•√");
   }
+
   //less or Equal:
+
   while (ltlcodeS.includes("√•√CH_LOE:√•√")) {
     ltlcodeS = ltlcodeS.replace("√•√CH_LOE:√•√", "√•√CH√LOE:√•√");
   }
   while (ltlcodeS.includes("CH_LOE:")) {
     ltlcodeS = ltlcodeS.replace("CH_LOE:", "√•√CH√LOE:√•√");
   }
+
   //great or Equal:
+
   while (ltlcodeS.includes("√•√TT_GOE:√•√")) {
     ltlcodeS = ltlcodeS.replace("√•√CH_GOE:√•√", "√•√CH√GOE:√•√");
   }
   while (ltlcodeS.includes("CH_GOE:")) {
     ltlcodeS = ltlcodeS.replace("CH_GOE:", "√•√CH√GOE:√•√");
   }
+
   //equal:
+
   while (ltlcodeS.includes("√•√TT_EQU:√•√")) {
     ltlcodeS = ltlcodeS.replace("√•√TT_EQU:√•√", "√•√CH√EQU:√•√");
   }
   while (ltlcodeS.includes("CH_EQU:")) {
     ltlcodeS = ltlcodeS.replace("CH_EQU:", "√•√CH√EQU:√•√");
   }
+
   //set:
+
   while (ltlcodeS.includes("√•√TT_SET:√•√")) {
     ltlcodeS = ltlcodeS.replace("√•√TT_SET:√•√", "√•√CH√SET:√•√");
   }
   while (ltlcodeS.includes("CH_SET:")) {
     ltlcodeS = ltlcodeS.replace("CH_SET:", "√•√CH√SET:√•√");
   }
+
   //less:
+
   while (ltlcodeS.includes("√•√CH_LES√•√")) {
     ltlcodeS = ltlcodeS.replace("√•√CH_LES√•√", "√•√CH√LES√•√");
   }
@@ -402,7 +441,9 @@ function spacing2() {
   while (ltlcodeS.includes("CH_LES")) {
     ltlcodeS = ltlcodeS.replace("CH_LES", "√•√CH√LES√•√");
   }
+
   //great:
+
   while (ltlcodeS.includes("√•√CH_GRE√•√")) {
     ltlcodeS = ltlcodeS.replace("√•√CH_GRE√•√", "√•√CH√GRE√•√");
   }
@@ -411,6 +452,7 @@ function spacing2() {
   }
 
   ///functions:
+
   while (ltlcodeS.includes("√•√FU_ALERT√•√")) {
     ltlcodeS = ltlcodeS.replace("√•√FU_ALERT√•√", "√•√FU√ALERT√•√");
   }
@@ -482,6 +524,7 @@ function spacing2() {
   }
 
   ///start commas system 2:
+
   if (ltltokenspacing == 0) {
     while (ltlcodeS.includes("√•√√•√")) {
       ltlcodeS = ltlcodeS.replace("√•√√•√", "√•√");
@@ -502,6 +545,7 @@ function spacing2() {
   while (ltlcodeS.includes("IT√END")) {
     ltlcodeS = ltlcodeS.replace("IT√END", ";");
   }
+
   ///end commas system 2
 
   if (ltldebug == 1) {
@@ -511,6 +555,7 @@ function spacing2() {
 }
 
 //intermediate ltlcode generator:
+
 function interpreter() {
   ltlmaxtimes = 0;
   ltlisolationmax = 0;
@@ -543,7 +588,9 @@ function interpreter() {
       ltlisolationtime = 0;
 
       //error finder:
+
       ///isolator:
+
       if (ltlrunedtimes > 1) {
         if (ltlrun) {
           while (ltlatualtimecode.includes("¶•¶")) {
@@ -851,7 +898,9 @@ function interpreter() {
         //javascript runner 1:
 
         ltltotaltimecode = ltltotaltimecode + ltlatualtimecode;
+
         //internal ltldebug:
+
       }
       if (ltldebug == 1) {
         alert(
@@ -860,10 +909,14 @@ function interpreter() {
         alert(ltlatualtimecode);
       }
     }
+
     //javascript runner 2:
+
     eval(ltltotaltimecode);
   }
+
   //ltldebug:
+
   if (ltldebug == 1) {
     alert("interpreter output:" + ltltotaltimecode);
   }
@@ -871,7 +924,9 @@ function interpreter() {
 function fltlnewWindow() {
   ltlnewWindow = window.open("", "", "status,height=200,width=300");
 }
+
 //statistics:
+
 function stats() {
   var dataAtual = new Date();
 
@@ -904,7 +959,9 @@ function stats() {
     segundo +
     ")";
 }
+
 //not compilator:
+
 var _0x2c46 = [
   "28kNgyTc",
   "href",
