@@ -1013,9 +1013,12 @@ function openconsole() {
   runnermode = false;
 }
 function openrunner() {
+
+  exportedcode = prompt("Paste your code here!");
+  if!(exportedcode == '' || ' '){
   document.getElementById("ltlselector").style.display = "none";
   document.getElementById("ltltExecutor").style.display = "block";
   runnermode = true;
-  exportedcode = prompt("Paste your code here!");
   run();
+}
 }
