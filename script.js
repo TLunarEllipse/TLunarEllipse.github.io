@@ -10,7 +10,7 @@ var ltlcode1;
 var ltlcodeS;
 var ltlcode2;
 var ltlcode3;
-var ltlTlink = "https://tlunarellpse.github.io/";
+var ltlTlink = "https://tlunarellipse.github.io/";
 var ltldebug = 0;
 var ltltokenspacing = 1;
 var ltlmaxtimes;
