@@ -21,6 +21,10 @@ Ex:!alert("VarName");
 Issues a notice with a box for writing and a message.
 Ex: !Var "value" = !prompt('Whats|your|name?'); !if(!not("value" == '')){!alert('hello|'+ "value");};
 
+•(!confirm)
+Shows an alert that returns true when the user selects the option "ok" and false when he selects the option "cancel".
+Ex: !if(!confirm('start?')){ !alert('process|started');};
+
 •(!and)
 Returns true if both conditions are true.
 Ex: if("varname" < 5 !and "varname" > 1){ !alert('true');};
