@@ -1015,7 +1015,7 @@ function openconsole() {
 function openrunner() {
 
   exportedcode = prompt("Paste your code here!");
-  if!(exportedcode == '' || ' '){
+  if(!(exportedcode == '' || ' ')){
   document.getElementById("ltlselector").style.display = "none";
   document.getElementById("ltltExecutor").style.display = "block";
   runnermode = true;
