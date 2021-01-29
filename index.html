@@ -10,33 +10,53 @@
     />
   </head>
   <body>
-    <div id="ltltotal">
-      <textarea
-        id="ltlconsole1"
-        disabled
-        name="ltlconsole1"
-        rows="50"
-        cols="50"
-      ></textarea>
-
-      <textarea
-        id="ltlconsole2"
-        name="ltlconsole2"
-        rows="50"
-        cols="50"
-      ></textarea>
+    <div id="ltlselector">
+      <center>
+        <p1>Select which mode you want the language to operate in:</p1>
+      </center>
+      <br />
+      <hr />
+      <br />
+      <center>
+        <a href="javascript: openconsole();"><h>CONSOLE_</h></a
+        ><br /><br /><br /><br />
+        <a href="javascript: openrunner();"><h>EXECUTOR_</h></a>
+      </center>
+      <p1 id="ltlversion">Javascript disabled</p1>
     </div>
-    <div id="ltlmenu">
-     <a href="/functions.txt" target="_blank">
-      <img
-        src="https://cdn.glitch.com/9d7db3cd-60b4-49a2-bd2e-f912029b8497%2F4e15fdbb-9fd8-46fa-8033-b8c0c1898172.png?v=1608492545796"
-        id="ltllogo"
-      />
-      <a href="javascript: run();"
-        ><img
-          src="https://cdn.glitch.com/9d7db3cd-60b4-49a2-bd2e-f912029b8497%2Ff1c18b85-5c2c-4628-afef-c662b8d64af1.png?v=1608492533936"
-          id="ltlrun"
-      /></a>
+    <div id="ltltconsole">
+      <div id="ltltotal">
+        <textarea
+          id="ltlconsole1"
+          disabled
+          name="ltlconsole1"
+          rows="50"
+          cols="50"
+        ></textarea>
+
+        <textarea
+          id="ltlconsole2"
+          name="ltlconsole2"
+          rows="50"
+          cols="50"
+        ></textarea>
+      </div>
+      <div id="ltlmenu">
+        <a href="/functions.txt" target="_blank">
+          <img
+            src="https://cdn.glitch.com/9d7db3cd-60b4-49a2-bd2e-f912029b8497%2F4e15fdbb-9fd8-46fa-8033-b8c0c1898172.png?v=1608492545796"
+            id="ltllogo"
+          />
+        </a>
+        <a href="javascript: run();"
+          ><img
+            src="https://cdn.glitch.com/9d7db3cd-60b4-49a2-bd2e-f912029b8497%2Ff1c18b85-5c2c-4628-afef-c662b8d64af1.png?v=1608492533936"
+            id="ltlrun"
+        /></a>
+      </div>
+    </div>
+    <div id="ltltExecutor">
+      <a id="notice" href="/index.html"><h>Stop And Return/Refresh</h></a>
     </div>
   </body>
 </html>
