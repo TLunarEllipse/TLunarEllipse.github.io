@@ -8,7 +8,7 @@ var ltlcode1;
 var ltlcodeS;
 var ltlcode2;
 var ltlcode3;
-var ltlTlink = "https://inquisitive-rust-shaker.glitch.me/";
+var ltlTlink = "https://tlunarellipse.github.io";
 var ltldebug = 0;
 var ltltokenspacing = 1;
 var ltlmaxtimes;
