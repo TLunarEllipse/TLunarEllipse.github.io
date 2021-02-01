@@ -21,8 +21,15 @@
         <a href="javascript: openconsole();"><h>CONSOLE_</h></a
         ><br /><br /><br /><br />
         <a href="javascript: openrunner();"><h>EXECUTOR_</h></a>
+        <br /><br /><br /><br />
+        <a href="javascript: openruninhtmlsites();"
+          ><h>RUN IN HTML SITES_</h></a
+        >
       </center>
-      <img id="logorot" src="https://cdn.glitch.com/efe5bf34-3dab-41c2-89e6-e9f14810c953%2FGIF-210129_191433.gif?v=1611958573696"/>
+      <img
+        id="logorot"
+        src="https://cdn.glitch.com/efe5bf34-3dab-41c2-89e6-e9f14810c953%2FGIF-210129_191433.gif?v=1611958573696"
+      />
       <p1 id="ltlversion">Javascript disabled</p1>
     </div>
     <div id="ltltconsole">
@@ -59,5 +66,46 @@
     <div id="ltltExecutor">
       <a id="notice" href="/index.html"><h>Stop And Return/Refresh</h></a>
     </div>
+    <div id="ltlhtmlrunnertutorial">
+      <center>
+        <h>RUN TLUNARELLIPSE IN HTML SITES:</h>
+        <br /><br />
+        <p>FIRST STEP:</p>
+        <p>
+          Copy the code below and paste it at the end of your html tag in your
+          code.
+        </p>
+        <br />
+        <textarea
+          disabled
+          style="border-radius: 5px;width: 50%;height: 100px;"
+          id="codecopy"
+        ></textarea>
+        <br /><br />
+        <p>SECOND STEP:</p>
+        <p>
+          Write your or paste code in TlunarEllipse between the two textarea
+          tags.
+        </p>
+        <img
+          style="border-radius: 5px;width: 50%;height: 100px;"
+          src="https://cdn.glitch.com/b17d16ba-7c8e-4f3f-a99b-035c8be5533e%2FScreenshot_20210201-140901.png?v=1612199366703"
+        />
+        <br />
+        <br />
+        <p>
+          Doing this your code will run from the bottom of your page.
+        </p>
+      </center>
+    </div>
   </body>
 </html>
+
+<script>
+  var scriptend = "</script";
+  document.getElementById("codecopy").value =
+    '<script src="https://tlunarellipse.github.io/tlunarellipse_compiler.js">' +
+    scriptend +
+    ">" +
+    '<textarea id="code_tlunarellipse" style="display: none;"></textarea>';
+</script>
