@@ -66,6 +66,9 @@ div[id="ltltExecutor"] {
 div[id="ltlselector"] {
   display: block;
 }
+div[id="ltlhtmlrunnertutorial"] {
+  display: none;
+}
 h {
   font-size: 240%;
 }
