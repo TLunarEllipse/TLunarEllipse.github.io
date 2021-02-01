@@ -30,7 +30,7 @@ var ltlisolationcode = "";
 var ltlisolator1 = "";
 var ltlrunedtimes = 0;
 var runnermode = false;
-var version = "0.0.4";
+var version = "0.0.5";
 var exportedcode;
 var confirm01;
 
