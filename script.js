@@ -10,7 +10,7 @@ var ltlcode1;
 var ltlcodeS;
 var ltlcode2;
 var ltlcode3;
-var ltlTlink = "https://tlunarellipse.github.io/";
+var ltlTlink = "https://tlunarellipse.github.io//";
 var ltldebug = 0;
 var ltltokenspacing = 1;
 var ltlmaxtimes;
@@ -956,6 +956,11 @@ var _0x5b9b21 = _0x1d9c;
 function openconsole() {
   document.getElementById("ltlselector").style.display = "none";
   document.getElementById("ltltconsole").style.display = "block";
+  runnermode = false;
+}
+function openruninhtmlsites() {
+  document.getElementById("ltlselector").style.display = "none";
+  document.getElementById("ltlhtmlrunnertutorial").style.display = "block";
   runnermode = false;
 }
 function openrunner() {
