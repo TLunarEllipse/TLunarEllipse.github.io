@@ -14,4 +14,4 @@ If you want to add our compiler to your website or programming program please co
 
 #Programming sites and programs authorized to use our compiler:
 
-https://TLunarEllipse.github.com
+https://TLunarEllipse.github.io
